@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs');
 const utilities=require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
 const nodemailer = require('../utilities/nodeemailer.js');
-const { error } = require('winston');
 
 class UserService {
  
@@ -37,18 +36,15 @@ class UserService {
     }
 
     forgotPassword = (email, callback) => {
-      console.log("Service email", email);
-      //userModel.forgotPassword(email, (error, data) => {
         userModel.forgotPassword(email,(error,data) => {
-          console.log(data);
-        if (error) {
-          console.log(error);
-          //logger.error(error);
+          //console.log("serv",data);
+        if (error || !data) {
+          logger.error(error);
           return callback(error, null);
         } else {
           return callback(null, nodemailer.sendEmail(data));
         }
       });
-    };
+    }
   }
 module.exports = new UserService();

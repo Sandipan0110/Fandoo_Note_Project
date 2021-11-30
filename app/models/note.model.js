@@ -77,23 +77,11 @@ class userModel {
   }
 
     forgotPassword = (data, callback) => {
-      console.log("model", data);
       User.findOne({ email: data.email }, (err, data) => {
-       if (err) {
-         console.log("data", data);
-         //logger.error('User with email id exists');
-         callback(err,null);
-       } else {
-         if(data){
-           console.log("Data", data);
-           callback(data,null);
-          
-         }
-         else{
-          //console.log("model", err);
-          callback("User Not Found",null);
-         }
-        
+       if (data) {
+        return callback(null,data);
+      } else {
+          return callback(err,null);
        }
      });
    };

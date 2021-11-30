@@ -94,10 +94,21 @@ class Controller {
           const userCredential = {
             email: req.body.email
           };
-          console.log(userCredential);
-          userService.forgotPassword(userCredential, (error, result) => {
+
+        const validationforgotPassword =
+        validation.authenticateLogin.validate(userCredential);
+
+        if (validationforgotPassword.error) {
+          logger.error('Wrong Input Validations');
+          return res.status(400).send({
+            success: false,
+            message: 'Wrong Input Validations',
+            data: validationforgotPassword
+          });
+        }
+
+        userService.forgotPassword(userCredential, (error, result) => {
             if (error) {
-              console.log(error)
               return res.status(400).send({
                 success: false,
                 message: 'failed to send email'
@@ -110,14 +121,13 @@ class Controller {
             }
           });
         } catch (error) {
-          console.log(error)
-          //logger.error('Internal server error');
-          return res.status(500).send({
+            logger.error('Internal server error');
+            return res.status(500).send({
             success: false,
             message: 'Internal server error',
             result: null
           });
         }
-      };
+      }
     }
   module.exports = new Controller();

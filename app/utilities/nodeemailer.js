@@ -22,7 +22,7 @@ exports.sendEmail = (mailMessage) => {
     from: process.env.EMAIL,
     to: mailMessage.email,
     subject:'Fundoo notes otp code',
-    html:`Enter this otp to reset your password
+    html:`Enter This OTP to Reset Your Password
     <h3>${otpcode}</h3>`
   };
 
