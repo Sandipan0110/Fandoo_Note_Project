@@ -69,35 +69,70 @@
                     }
                 }
             }
-        }
-    },
+        },
 
-    "/forgotpassword": {
-        "post": {
-            "tags": ["forgotPassword"],
-            "description": "Send password link",
-            "parameters": [
-                {
-                    "name": "forgotpassword",
-                    "in": "body",
-                    "description": "Sent password resent link",
-                    "schema": {
-                        "$ref": "#/definitions/forgotpassword"
+        "/forgotpassword": {
+            "post": {
+                "tags": ["Forgot Password"],
+                "description": "Send password link",
+                "parameters": [
+                    {
+                        "name": "Forgot Password",
+                        "in": "body",
+                        "description": "Sent password resent link",
+                        "schema": {
+                            "$ref": "#/definitions/forgotpassword"
+                        }
+                    }
+                ],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "ok"
+                    },
+                    "404": {
+                        "description": "Not Found"
                     }
                 }
-            ],
-            "produces": ["application/json"],
-            "responses": {
-                "200": {
-                    "description": "ok"
-                },
-                "404": {
-                    "description": "Not Found"
+            }
+        },
+
+        "/reset-Password": {
+            "put": {
+                "tags": ["Reset Password"],
+                "description": "Already registered ? Then reset password successfully !!",
+                "parameters": [
+        
+                    {
+                        "name": "Reset Password",
+                        "in": "body",
+                        "description": "Reset Password with code",
+                        "schema": {
+                            "$ref": "#/definitions/resetPassword"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "reset password succesfully !!"
+                    },
+                    "400": {
+                        "description": "Incorrect Password for reset password"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
                 }
             }
         }
+    
     },
+    
 
+    
     "definitions": {
         "registerUser": {
             "type": "object",
@@ -135,6 +170,21 @@
                     "type": "string"
                 }
             }
-        }   
+        },
+        "resetPassword": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"   
+                },
+                "newPassword":{
+                    "type":"string"
+                },
+                "code":{
+                    "type":"string"
+                }
+            }
+            
+        }
     }
 }

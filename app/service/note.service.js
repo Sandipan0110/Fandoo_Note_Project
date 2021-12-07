@@ -1,6 +1,6 @@
 const userModel = require('../models/note.model.js');
 const bcrypt = require('bcryptjs');
-const utilities=require('../utilities/helper.js');
+const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
 const nodemailer = require('../utilities/nodeemailer.js');
 
@@ -15,6 +15,7 @@ class UserService {
         }
       });
     }
+    
     userLogin = (InfoLogin, callback) => {
       userModel.loginUser(InfoLogin, (error, data) => {
         if (data) {
@@ -34,17 +35,27 @@ class UserService {
         }
       });
     }
+    
+  forgotPassword = (email, callback) => {
+    userModel.forgotPassword(email, (error, data) => {
+      if (error) {
+        logger.error(error);
+        return callback(error, null);
+      } else {
+        return callback(null, nodemailer.sendEmail(data));
+      }
+    });
+  };
 
-    forgotPassword = (email, callback) => {
-        userModel.forgotPassword(email,(error,data) => {
-          //console.log("serv",data);
-        if (error || !data) {
-          logger.error(error);
-          return callback(error, null);
-        } else {
-          return callback(null, nodemailer.sendEmail(data));
-        }
-      });
-    }
+  resetPassword = (userData, callback) => {
+        userModel.resetPassword(userData, (error, data) => {
+          if (error) {
+            logger.error(error);
+            return callback(error, null);
+          } else {
+            return callback(null, data);
+          }
+        });
   }
+}
 module.exports = new UserService();

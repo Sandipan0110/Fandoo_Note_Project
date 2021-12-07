@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // create express app
 const app = express();
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // parse requests of content-type - application/x-www-form-urlencoded
@@ -17,6 +18,7 @@ app.use(express.json())
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
+
 
 
 //mongoose.Promise = global.Promise;
@@ -33,7 +35,7 @@ require('./app/routes/note.routes.js')(app);
 
 // listen for requests
 app.listen(process.env.PORT, () => {
-    logger.info("Server is Starting");
+    logger.info("Server start");
     console.log("Server is listening");
 });
 

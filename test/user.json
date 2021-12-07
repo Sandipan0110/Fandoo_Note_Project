@@ -1,9 +1,9 @@
 {
     "user": {
-        "correctRegister": {
+        "registartion": {
             "firstName": "Bruj",
             "lastName": "Khalifa",
-            "email": "bruj.khalifa77@gmail.com",
+            "email": "bruj.khalifa007@gmail.com",
             "password": "Banu@baj#12345"
         },
         "registrationWithImproperDetails": {
@@ -21,13 +21,31 @@
             "email": "ajay.barma1947@gmail.com",
             "password": "AjaY@123B"
         },
+       
         "login": {
-            "email": "akash123@gmail.com",
-            "password": "Akash#12345"
+            "email" : "sandipanseal11@gmail.com",
+            "password" : "Sandipan#12345"
         },
         "loginWithImproperDetails": {
-            "email": "abhas123@gmail.com",
-            "password": "AbhaSh#12@$"
-        }
+            "email": "sandipansea1@gmailcom",
+            "password": "Sandip@12345"
+        },
+        
+        "ForgotPasswordPos" : {
+            "email" : "sandipanseal11@gmail.com"
+        }, 
+        "ForgotPasswordNegNonRegistered" : {
+            "email" : "sandipanseal11gmail"
+        },
+        
+        "validDetails":{
+            "email":"mkaubr007@gmail.com",
+            "newPassword":"Mkaubr#12",
+            "code":"9867"
+        },
+        "invalidDetails":{
+            "email":"sandipanseal11@gmail.com",
+            "newPassword":"Sandipan#12"
+        } 
     }
 }
