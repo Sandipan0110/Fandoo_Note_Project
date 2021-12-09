@@ -127,6 +127,225 @@
                     }
                 }
             }
+        },
+
+        "/createnotes": {
+            "post": {
+                "tags": [
+                    "Create Notes"
+                ],
+                "description": "Create a  note !!",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Token for vaidation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "create note",
+                        "in": "body",
+                        "description": "Note's body",
+                        "schema": {
+                            "$ref": "#/definitions/notes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "schema": {
+                    "$ref": "#/definitions/notes"
+                },
+                "responses": {
+                    "201": {
+                        "description": "Create note succesfully !!"
+                    },
+                    "400": {
+                        "description": "Please enter Valid Token"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+
+        "/getnotes": {
+            "get": {
+                "tags": [
+                    "Get Notes"
+                ],
+                "description": "Get a  note !!",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Token for vaidation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "schema": {
+                    "$ref": "#/definitions/notes"
+                },
+                "responses": {
+                    "201": {
+                        "description": "Get note succesfully !!"
+                    },
+                    "401": {
+                        "description": "Please enter Valid Token"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+
+        "/getnotes/{id}": {
+            "get": {
+                "tags": [
+                    "Get Notes"
+                ],
+                "description": "Get a note by ID for perticuler person id",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Token for vaidation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of note you want to update",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "schema": {
+                    "$ref": "#/definitions/notes"
+                },
+                "responses": {
+                    "201": {
+                        "description": "Create note succesfully !!"
+                    },
+                    "400": {
+                        "description": "Please enter Valid Token"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+
+        "/updatenotes/{id}": {
+            "put": {
+                "tags": [
+                    "update Notes"
+                ],
+                "description": "update a note by ID for perticuler person id !!",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Token for vaidation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id of note you want to update",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "body",
+                        "name": "note",
+                        "description": "Note body",
+                        "schema": {
+                            "$ref": "#/definitions/updatenotes"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "update note succesfully !!"
+                    },
+                    "401": {
+                        "description": "Please enter Valid Token"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+
+        "/deletenotes/{id}": {
+            "delete": {
+                "tags": [
+                    "Delete Notes"
+                ],
+                "description": "Delete a note by ID for perticuler person id !!",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "description": "Token for vaidation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id of note you want to update",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Delete note succesfully !!"
+                    },
+                    "401": {
+                        "description": "Please enter Valid Token"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
         }
     
     },
@@ -183,6 +402,37 @@
                 }
             }
             
+        },
+        "notes": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "title": "Write a title here.....",
+                "description": "Write a description here....."
+            }
+        },
+
+        "updatenotes": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "title": "Write a title here.....",
+                "description": "Write a description here....."
+            }
         }
     }
 }
