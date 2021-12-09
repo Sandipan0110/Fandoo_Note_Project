@@ -130,9 +130,7 @@
         }
     
     },
-    
-
-    
+       
     "definitions": {
         "registerUser": {
             "type": "object",

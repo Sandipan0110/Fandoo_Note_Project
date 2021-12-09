@@ -29,35 +29,34 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 class userModel {
-
-  registerUser = (userDetails, callback) => {
-        
-      const newUser = new User({
-          firstName: userDetails.firstName,
-          lastName: userDetails.lastName,
-          email: userDetails.email,
-          password: userDetails.password
+  
+  registerUser = (userDetails, callback) => {        
+    const newUser = new User({
+      firstName: userDetails.firstName,
+      lastName: userDetails.lastName,
+      email: userDetails.email,
+      password: userDetails.password
+  });
+  try {
+    utilities.hashing(userDetails.password, (error, hash) => {
+      if (hash) {
+        newUser.password = hash;
+        newUser.save((error, data) => {
+          if (error) {
+            callback(error, null);
+          } else {
+            callback(null, data);
+          }
         });
-        try {
-          utilities.hashing(userDetails.password, (error, hash) => {
-          if (hash) {
-          newUser.password = hash;
-          newUser.save((error, data) => {
-            if (error) {
-              callback(error, null);
-            } else {
-              callback(null, data);
-            }
-          });
-        } else {
+      } else {
           throw error;
         }
-      });
-      }
-      catch (error) {
-        logger.error('Find error in model');
-          return callback('Internal Error', null)
-      }
+    });
+  }
+  catch (error) {
+    logger.error('Find error in model');
+      return callback('Internal Error', null)
+  }
   }  
   
   loginUser= (loginData, callBack) => {
@@ -116,4 +115,4 @@ class userModel {
     }
 }
 
-module.exports = new userModel(); 
+module.exports = new userModel();
