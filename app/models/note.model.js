@@ -30,35 +30,37 @@ const User = mongoose.model('User', userSchema);
 
 class userModel {
   
+  // Error and logic Haldeling for Registration
   registerUser = (userDetails, callback) => {        
     const newUser = new User({
       firstName: userDetails.firstName,
       lastName: userDetails.lastName,
       email: userDetails.email,
       password: userDetails.password
-  });
-  try {
-    utilities.hashing(userDetails.password, (error, hash) => {
-      if (hash) {
-        newUser.password = hash;
-        newUser.save((error, data) => {
-          if (error) {
-            callback(error, null);
-          } else {
-            callback(null, data);
-          }
-        });
-      } else {
-          throw error;
-        }
     });
-  }
-  catch (error) {
-    logger.error('Find error in model');
-      return callback('Internal Error', null)
-  }
+    try {
+      utilities.hashing(userDetails.password, (error, hash) => {
+        if (hash) {
+          newUser.password = hash;
+          newUser.save((error, data) => {
+            if (error) {
+              callback(error, null);
+            } else {
+              callback(null, data);
+           }
+          });
+        } else {
+            throw error;
+          }
+      });
+    }
+    catch (error) {
+      logger.error('Find error in model');
+        return callback('Internal Error', null)
+    }
   }  
   
+  // Error and logic Haldeling for Lodin
   loginUser= (loginData, callBack) => {
     //To find a user email in the database
     User.findOne({ email: loginData.email }, (error, data) => {
@@ -75,6 +77,7 @@ class userModel {
     });
   }
 
+  // Error and logic Haldeling for Forgot Password
   forgotPassword = (data, callback) => {
      User.findOne({ email: data.email }, (err, data) => {
       if (data) {
@@ -86,6 +89,7 @@ class userModel {
     });
   };
 
+  // Error and logic Haldeling for Reset Password
   resetPassword = (userData, callback) =>{
     Otp.findOne({code: userData.code }, (error, data) =>{
         if(data){

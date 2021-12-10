@@ -4,6 +4,8 @@ const { logger } = require('../../logger/logger');
 require('dotenv').config();
 
 class Controller {
+
+    // Register API
     register = (req, res) => {
       try {
         const user = {
@@ -13,6 +15,7 @@ class Controller {
           password: req.body.password
         };        
         
+        // Validate User Details
         const registerValidation = validation.authRegister.validate(user)
         if (registerValidation.error) {
             return res.status(400).send({
@@ -22,7 +25,7 @@ class Controller {
             });           
         }
         
-        
+        // Handeling Logic and Error
         userService.registerUser(user, (error, data) => {
           if (error) {
             return res.status(409).json({
@@ -48,7 +51,7 @@ class Controller {
         }
       }
 
-
+      // Login API
       login = (req, res) => {
         try {
           const userLoginInfo = {
@@ -56,6 +59,7 @@ class Controller {
             password: req.body.password
           };
           
+          // Validate Login Ditails
           const loginValidation = validation.authLogin.validate(userLoginInfo);
           if (loginValidation.error) {
             console.log(loginValidation.error);
@@ -66,6 +70,7 @@ class Controller {
             });
           }
           
+          // Handeling Logic and Error
           userService.userLogin(userLoginInfo, (error,data) => {
             if (error) {
               return res.status(400).json({
@@ -90,14 +95,15 @@ class Controller {
         }
       }; 
       
-    forgotPassword = (req, res) => {
+      // Forgot Password API
+      forgotPassword = (req, res) => {
       try {
         const userCredential = {
           email: req.body.email
         };
-         
-        const validationforgotPassword =
-        validation.authenticateLogin.validate(userCredential);
+        
+        // Vlidate Input Details
+        const validationforgotPassword = validation.authenticateLogin.validate(userCredential);
         
         if (validationforgotPassword.error) {
           logger.error('Wrong Input Validations');
@@ -108,6 +114,7 @@ class Controller {
           });
         }
        
+        // // Handeling Logic and Error
         userService.forgotPassword(userCredential, (error, result) => {
           if (error) {
             return res.status(400).send({
@@ -132,6 +139,7 @@ class Controller {
       }
     };
     
+    // Reset Pass API
     resetPassword=(req, res) => {
       try {
         const userData = {
@@ -140,6 +148,7 @@ class Controller {
           code:req.body.code
         };
 
+        // Validate Details
         const resetVlaidation = validation.validateReset.validate(userData);
         if (resetVlaidation.error) {
           logger.error('Invalid password');
@@ -150,6 +159,7 @@ class Controller {
           return;
         }
 
+        // Handeling Logic and Error
         userService.resetPassword(userData, (error, userData) => {
           if (error) {
             logger.error(error);
