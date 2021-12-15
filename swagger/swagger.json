@@ -70,7 +70,6 @@
                 }
             }
         },
-
         "/forgotpassword": {
             "post": {
                 "tags": ["Forgot Password"],
@@ -96,7 +95,6 @@
                 }
             }
         },
-
         "/reset-Password": {
             "put": {
                 "tags": ["Reset Password"],
@@ -128,7 +126,6 @@
                 }
             }
         },
-
         "/createnotes": {
             "post": {
                 "tags": [
@@ -173,7 +170,6 @@
                 }
             }
         },
-
         "/getnotes": {
             "get": {
                 "tags": [
@@ -210,7 +206,6 @@
                 }
             }
         },
-
         "/getnotes/{id}": {
             "get": {
                 "tags": [
@@ -255,7 +250,6 @@
                 }
             }
         },
-
         "/updatenotes/{id}": {
             "put": {
                 "tags": [
@@ -305,7 +299,6 @@
                 }
             }
         },
-
         "/deletenotes/{id}": {
             "delete": {
                 "tags": [
