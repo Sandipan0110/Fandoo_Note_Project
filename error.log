@@ -198,3 +198,7 @@
 {"level":"error","message":"Invalid Credential","timestamp":"2021-12-09T18:31:52.330Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-09T18:31:52.468Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-09T18:31:52.697Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-14T02:32:02.761Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-14T02:32:02.762Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-14T02:32:02.955Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-14T02:32:03.931Z"}
