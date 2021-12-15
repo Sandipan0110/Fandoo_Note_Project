@@ -15,11 +15,11 @@
         "isDeleted": true
     },
     "notesCreatePos": {
-        "title": "Notes testing",
-        "description": "generate notes "
+        "title": "First",
+        "description": "First Note"
     },
     "notesCreateNegTitle": {
-        "title": "",
-        "description": "sample note create"
+        "title": "Sample",
+        "description": "Sample Note Create"
     }
 }

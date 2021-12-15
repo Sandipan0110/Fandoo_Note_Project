@@ -78,7 +78,7 @@ describe('Update notes api', () => {
     const note = noteDB.updateNote.validData;
     chai
       .request(server)
-      .put('/updatenotes/6165357e39139e12b1b2986f')
+      .put('/updatenotes/61ba38fcd48f7fe935bbbfbc')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -92,7 +92,7 @@ describe('Update notes api', () => {
     const note = noteDB.updateNote.validData;
     chai
       .request(server)
-      .put('/updatenotes/6163a92b4ec773015a13abb0')
+      .put('/updatenotes/61ba38fcd48f7fe935bbbfbc')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -108,7 +108,7 @@ describe('delete notes api', () => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/61653c4e458259447e4e225f')
+      .delete('/deletenotes/61ba38fcd48f7fe935bbbfbc')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(500);
@@ -120,7 +120,7 @@ describe('delete notes api', () => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/6165357e39139e12b1b2986f')
+      .delete('/deletenotes/61ba38fcd48f7fe935bbbfbc')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);
@@ -135,7 +135,7 @@ describe('Get notes by ID api', () => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .get('/getnotes/6165357e39139e12b1b2986f')
+      .get('/getnotes/61ba38b1d48f7fe935bbbfb6')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(200);
