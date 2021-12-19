@@ -48,5 +48,18 @@ class Model {
             .catch((error) => reject(error));
         });
       };
+
+      /**
+      *
+      * @param {*} id
+      * @description retrieve all the label created
+      */
+    labelGetById = async (id) => {
+        try {
+          return await LabelRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+        } catch (err) {
+          return err;
+        }
+      };
 }
 module.exports = new Model();

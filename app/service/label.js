@@ -18,5 +18,18 @@ class Service {
         labelModel.getLabel(id).then((data) => { callback(data, null); })
           .catch((err) => { callback(null, err); });
       };
+
+       /**
+      * @description function written to get label by ID
+      * @param {*} a valid id is expected
+      * @returns data else returns error
+      */
+    labelGetById = async (id) => {
+        try {
+          return await labelModel.labelGetById(id);
+        } catch (err) {
+          return err;
+        }
+      };
 }
 module.exports = new Service();

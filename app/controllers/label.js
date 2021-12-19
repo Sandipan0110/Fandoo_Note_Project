@@ -74,6 +74,38 @@ class Label {
           }
         });
       };
+
+       /**
+     * @description function written  to get label by ID
+     * @param {*} req
+     *
+     * @param {*} res
+     */
+
+    labelGetById = async (req, res) => {
+        try {
+          const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
+          const data = await labelService.labelGetById(id);
+          if (data.message) {
+            return res.status(404).json({
+              message: 'label not found',
+              success: false
+            });
+          };
+          return res.status(200).json({
+            message: 'label retrieved succesfully',
+            success: true,
+            data: data
+          });
+        } catch (err) {
+          return res.status(500).json({
+            message: 'label not updated',
+            success: false,
+            data: err
+          });
+        }
+      };
+  
   
 }
 module.exports = new Label();
