@@ -8,6 +8,15 @@ class Service {
       labelModel.createLabel(label)
         .then((data) => resolve(data))
         .catch(() => reject());
-    }
+    };
+
+    /**
+      * @description function written to get all labels
+      * @returns data else returns error
+      */
+     getLabel =(id, callback) => {
+        labelModel.getLabel(id).then((data) => { callback(data, null); })
+          .catch((err) => { callback(null, err); });
+      };
 }
 module.exports = new Service();

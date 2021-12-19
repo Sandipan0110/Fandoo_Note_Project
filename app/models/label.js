@@ -32,6 +32,21 @@ class Model {
         label.save().then((data) => resolve(data))
           .catch((error) => reject(error));
       });
-    }
+    };
+
+    /**
+      * @description function written to get all labels
+      * @returns data else if returns error
+      *
+      *
+      */
+     getLabel = (id) => {
+        return new Promise((resolve, reject) => {
+          LabelRegister.find({ userId: id }).then((data) => {
+            resolve(data);
+          })
+            .catch((error) => reject(error));
+        });
+      };
 }
 module.exports = new Model();
