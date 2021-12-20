@@ -1,7 +1,7 @@
 const validation = require('../utilities/validation.js');
 const { logger } = require('../../logger/logger');
 const labelService = require('../service/label');
-const redisjs=require('../middleware/redis')
+
 class Label {
    /**
      * @description function writt
@@ -132,7 +132,7 @@ class Label {
             error: valid.error
           });
         }
-        labelServices.updateLabelById(updateLabel, (error, data) => {
+        labelService.updateLabel(updateLabel, (error, data) => {
           if (error) {
             logger.error("failed to update label");
             return res.status(400).json({
