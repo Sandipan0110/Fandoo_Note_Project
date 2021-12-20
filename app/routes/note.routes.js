@@ -1,6 +1,7 @@
 const controller = require('../controllers/note.controller.js');
 const noteController = require('../controllers/notes');
 const helper= require('../utilities/helper');
+const label = require('../controllers/label');
 
 module.exports = (app) => {
   // API for Registration
@@ -13,7 +14,7 @@ module.exports = (app) => {
   app.put('/resetPassword', controller.resetPassword);
 
   
-  // API for CRUD
+  // API for CRUD 
   // API for Creat Notes
   app.post('/createnotes', helper.validateToken, noteController.createNote);
   // API for Get Notes
@@ -25,8 +26,13 @@ module.exports = (app) => {
   // API for Delete Notes
   app.delete('/deletenotes/:id', helper.validateToken, noteController.deleteNoteById);
 
-  //api for label CRUD
+  
+  //api for Creat Label CRUD
   app.post('/createlabel', helper.validateToken, label.createLabel);
+  //api for Get Label CRUD
   app.get('/getlabels', helper.validateToken, label.getLabel);
+  //api for Get Label by ID CRUD
   app.get('/getlabel/:id', helper.validateToken, label.labelGetById);
+  app.put('/updatelabel/:id', helper.validateToken, label.updateLabel);
+  app.delete('/deletelabel/:id', helper.validateToken, label.deleteLabelById);
 }

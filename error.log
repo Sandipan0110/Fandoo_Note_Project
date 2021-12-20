@@ -221,3 +221,17 @@
 {"level":"error","message":"Invalid Credential","timestamp":"2021-12-15T19:31:36.261Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-15T19:31:36.368Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-15T19:31:36.631Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-19T17:28:57.712Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-19T17:30:14.887Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T17:48:49.795Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T17:50:24.310Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T17:53:45.234Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T17:55:53.899Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T17:57:34.716Z"}
+{"level":"error","message":null,"timestamp":"2021-12-19T18:02:30.023Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-19T18:05:23.654Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-19T18:05:23.673Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-19T18:05:23.674Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-19T18:05:23.846Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-19T18:05:23.859Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-19T18:05:23.908Z"}

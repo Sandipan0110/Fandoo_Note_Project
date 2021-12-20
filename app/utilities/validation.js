@@ -25,12 +25,12 @@ class Validation {
         authLogin =
         Joi.object({
           email: Joi.string()
-            .pattern(new RegExp('^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$'))
+            .pattern(new RegExp('^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$'))
             .required(),
 
           password: Joi.string()
-            .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
             .required()
+            .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
         });
 
         authenticateLogin = Joi.object({
@@ -43,7 +43,7 @@ class Validation {
           email: Joi.string()
             .pattern(new RegExp('^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$'))
             .required(),
-          newPassword: Joi.string()
+          password: Joi.string()
             .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
             .required(),
           code: Joi.string()
@@ -78,6 +78,26 @@ class Validation {
           userId: Joi.string().required(),
           noteId: Joi.string().required()
         });
-}
 
-module.exports = new Validation();
+        validateLabel = Joi.object({
+          labelName: Joi.string()
+            .required()
+        });
+
+        validateLabel = Joi.object({
+          labelName: Joi.string()
+            .required()
+        });
+ 
+        labeldeleteValidation = Joi.object({
+          userId: Joi.string().required(),
+          labelId: Joi.string().required()
+        });
+
+        deleteLabelValidation =Joi.object({
+          noteId: Joi.string().required(),
+          userId: Joi.string().required(),
+          labelName: Joi.string().required()  
+        });
+    }
+    module.exports = new Validation();
