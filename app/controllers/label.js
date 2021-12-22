@@ -1,7 +1,6 @@
 const validation = require('../utilities/validation.js');
 const { logger } = require('../../logger/logger');
 const labelService = require('../service/label');
-
 class Label {
    /**
      * @description function writt
@@ -132,7 +131,7 @@ class Label {
             error: valid.error
           });
         }
-        labelService.updateLabel(updateLabel, (error, data) => {
+        labelServices.updateLabelById(updateLabel, (error, data) => {
           if (error) {
             logger.error("failed to update label");
             return res.status(400).json({
@@ -158,13 +157,6 @@ class Label {
         });
       }
     };
-
-    /**
-     * @description function written  to Delete label by ID
-     * @param {*} req
-     *
-     * @param {*} res
-     */
 
     deleteLabelById = async (req, res) => {
       try{
@@ -197,15 +189,5 @@ class Label {
         });
       }
     };
-
-    addNoteId = async (id, res) => {
-      try {
-        await labelService.addNoteId(id);
-        return;
-      } catch (err) {
-        return err;
-      }
-    }
 }
-
 module.exports = new Label();

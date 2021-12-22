@@ -41,8 +41,7 @@ class Service {
         return error;
       }
     };
-     
-  /**
+     /**
     * @param {data}  : data will come from the controller body.
     * @description   : createLabel will takes the data from controller and send it to models
     */
@@ -53,14 +52,5 @@ class Service {
           return err;
         }
       };
-
-      async addNoteId (id) {
-        try {
-          return await labelModel.addNoteId(id);
-        } catch (err) {
-          return err;
-        }
-      }
 }
-
 module.exports = new Service();
