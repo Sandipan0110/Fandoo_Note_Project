@@ -1,11 +1,15 @@
-const userService = require('../service/user');
+const userService = require('../service/user.js');
 const validation = require('../utilities/validation.js');
 const { logger } = require('../../logger/logger');
 require('dotenv').config();
-
 class Controller {
+  
+  /**
+    * @description Create and save user and sending response to service
+    * @method register to save the user
+    * @param req,res for service
+    */
 
-    // Register API
     register = (req, res) => {
       try {
         const user = {
@@ -14,8 +18,6 @@ class Controller {
           email: req.body.email,
           password: req.body.password
         };        
-        
-        // Validate User Details
         const registerValidation = validation.authRegister.validate(user)
         if (registerValidation.error) {
             return res.status(400).send({
@@ -24,8 +26,6 @@ class Controller {
               data: registerValidation
             });           
         }
-        
-        // Handeling Logic and Error
         userService.registerUser(user, (error, data) => {
           if (error) {
             return res.status(409).json({
@@ -50,61 +50,66 @@ class Controller {
           });
         }
       }
-
-      // Login API
-      login = (req, res) => {
-        try {
-          const userLoginInfo = {
-            email: req.body.email,
-            password: req.body.password
-          };
-          
-          // Validate Login Ditails
-          const loginValidation = validation.authLogin.validate(userLoginInfo);
-          if (loginValidation.error) {
-            console.log(loginValidation.error);
-            logger.error(loginValidation.error);
-            res.status(400).send({
+        
+  /**
+    * @description retrieving login info from user by email and password
+    * @method login
+    * @param req,res for service
+    */
+      
+    login = (req, res) => {
+      try {
+        const userLoginInfo = {
+          email: req.body.email,
+          password: req.body.password
+        };
+        const loginValidation = validation.authLogin.validate(userLoginInfo);
+        if (loginValidation.error) {
+          console.log(loginValidation.error);
+          logger.error(loginValidation.error);
+          res.status(400).send({
+            success: false,
+            message: loginValidation.error.message
+          });
+        }
+        userService.userLogin(userLoginInfo, (error,data) => {
+          if (error) {
+            return res.status(400).json({
               success: false,
-              message: loginValidation.error.message
+              message: 'Unable to login. Please enter correct info',
+              error
             });
           }
-          
-          // Handeling Logic and Error
-          userService.userLogin(userLoginInfo, (error,data) => {
-            if (error) {
-              return res.status(400).json({
-                success: false,
-                message: 'Unable to login. Please enter correct info',
-                error
-              });
-            }
-            return res.status(200).json({
-              success: true,
-              message: 'User logged in successfully',
-              data: data
-            });
+          return res.status(200).json({
+            success: true,
+            message: 'User logged in successfully',
+            data: data
           });
-        } 
-        catch (error) {
+        });
+      } catch (error) {
           return res.status(500).json({
             success: false,
             message: 'Error while Login',error,
             data: null
           });
         }
-      }; 
+    }; 
       
-      // Forgot Password API
-      forgotPassword = (req, res) => {
+  /**
+    * description controller function for forgot password
+    * @param {*} req
+    * @param {*} res
+    * @returns
+    */ 
+    
+    forgotPassword = (req, res) => {
       try {
         const userCredential = {
           email: req.body.email
         };
         
-        // Vlidate Input Details
-        const validationforgotPassword = validation.authenticateLogin.validate(userCredential);
-        
+        const validationforgotPassword =
+        validation.authenticateLogin.validate(userCredential);
         if (validationforgotPassword.error) {
           logger.error('Wrong Input Validations');
           return res.status(400).send({
@@ -113,8 +118,6 @@ class Controller {
             data: validationforgotPassword
           });
         }
-       
-        // // Handeling Logic and Error
         userService.forgotPassword(userCredential, (error, result) => {
           if (error) {
             return res.status(400).send({
@@ -128,8 +131,7 @@ class Controller {
             });
           }
         });
-      } 
-      catch (error) {
+      } catch (error) {
         logger.error('Internal server error');
         return res.status(500).send({
           success: false,
@@ -138,8 +140,14 @@ class Controller {
         });
       }
     };
+     
+  /**
+    * description controller function for reset password
+    * @param {*} req
+    * @param {*} res
+    * @returns
+    */
     
-    // Reset Pass API
     resetPassword=(req, res) => {
       try {
         const userData = {
@@ -148,7 +156,6 @@ class Controller {
           code:req.body.code
         };
 
-        // Validate Details
         const resetVlaidation = validation.validateReset.validate(userData);
         if (resetVlaidation.error) {
           logger.error('Invalid password');
@@ -159,7 +166,6 @@ class Controller {
           return;
         }
 
-        // Handeling Logic and Error
         userService.resetPassword(userData, (error, userData) => {
           if (error) {
             logger.error(error);
@@ -176,8 +182,7 @@ class Controller {
             });
           }
         });
-      } 
-      catch (error) {
+      } catch (error) {
         logger.error('Internal server error');
         return res.status(500).send({
           success: false,
@@ -189,4 +194,3 @@ class Controller {
   }
   
   module.exports = new Controller();
-  

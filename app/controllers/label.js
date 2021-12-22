@@ -50,11 +50,11 @@ class Label {
       }
     };
     
-    /**
-     * @description function written to get all labels
-     * @param {*} req
-     * @param {*} res
-     */
+  /**
+    * @description function written to get all labels
+    * @param {*} req
+    * @param {*} res
+    */
 
     getLabel = (req, res) => {
       const id = req.user.dataForToken.id;
@@ -76,12 +76,12 @@ class Label {
       });
     };
 
-     /**
-     * @description function written  to get label by ID
-     * @param {*} req
-     *
-     * @param {*} res
-     */
+  /**
+    * @description function written  to get label by ID
+    * @param {*} req
+    *
+    * @param {*} res
+    */
 
     labelGetById = async (req, res) => {
       try {
@@ -108,11 +108,11 @@ class Label {
       }
     };
 
-     /**
-     * @description function written to update label
-     * @param {*} a valid req body is expected
-     * @param {*} res
-     */
+  /**
+    * @description function written to update label
+    * @param {*} a valid req body is expected
+    * @param {*} res
+    */
 
     updateLabel =async (req, res) => {
       try {
@@ -158,6 +158,13 @@ class Label {
       }
     };
 
+ /**
+    * @description function written to delete note by ID
+    * @param {*} req
+    * @param {*} res
+    * @returns response
+    */
+   
     deleteLabelById = async (req, res) => {
       try{
         const id = { userId: req.user.dataForToken.id, labelId: req.params.id }; 
@@ -190,4 +197,5 @@ class Label {
       }
     };
 }
+
 module.exports = new Label();

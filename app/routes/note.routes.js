@@ -4,6 +4,7 @@ const helper= require('../utilities/helper');
 const label = require('../controllers/label');
 
 module.exports = (app) => {
+  
   // API for Registration
   app.post('/register', controller.register);
    // API for Login
