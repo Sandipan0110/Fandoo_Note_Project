@@ -1,4 +1,4 @@
-const controller = require('../controllers/note.controller.js');
+const controller = require('../controllers/user.js');
 const noteController = require('../controllers/notes');
 const helper= require('../utilities/helper');
 const label = require('../controllers/label');
@@ -27,18 +27,20 @@ module.exports = (app) => {
   app.delete('/deletenotes/:id', helper.validateToken, noteController.deleteNoteById);
 
   
-  //api for Creat Label CRUD
+  //API for Creat Label
   app.post('/createlabel', helper.validateToken, label.createLabel);
-  //api for Get Label CRUD
+  //API for Get Label
   app.get('/getlabels', helper.validateToken, label.getLabel);
-  //api for Get Label by ID CRUD
+  //API for Get Label by ID
   app.get('/getlabel/:id', helper.validateToken, label.labelGetById);
-  //api for Update Label by ID CRUD
+  //API for Update Label by ID
   app.put('/updatelabel/:id', helper.validateToken, label.updateLabel);
-  //api for Delete Label by ID CRUD
+  //API for Delete Label by ID
   app.delete('/deletelabel/:id', helper.validateToken, label.deleteLabelById);
   
-  //api for Add Label CRUD
+  //API for Add Label by ID
   app.post('/addlabel/:id', helper.validateToken, noteController.addLabelById);
+  //API for Delete Label
+  app.delete('/deleteLabelFromNote/:id', helper.validateToken, noteController.deleteLabel);
 
 }

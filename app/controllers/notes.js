@@ -268,14 +268,15 @@ class Note {
         message: 'Label Deleted succesfully',
         success: true,
         data: data
-      });
-  }catch (error) {
-    res.status(500).send({
-      message: "internal error occurs",
-      success: false,
-      error: error,
     });
+      }catch (error) {
+        res.status(500).send({
+          message: "internal error occurs",
+          success: false,
+          error: error,
+        });
+      }
   }
- }
 }
+
 module.exports = new Note();
