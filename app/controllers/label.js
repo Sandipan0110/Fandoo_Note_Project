@@ -159,6 +159,13 @@ class Label {
       }
     };
 
+    /**
+     * @description function written  to Delete label by ID
+     * @param {*} req
+     *
+     * @param {*} res
+     */
+
     deleteLabelById = async (req, res) => {
       try{
         const id = { userId: req.user.dataForToken.id, labelId: req.params.id }; 
@@ -190,5 +197,14 @@ class Label {
         });
       }
     };
+
+    addNoteId = async (id, res) => {
+      try {
+        await labelService.addNoteId(id);
+        return;
+      } catch (err) {
+        return err;
+      }
+    }
 }
 module.exports = new Label();

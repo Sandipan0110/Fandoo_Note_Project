@@ -97,9 +97,9 @@ class userModel {
             utilities.hashing(userData.password, (err, hash) => {
               if (hash) {
                   userData.password = hash;
-                  User.updateOne({'$set':{"password": userData.password}},{new : true}, (error, data) => {
+                  User.updateOne({'$set':{'password':userData.password}},{new:true},(error, data) => {
                       if(data){
-                          return callback (null, "Updated successfully")
+                        return callback (null,data)
                       }
                       else{
                           return callback ("Error in updating", null)
