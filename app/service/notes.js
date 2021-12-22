@@ -54,13 +54,14 @@ class Service {
      * @returns
      */
 
-  addLabelById = async (id) => {
-    try {
-      const data = await noteModel.addLabelById(id);
-      return data;
-    } catch (error) {
-      return error;
+    addLabelById = async (id) => {
+      try {
+        const data = await noteModel.addLabelById(id);
+        return data;
+      } catch (error) {
+          return error;
+        }
+    }
 }
-  }
-}
+
 module.exports = new Service();

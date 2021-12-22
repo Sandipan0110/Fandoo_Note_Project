@@ -207,4 +207,5 @@ class Label {
       }
     }
 }
+
 module.exports = new Label();

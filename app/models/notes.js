@@ -74,20 +74,21 @@ class Model {
       }
     };
 
-    /**
+   /**
      * @description function written to add label to note
      * @param {*} a valid noteId is expected
      * @param {*} a valid labelId is expected
      * @returns
      */
 
-  addLabelById = async (id) => {
-    try {
-      const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $push: { labelId: id.labelId } }, { new: true });
-      console.log(data);
-    } catch (error) {
-      return error;
+    addLabelById = async (id) => {
+      try {
+        const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $push: { labelId: id.labelId } }, { new: true });
+        console.log(data);
+      } catch (error) {
+          return error;
+        }
+    }
 }
-  }
-}
+
 module.exports = new Model();

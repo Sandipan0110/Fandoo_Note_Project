@@ -192,11 +192,12 @@ class Note {
       });
     }
   };
-    /** @description function written to add label to note
+    
+  /** @description function written to add label to note
     * @param {*} a valid noteId is expected
     * @param {*} a valid labelId is expecte
     */
-
+   
   addLabelById = async (req, res) => {
    try {
      const id = {
@@ -211,7 +212,7 @@ class Note {
        success: true,
        data: labels
      });
-   } catch (err) {
+    } catch (err) {
      res.status(500).send({
        message: 'Label wasnt added',
        success: false,

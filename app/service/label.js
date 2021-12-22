@@ -41,7 +41,8 @@ class Service {
         return error;
       }
     };
-     /**
+     
+  /**
     * @param {data}  : data will come from the controller body.
     * @description   : createLabel will takes the data from controller and send it to models
     */
@@ -61,4 +62,5 @@ class Service {
         }
       }
 }
+
 module.exports = new Service();
