@@ -37,7 +37,8 @@ module.exports = (app) => {
   app.put('/updatelabel/:id', helper.validateToken, label.updateLabel);
   //api for Delete Label by ID CRUD
   app.delete('/deletelabel/:id', helper.validateToken, label.deleteLabelById);
-  //api for Delete Label by ID CRUD
+  
+  //api for Add Label CRUD
   app.post('/addlabel/:id', helper.validateToken, noteController.addLabelById);
 
 }
