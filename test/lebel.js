@@ -157,7 +157,7 @@ describe('Delete label api', () => {
         res.should.have.status(404);
         res.body.should.have.property('success').eql(false);
         res.body.should.have.property('message').eql('label not found');
-       done();
+        done();
       });
   });
   it('Success should return false when invalid', (done) => {
@@ -168,12 +168,12 @@ describe('Delete label api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(400);
         res.body.should.have.property('success').eql(false);
         res.body.should.have.property('message').eql('Invalid Token');
-       done();
+        done();
       });
   });
   it('Success should return true when valid', (done) => {
@@ -184,12 +184,12 @@ describe('Delete label api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(200);
         res.body.should.have.property('success').eql(true);
         res.body.should.have.property('message').eql('label Deleted succesfully');
-       done();
+        done();
       });
   });
   it('givenImppoperDetails_ShouldNotDeletelabel', (done) => {
@@ -200,12 +200,12 @@ describe('Delete label api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(500);
         res.body.should.have.property('success').eql(false);
         res.body.should.have.property('message').eql('label not deleted');
-       done();
+        done();
       });
   });
 });

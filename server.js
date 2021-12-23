@@ -19,8 +19,6 @@ app.use(express.json())
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 
-
-
 //mongoose.Promise = global.Promise;
 
 // Connecting to the database
@@ -28,7 +26,7 @@ const dbConfig = require('./config/database.config.js');
 dbConfig.connection();
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to fundooNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({ "message": "Welcome to fundooNotes application. Take notes quickly. Organize and keep track of all your notes." });
 });
 // Require Notes routes
 require('./app/routes/note.routes.js')(app);

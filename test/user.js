@@ -6,7 +6,7 @@ chai.use(chaiHttp);
 const registrationData = require('./user.json');
 const loginData = require('./user.json');
 const userInputs = require('./user.json');
-const inputData=require('./user.json');
+const inputData = require('./user.json');
 const faker = require('faker');
 
 chai.should();
@@ -25,7 +25,7 @@ describe('registartion', () => {
       .send(registerfaker)
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(200);
         res.body.should.have.property('success').eql(true);
@@ -41,7 +41,7 @@ describe('registartion', () => {
       .send(registartionDetails)
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(400);
         res.body.should.have.property('success').eql(false);
@@ -57,7 +57,7 @@ describe('registartion', () => {
       .send(registartionDetails)
       .end((err, res) => {
         if (err) {
-          return done(err,"Please check details again and re-enter the details with proper format");
+          return done(err, "Please check details again and re-enter the details with proper format");
         }
         res.should.have.status(400);
         res.body.should.have.property('success').eql(false);
@@ -127,7 +127,7 @@ describe('forgotPassword', () => {
       .send(forgotPasswordDetails)
       .end((error, res) => {
         if (error) {
-          return done('Invalid details received instead of valid',error);
+          return done('Invalid details received instead of valid', error);
         }
         res.should.have.status(200);
         res.body.should.have.property('success').eql(true);

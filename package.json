@@ -29,8 +29,6 @@
     "start": "nodemon server.js",
     "eslint": "eslint"
   },
-
   "author": "Sandipan Seal",
   "license": "ISC"
-
 }

@@ -1,13 +1,13 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const Otp=require('../models/otp.js');
+const Otp = require('../models/otp.js');
 
 exports.sendEmail = (mailMessage) => {
-  let otpcode=Math.random().toString(36).substring(2,12);
-  let optData=new Otp({
-    email:mailMessage.email,
-    code:otpcode,
-    expireIn:new Date().getTime()+300*1000
+  let otpcode = Math.random().toString(36).substring(2, 12);
+  let optData = new Otp({
+    email: mailMessage.email,
+    code: otpcode,
+    expireIn: new Date().getTime() + 300 * 1000
   })
   optData.save();
   const transporter = nodemailer.createTransport({
@@ -21,8 +21,8 @@ exports.sendEmail = (mailMessage) => {
   const message = {
     from: process.env.EMAIL,
     to: mailMessage.email,
-    subject:'Fundoo notes otp code',
-    html:`Enter this otp to reset your password
+    subject: 'Fundoo notes otp code',
+    html: `Enter this otp to reset your password
     <h3>${otpcode}</h3>`
   };
 
