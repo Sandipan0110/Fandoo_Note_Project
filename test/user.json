@@ -26,8 +26,9 @@
             "password": "Sandipan#12345"
         },
         "loginWithImproperDetails": {
-            "email": "sandipansea1@gmailcom",
+            "email": "sandipansea@gmail.com",
             "password": "Sandip@12345"
+            
         },
         "ForgotPasswordPos": {
             "email": "sandipanseal11@gmail.com"

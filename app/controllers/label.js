@@ -111,37 +111,35 @@ class Label {
     */
   updateLabel = async (req, res) => {
     try {
-      const updateLabel = {
-        id: req.params.id,
-        userId: req.userData.dataForToken.id,
-        labelName: req.body.labelName
-      };
-      console.log(updateLabel);
       const valid = validation.validateLabel.validate(req.body);
       if (valid.error) {
-        logger.error("Invalid label body");
+        logger.error('Invalid label given to update');
         return res.status(400).send({
-          message: "Please enter valid label",
+          message: 'Please enter valid label',
           success: false,
           error: valid.error
         });
-      }
-      labelService.updateLabelById(updateLabel, (error, data) => {
-        if (error) {
-          logger.error("failed to update label");
-          return res.status(400).json({
-            message: "failed to update label",
+      } else {
+        const label = {
+          labelName: req.body.labelName,
+          labelId: req.params.id
+        };
+        const updatedlabel = await labelService.updateLabel(label);
+        if (updatedlabel.message) {
+          logger.error('Label to be updated not found');
+          return res.status(404).send({
+            message: 'Label Not Found',
             success: false
           });
         } else {
-          logger.info("Successfully Update label");
-          return res.status(201).send({
-            message: "Successfully update label",
+          logger.info("Label Updated")
+          return res.status(200).send({
+            message: 'label updated',
             success: true,
-            data: data
+            data: updatedlabel
           });
         }
-      });
+      }
     } catch (error) {
       logger.error('Label to be updated not foudn due to error');
       return res.status(500).send({

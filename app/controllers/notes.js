@@ -20,7 +20,6 @@ class Note {
 
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
-        console.log(createNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -64,7 +63,6 @@ class Note {
       const id = { id: req.user.dataForToken.id };
       const getNoteValidation = validation.getNoteValidation.validate(id);
       if (getNoteValidation.error) {
-        console.log(getNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -107,7 +105,6 @@ class Note {
       const data = await noteService.getNoteById(id);
       const getNoteValidation = validation.notesdeleteValidation.validate(id);
       if (getNoteValidation.error) {
-        console.log(getNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -152,7 +149,6 @@ class Note {
       };
       const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
       if (updateNoteValidation.error) {
-        console.log(updateNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -196,7 +192,6 @@ class Note {
       const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
       const deleteNoteValidation = validation.validateLabel.validate(id);
       if (deleteNoteValidation.error) {
-        console.log(deleteNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',

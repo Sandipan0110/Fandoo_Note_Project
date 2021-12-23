@@ -101,7 +101,7 @@ describe('Get label by ID api', () => {
     const token = labelDB.label.getlabelWithValidToken;
     chai
       .request(server)
-      .get('/getlabel/61af17e23c2e46f6856c3823')
+      .get('/getlabel/61bf6c809ed8c0141237cd7b')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(200);
@@ -118,7 +118,7 @@ describe('Update label api', () => {
     const note = labelDB.updatelabel.validData;
     chai
       .request(server)
-      .put('/updatelabel/61b05d85a5fe8ced01a3aeec')
+      .put('/updatelabel/61c4aed9f67b2ed7415febb9')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -134,7 +134,7 @@ describe('Update label api', () => {
     const note = labelDB.updatelabel.validData;
     chai
       .request(server)
-      .put('/updatelabel/61af1c3bfff30f91b6156807')
+      .put('/updatelabel/61bf6c809ed8c0141237cd')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -151,7 +151,7 @@ describe('Delete label api', () => {
     const token = labelDB.label.getlabelWithValidToken;
     chai
       .request(server)
-      .delete('/deletelabel/61af17e23c246f6856c3823')
+      .delete('/deletelabel/61c4afe71d930b12dbe03d09')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(404);
@@ -164,7 +164,7 @@ describe('Delete label api', () => {
     const token = labelDB.label.getlabelWithInValidToken;
     chai
       .request(server)
-      .delete('/deletelabel/61af17e23c2e46f6856c3823')
+      .delete('/deletelabel/61c4afe71d930b12dbe03d09')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
@@ -196,7 +196,7 @@ describe('Delete label api', () => {
     const token = labelDB.label.getlabelWithValidToken;
     chai
       .request(server)
-      .delete('/deletelabel/61b61e585da52449f9695776')
+      .delete('/deletelabel/61bf6c809ed8c0141237cd7b')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {

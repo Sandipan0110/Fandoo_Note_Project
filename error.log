@@ -240,3 +240,96 @@
 {"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-20T19:19:54.791Z"}
 {"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-20T19:24:43.270Z"}
 {"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-20T19:25:17.771Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:16:09.339Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:16:09.454Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:16:11.136Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:16:11.155Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:16:11.156Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:16:13.263Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:16:13.306Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:16:13.345Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:20:39.431Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:20:39.562Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:20:40.676Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:20:40.689Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:20:40.689Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:20:40.822Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:20:40.836Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:20:40.870Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:23:40.555Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:23:40.728Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:23:42.055Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:23:42.064Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:23:42.065Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:23:42.172Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:23:42.193Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:23:42.224Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:26:00.556Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:26:00.666Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:26:01.766Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:26:01.777Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:26:01.778Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:26:01.897Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:26:01.919Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:26:01.945Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:29:55.651Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:29:55.767Z"}
+{"_original":{"email":"sandipansea1gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1gmailcom"},"message":"\"email\" with value \"sandipansea1gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:29:56.903Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:29:56.918Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:29:56.921Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:29:57.012Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:29:57.031Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:29:57.094Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:31:53.891Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:31:54.000Z"}
+{"_original":{"email":"sandipansea1@gmailcom"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:31:54.966Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:31:54.978Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:31:54.979Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:31:55.064Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:31:55.077Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:31:55.124Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T17:51:32.938Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:51:33.037Z"}
+{"_original":{"email":"sandipansea1@gmailcom","password":"Sandip@12345"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipansea1@gmailcom"},"message":"\"email\" with value \"sandipansea1@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2021-12-23T17:51:33.907Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T17:51:33.917Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T17:51:33.918Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T17:51:34.000Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:51:34.014Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T17:51:34.054Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:57:37.812Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T17:59:03.717Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T18:14:29.979Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T18:14:30.086Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T18:14:31.000Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T18:14:31.001Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:14:31.063Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:14:31.078Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:14:31.113Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T18:15:44.500Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T18:15:44.603Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T18:15:45.474Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T18:15:45.474Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:15:45.560Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:15:45.571Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:15:45.614Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T18:20:14.115Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T18:20:14.220Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T18:20:15.129Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T18:20:15.130Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:20:15.190Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:20:15.205Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:20:15.273Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T18:31:30.936Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T18:35:59.106Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-23T18:35:59.210Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T18:36:00.297Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T18:36:00.297Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:36:00.394Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:36:00.406Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:36:00.455Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T18:58:02.111Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T18:58:03.320Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T18:58:03.321Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:58:03.420Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:58:03.439Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:58:03.462Z"}
