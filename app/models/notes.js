@@ -115,6 +115,7 @@ class Model {
   addLabelById = async (id) => {
     try {
       const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $addToSet: { labelName: id.labelName } });
+      return data;
     } catch (error) {
       return error;
     }
@@ -128,8 +129,8 @@ class Model {
     */
   deleteLabel = async (id) => {
     try {
-      const data = await NoteRegister.findByIdAndUpdate(id.noteId,
-        { $pull: { labelName: id.labelName } });
+      const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $pull: { labelName: id.labelName } });
+      return data;
     } catch (error) {
       return error;
     }

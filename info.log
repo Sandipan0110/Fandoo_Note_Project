@@ -1339,3 +1339,23 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T18:58:03.420Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:58:03.439Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-23T18:58:03.461Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-23T19:14:49.925Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-23T19:14:53.335Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-23T19:17:55.683Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-23T19:18:06.870Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-23T19:27:36.926Z"}
+{"level":"info","message":"Label inserted","timestamp":"2021-12-23T19:27:37.151Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-23T19:27:37.216Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-23T19:27:37.303Z"}
+{"level":"info","message":"Label Updated","timestamp":"2021-12-23T19:27:37.390Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T19:27:37.560Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-23T19:27:37.612Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T19:27:37.651Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-23T19:27:38.082Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-23T19:27:38.148Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-23T19:27:38.320Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-23T19:27:38.336Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-23T19:27:38.337Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-23T19:27:38.427Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T19:27:38.442Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-23T19:27:38.470Z"}
