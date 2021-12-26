@@ -197,7 +197,7 @@ describe('Delete label api', () => {
       .delete('/deletelabel/61c4b09c69889b7a7f3a5501')
       .set({ authorization: token })
       .end((err, res) => {
-        if(err) {
+        if (err) {
           res.should.have.status(400);
           return done();
         }
@@ -206,6 +206,21 @@ describe('Delete label api', () => {
       });
   })
   it.only('Success should return true when Model is Responding', (done) => {
+    const token = labelDB.label.validToken;
+    chai
+      .request(server)
+      .delete('/deletelabel/61c4b09c69889b7a7f3a5501')
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          res.should.have.status(400);
+          return done();
+        }
+        res.should.have.status(201);
+        done();
+      });
+  })
+  it.only('Success should return true when Return Particular id is Found', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)

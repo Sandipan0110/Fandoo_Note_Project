@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { error } = require('winston');
 
 const labelSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -83,13 +84,14 @@ class Model {
     * @param {*} id
     * @returns error in the case of error occurrence
     */
-  // deleteLabelById = async (id) => {
-  //   try {
-  //     return await LabelRegister.findOneAndDelete({ $and: [{ _id: id.labelId }, { userId: id.userId }] });
-  //   } catch (err) {
-  //     return err;
-  //   }
-  // };
+  deleteLabelById = (id,callback) => {
+    LabelRegister.findOneAndDelete({userId: id.userId},(error,data) => {
+      if(data) {
+        return callback(null,data);
+      }
+      return callback(error,null);
+    })
+  };
 }
 
 module.exports = new Model();
