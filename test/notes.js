@@ -135,17 +135,17 @@ describe('Get notes by ID api', () => {
 
 describe('Add notes by ID api', () => {
   it.only('Success Should Return False', (done) => {
-    const token = noteDB.notes.getNoteWithValidToken;
+    const token = noteDB.notes.getNoteWithinValidToken;
     chai
       .request(server)
-      .post('/addLabel/:id')
+      .post('/addlabel/:id')
       .end((err, res) => {
         res.should.have.status(500);
         return done();
       });
-  });
-  it.only('Success Should Return True When Token Valid', (done) => {
-    const token = noteDB.notes.getNoteWithValidToken;
+  })
+  it.only('Success should return True when token valid', (done) => {
+    const token = noteDB.notes.validToken;
     chai
       .request(server)
       .post('/addlabel/:id')
@@ -155,7 +155,18 @@ describe('Add notes by ID api', () => {
         res.body.should.have.property('success').eql(true);
         done();
       });
-  });
+  })
+  it.only('Success should return false when token invalid', (done) => {
+    const token = noteDB.notes.invalidToken;
+    chai
+      .request(server)
+      .post('/addlabel/:id')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  })
 });
 
   describe('Delete label from note ID api', () => {
@@ -186,5 +197,5 @@ describe('Add notes by ID api', () => {
           res.body.should.have.property('success').eql(false);
           done();
         });
-    });
-  })
+    })
+  });

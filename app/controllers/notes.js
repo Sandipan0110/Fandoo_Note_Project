@@ -226,47 +226,55 @@ class Note {
 
   addLabelById = async (req, res) => {
     try {
+      const id = {
+        noteId: req.params.id,
+        labelName: req.body.labelName,
+        userId: req.user.dataForToken.id
+      };
+      const labels = await noteService.addLabelById(id);
       res.status(200).json({
         message: 'Label added',
-        success: true
+        success: true,
+        data: labels
       });
-      } catch (err) {
-        res.status(500).send({
-          message: 'Label was not added',
-          success: false,
-        });
-      }
-    };
+    } catch (err) {
+      res.status(500).send({
+        message: 'Label was not added',
+        success: false,
+        error: err
+      });
+    }
+  };
 
-    deleteLabel = async (req, res) => {
-      try {
-        const id = {
-          noteId: req.params.id,
-          labelName: req.body.labelName,
-          userId: req.user.dataForToken.id
-        };
-        const noteValidation = validation.deleteLabelValidation.validate(id);
-        if (noteValidation.error) {
-          logger.error(noteValidation.error);
-          res.status(422).send({
-            message: 'Validation error',
-            success: false
-          });
-          return;
-        };
-        const data = await noteService.deleteLabel(id);
-        res.status(200).json({
-          message: 'Label Deleted succesfully',
-          success: true,
-          data: data
+  deleteLabel = async (req, res) => {
+    try {
+      const id = {
+        noteId: req.params.id,
+        labelName: req.body.labelName,
+        userId: req.user.dataForToken.id
+      };
+      const noteValidation = validation.deleteLabelValidation.validate(id);
+      if (noteValidation.error) {
+        logger.error(noteValidation.error);
+        res.status(422).send({
+          message: 'Validation error',
+          success: false
         });
-      } catch (error) {
-        res.status(500).send({
-          message: "internal error occurs",
-          success: false,
-          error: error,
-        });
-      }
+        return;
+      };
+      const data = await noteService.deleteLabel(id);
+      res.status(200).json({
+        message: 'Label Deleted succesfully',
+        success: true,
+        data: data
+      });
+    } catch (error) {
+      res.status(500).send({
+        message: "internal error occurs",
+        success: false,
+        error: error,
+      });
     }
   }
+}
 module.exports = new Note();
