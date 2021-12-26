@@ -167,6 +167,18 @@ describe('Add notes by ID api', () => {
         done();
       });
   })
+  it.only('Success should return true when Model is Responding', (done) => {
+    const token = noteDB.notes.invalidToken;
+    chai
+      .request(server)
+      .post('/addlabel/61ba38b1d48f7fe935bbbfb6')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  })
+  
 });
 
   describe('Delete label from note ID api', () => {
