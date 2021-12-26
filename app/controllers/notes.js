@@ -226,44 +226,47 @@ class Note {
 
   addLabelById = async (req, res) => {
     try {
-      
-    } catch (err) {
-      res.status(500).send({
-        message: 'Label was not added',
-        success: false,
-      });
-    }
-  };
-
-  deleteLabel = async (req, res) => {
-    try {
-      const id = {
-        noteId: req.params.id,
-        labelName: req.body.labelName,
-        userId: req.user.dataForToken.id
-      };
-      const noteValidation = validation.deleteLabelValidation.validate(id);
-      if (noteValidation.error) {
-        logger.error(noteValidation.error);
-        res.status(422).send({
-          message: 'Validation error',
-          success: false
-        });
-        return;
-      };
-      const data = await noteService.deleteLabel(id);
       res.status(200).json({
-        message: 'Label Deleted succesfully',
-        success: true,
-        data: data
+        message: 'Label added',
+        success: true
       });
-    } catch (error) {
-      res.status(500).send({
-        message: "internal error occurs",
-        success: false,
-        error: error,
-      });
+      } catch (err) {
+        res.status(500).send({
+          message: 'Label was not added',
+          success: false,
+        });
+      }
+    };
+
+    deleteLabel = async (req, res) => {
+      try {
+        const id = {
+          noteId: req.params.id,
+          labelName: req.body.labelName,
+          userId: req.user.dataForToken.id
+        };
+        const noteValidation = validation.deleteLabelValidation.validate(id);
+        if (noteValidation.error) {
+          logger.error(noteValidation.error);
+          res.status(422).send({
+            message: 'Validation error',
+            success: false
+          });
+          return;
+        };
+        const data = await noteService.deleteLabel(id);
+        res.status(200).json({
+          message: 'Label Deleted succesfully',
+          success: true,
+          data: data
+        });
+      } catch (error) {
+        res.status(500).send({
+          message: "internal error occurs",
+          success: false,
+          error: error,
+        });
+      }
     }
   }
-}
 module.exports = new Note();
