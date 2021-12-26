@@ -51,13 +51,12 @@ class Service {
     * @param {data}  : data will come from the controller body.
     * @description   : createLabel will takes the data from controller and send it to models
     */
-  // deleteLabelById = async (id) => {
-  //   try {
-  //     return await labelModel.deleteLabelById(id);
-  //   } catch (err) {
-  //     return err;
-  //   }
-  // };
+  deleteLabelById = (deleteLabel, callback) => {
+    if (!deleteLabel) {
+      callback("Label Not Found", null);
+    }
+    callback(null, deleteLabel);
+  };
 }
 
 module.exports = new Service();

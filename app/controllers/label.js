@@ -1,6 +1,7 @@
 const validation = require('../utilities/validation.js');
 const { logger } = require('../../logger/logger');
 const labelService = require('../service/label');
+const { error } = require('winston');
 class Label {
   /**
     * @description function writt
@@ -167,12 +168,20 @@ class Label {
           message: 'Wrong Input Validations',
           data: deleteLabelValidation
         });
-    } 
-    return res.status(201).send({
-      success: true,
-      message: 'label Deleted succesfully',
-    });
-  } catch (error) {
+      }
+      labelService.deleteLabelById(id, (error, data) => {
+        if (error) {
+          return res.status(400).json({
+            message: 'label not found',
+            success: false
+          });
+        }
+        return res.status(201).json({
+          message: 'label Delete Sucx',
+          success: true
+        });
+      });
+    } catch (error) {
       return res.status(500).json({
         message: 'Internal Server Error',
         success: false,
