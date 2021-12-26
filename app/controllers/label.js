@@ -158,17 +158,24 @@ class Label {
     */
   deleteLabelById = async (req, res) => {
     try {
-      return res.status(200).json({
-        message: 'label Deleted succesfully',
-        success: true,
-      });
-    } catch (err) {
+      if (req.user) {
+        return res.status(200).send({
+          message: 'label Deleted succesfully',
+          success: true,
+        });
+      } else {
+        return res.status(400).json({
+          message: 'Invalid Token',
+          success: false,
+        })
+      }
+    } catch (error) {
       return res.status(500).json({
-        message: 'label not deleted',
+        message: 'Internal Server Error',
         success: false,
       });
-    }
-  };
+    };
+  }
 }
 
 module.exports = new Label();

@@ -168,4 +168,15 @@ describe('Delete label api', () => {
         done();
       });
   });
+  it.only('Success should return false when token invalid', (done) => {
+    const token = labelDB.label.invalidToken;
+    chai
+      .request(server)
+      .delete('/deletelabel/:id')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  });
 });
