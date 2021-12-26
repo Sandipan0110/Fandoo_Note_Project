@@ -50,6 +50,7 @@ class Note {
       });
     }
   };
+
   /**
     * @description function written to get all the notes from the database
     * @param {*} req
@@ -91,6 +92,7 @@ class Note {
       });
     }
   };
+
   /**
     * @description function written to get  the notes by Id from the database
     * @param {*} req
@@ -131,6 +133,7 @@ class Note {
       });
     }
   };
+
   /**
     * @description function written to update notes using ID from the database
     * @param {*} req
@@ -180,6 +183,7 @@ class Note {
       });
     }
   };
+
   /**
     * @description function written to delete note by ID
     * @param {*} req
@@ -218,12 +222,12 @@ class Note {
       });
     }
   };
-  /**
-     * @description function written to add label to note
-     * @param {*} a valid noteId is expected
-     * @param {*} a valid labelId is expecte
-     */
 
+  /**
+    * @description function written to add label to note
+    * @param {*} a valid noteId is expected
+    * @param {*} a valid labelId is expecte
+    */
   addLabelById = async (req, res) => {
     try {
       const id = {
@@ -246,6 +250,12 @@ class Note {
     }
   };
 
+  /**
+    * @description function written to Delete label to note
+    * @param {*} req
+    * @param {*} res
+    * @returns response
+    */
   deleteLabel = async (req, res) => {
     try {
       const id = {
@@ -277,4 +287,5 @@ class Note {
     }
   }
 }
+
 module.exports = new Note();

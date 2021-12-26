@@ -104,12 +104,12 @@ class Model {
     }
   };
 
-    /**
-   * @description function written to add label to note
-   * @param {*} a valid noteId is expected
-   * @param {*} a valid labelId is expected
-   * @returns
-   */
+  /**
+ * @description function written to add label to note
+ * @param {*} a valid noteId is expected
+ * @param {*} a valid labelId is expected
+ * @returns
+ */
   addLabelById = async (id) => {
     try {
       const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $addToSet: { labelName: id.labelName } });
@@ -127,12 +127,12 @@ class Model {
 */
   deleteLabel = async (id) => {
     try {
-      const data = await NoteRegister.findByIdAndUpdate(id.noteId,
-        { $pull: { labelName: id.labelName } });
-        return data;
+      const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $pull: { labelName: id.labelName } });
+      return data;
     } catch (error) {
       return error;
     }
   }
 }
+
 module.exports = new Model();

@@ -118,7 +118,7 @@ describe('delete notes api', () => {
   });
 });
 
-// get data by id
+// get data by id API Test Cases
 describe('Get notes by ID api', () => {
   it('givenPoperDetails_ShouldGetNote', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
@@ -133,18 +133,19 @@ describe('Get notes by ID api', () => {
   });
 });
 
-describe('Add notes by ID api', () => {
-  it.only('Success Should Return False', (done) => {
-    const token = noteDB.notes.getNoteWithinValidToken;
-    chai
-      .request(server)
-      .post('/addlabel/:id')
-      .end((err, res) => {
-        res.should.have.status(500);
-        return done();
-      });
-  })
-  it.only('Success should return True when token valid', (done) => {
+//Add Label in Notes API Test Cases
+describe('Add lebel by ID api', () => {
+  // it('Success Should Return False', (done) => {
+  //   const token = noteDB.notes.getNoteWithinValidToken;
+  //   chai
+  //     .request(server)
+  //     .post('/addlabel/:id')
+  //     .end((err, res) => {
+  //       res.should.have.status(500);
+  //       return done();
+  //     });
+  // })
+  it('Success should return True when token valid', (done) => {
     const token = noteDB.notes.validToken;
     chai
       .request(server)
@@ -156,7 +157,7 @@ describe('Add notes by ID api', () => {
         done();
       });
   })
-  it.only('Success should return false when token invalid', (done) => {
+  it('Success should return false when token invalid', (done) => {
     const token = noteDB.notes.invalidToken;
     chai
       .request(server)
@@ -167,7 +168,7 @@ describe('Add notes by ID api', () => {
         done();
       });
   })
-  it.only('Success should return true when Model is Responding', (done) => {
+  it('Success should return true when Model is Responding', (done) => {
     const token = noteDB.notes.invalidToken;
     chai
       .request(server)
@@ -178,36 +179,36 @@ describe('Add notes by ID api', () => {
         done();
       });
   })
-  
 });
 
-  describe('Delete label from note ID api', () => {
-    it('givenPoperDetails_ShouldGetAPI', (done) => {
-      const token = noteDB.notes.getNoteWithValidToken;
-      const note = noteDB.deletelabel;
-      chai
-        .request(server)
-        .delete('/deleteLabelFromNote/:id')
-        .set({ authorization: token })
-        .send(note)
-        .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.have.property('success').eql(true);
-          done();
-        });
-    });
-    it('givenInvalidDetails_ShouldNotDeleteAPI', (done) => {
-      const token = noteDB.notes.getNoteWithValidToken;
-      const note = noteDB.notelabel;
-      chai
-        .request(server)
-        .delete('/deleteLabelFromNote/:id')
-        .set({ authorization: token })
-        .send(note)
-        .end((err, res) => {
-          res.should.have.status(422);
-          res.body.should.have.property('success').eql(false);
-          done();
-        });
-    })
+//Delete label from note ID API Test Cases
+describe('Delete label from note ID api', () => {
+  it('givenPoperDetails_ShouldGetAPI', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    const note = noteDB.deletelabel;
+    chai
+      .request(server)
+      .delete('/deleteLabelFromNote/:id')
+      .set({ authorization: token })
+      .send(note)
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.have.property('success').eql(true);
+        done();
+      });
   });
+  it('givenInvalidDetails_ShouldNotDeleteAPI', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    const note = noteDB.notelabel;
+    chai
+      .request(server)
+      .delete('/deleteLabelFromNote/:id')
+      .set({ authorization: token })
+      .send(note)
+      .end((err, res) => {
+        res.should.have.status(422);
+        res.body.should.have.property('success').eql(false);
+        done();
+      });
+  })
+});
