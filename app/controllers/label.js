@@ -158,23 +158,26 @@ class Label {
     */
   deleteLabelById = async (req, res) => {
     try {
-      if (req.user) {
-        return res.status(200).send({
-          message: 'label Deleted succesfully',
-          success: true,
-        });
-      } else {
-        return res.status(400).json({
-          message: 'Invalid Token',
+      const id = { userId: req.user.dataForToken.id, labelId: req.params.id };
+      const deleteLabelValidation = validation.labeldeleteValidation.validate(id);
+      if (deleteLabelValidation.error) {
+        console.log(deleteLabelById.error);
+        return res.status(400).send({
           success: false,
-        })
-      }
-    } catch (error) {
+          message: 'Wrong Input Validations',
+          data: deleteLabelValidation
+        });
+    } 
+    return res.status(201).send({
+      success: true,
+      message: 'label Deleted succesfully',
+    });
+  } catch (error) {
       return res.status(500).json({
         message: 'Internal Server Error',
         success: false,
       });
-    };
+    }
   }
 }
 
