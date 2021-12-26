@@ -1639,3 +1639,18 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T22:12:44.812Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:12:44.827Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:12:44.894Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-26T22:30:57.877Z"}
+{"level":"info","message":"Label inserted","timestamp":"2021-12-26T22:30:58.102Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-26T22:30:58.160Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-26T22:30:58.209Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-26T22:30:58.263Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-26T22:30:58.465Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T22:30:58.525Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-26T22:30:59.038Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-26T22:30:59.104Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-26T22:30:59.288Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T22:30:59.306Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T22:30:59.307Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T22:30:59.370Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:30:59.382Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:30:59.401Z"}

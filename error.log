@@ -433,3 +433,10 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T22:12:44.812Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:12:44.827Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:12:44.894Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-26T22:30:58.160Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-26T22:30:58.264Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T22:30:59.307Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T22:30:59.307Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T22:30:59.371Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:30:59.383Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T22:30:59.401Z"}

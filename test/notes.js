@@ -169,10 +169,21 @@ describe('Add lebel by ID api', () => {
       });
   })
   it('Success should return true when Model is Responding', (done) => {
-    const token = noteDB.notes.invalidToken;
+    const token = noteDB.notes.validToken;
     chai
       .request(server)
       .post('/addlabel/61ba38b1d48f7fe935bbbfb6')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  })
+  it('Success should return false when Model is notResponding', (done) => {
+    const token = noteDB.notes.invalidToken;
+    chai
+      .request(server)
+      .post('/addlabel/61ba38b1d48f7fe935bbbfb')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);
