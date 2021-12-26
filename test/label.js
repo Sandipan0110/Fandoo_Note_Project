@@ -8,7 +8,7 @@ const labelDB = require('./label.json');
 const { expect } = require('chai');
 chai.should();
 
-describe('create label api', () => {
+describe('Create label api', () => {
   it('label', (done) => {
     const token = labelDB.label.validToken;
     const createlabel = {
@@ -66,7 +66,7 @@ describe('create label api', () => {
   });
 });
 
-describe('get label api', () => {
+describe('Get label api', () => {
   it('notes', (done) => {
     const token = labelDB.label.getlabelWithValidToken;
     chai
@@ -147,64 +147,24 @@ describe('Update label api', () => {
 });
 
 describe('Delete label api', () => {
-  it('Success should return false', (done) => {
-    const token = labelDB.label.getlabelWithValidToken;
+  it.only('Success should return false', (done) => {
+    const token = labelDB.label.invalidToken
     chai
       .request(server)
-      .delete('/deletelabel/61c4afe71d930b12dbe03d09')
-      .set({ authorization: token })
+      .delete('/deletelabel/:id')
       .end((err, res) => {
-        res.should.have.status(404);
-        res.body.should.have.property('success').eql(false);
-        res.body.should.have.property('message').eql('label not found');
+        res.should.have.status(500);
         done();
       });
   });
-  it('Success should return false when invalid', (done) => {
-    const token = labelDB.label.getlabelWithInValidToken;
-    chai
-      .request(server)
-      .delete('/deletelabel/61c4afe71d930b12dbe03d09')
-      .set({ authorization: token })
-      .end((err, res) => {
-        if (err) {
-          return done(err, "Please check details again and re-enter the details with proper format");
-        }
-        res.should.have.status(400);
-        res.body.should.have.property('success').eql(false);
-        res.body.should.have.property('message').eql('Invalid Token');
-        done();
-      });
-  });
-  it('Success should return true when valid', (done) => {
+  it.only('Success should return true', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
       .delete('/deletelabel/:id')
       .set({ authorization: token })
       .end((err, res) => {
-        if (err) {
-          return done(err, "Please check details again and re-enter the details with proper format");
-        }
         res.should.have.status(200);
-        res.body.should.have.property('success').eql(true);
-        res.body.should.have.property('message').eql('label Deleted succesfully');
-        done();
-      });
-  });
-  it('givenImppoperDetails_ShouldNotDeletelabel', (done) => {
-    const token = labelDB.label.getlabelWithValidToken;
-    chai
-      .request(server)
-      .delete('/deletelabel/61bf6c809ed8c0141237cd7b')
-      .set({ authorization: token })
-      .end((err, res) => {
-        if (err) {
-          return done(err, "Please check details again and re-enter the details with proper format");
-        }
-        res.should.have.status(500);
-        res.body.should.have.property('success').eql(false);
-        res.body.should.have.property('message').eql('label not deleted');
         done();
       });
   });

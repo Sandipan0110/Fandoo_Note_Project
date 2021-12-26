@@ -83,13 +83,13 @@ class Model {
     * @param {*} id
     * @returns error in the case of error occurrence
     */
-  deleteLabelById = async (id) => {
-    try {
-      return await LabelRegister.findOneAndDelete({ $and: [{ _id: id.labelId }, { userId: id.userId }] });
-    } catch (err) {
-      return err;
-    }
-  };
+  // deleteLabelById = async (id) => {
+  //   try {
+  //     return await LabelRegister.findOneAndDelete({ $and: [{ _id: id.labelId }, { userId: id.userId }] });
+  //   } catch (err) {
+  //     return err;
+  //   }
+  // };
 }
 
 module.exports = new Model();

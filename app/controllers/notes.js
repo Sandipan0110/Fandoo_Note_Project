@@ -279,7 +279,7 @@ class Note {
         success: false,
         error: error,
       });
-    }
+     }
   }
 }
 
