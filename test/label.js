@@ -147,7 +147,7 @@ describe('Update label api', () => {
 });
 
 describe('Delete label api', () => {
-  it.only('Success should return false', (done) => {
+  it('Success should return false', (done) => {
     const token = labelDB.label.invalidToken;
     chai
       .request(server)
@@ -164,7 +164,7 @@ describe('Delete label api', () => {
       .delete('/deletelabel/:id')
       .set({ authorization: token })
       .end((err, res) => {
-        res.should.have.status(201);
+        res.should.have.status(200);
         done();
       });
   })
@@ -186,7 +186,7 @@ describe('Delete label api', () => {
       .delete('/deletelabel/61c4b09c69889b7a7f3a5501')
       .set({ authorization: token })
       .end((err, res) => {
-        res.should.have.status(201);
+        res.should.have.status(200);
         done();
       });
   })
@@ -201,7 +201,7 @@ describe('Delete label api', () => {
           res.should.have.status(400);
           return done();
         }
-        res.should.have.status(201);
+        res.should.have.status(200);
         done();
       });
   })
@@ -216,7 +216,7 @@ describe('Delete label api', () => {
           res.should.have.status(400);
           return done();
         }
-        res.should.have.status(201);
+        res.should.have.status(200);
         done();
       });
   })
@@ -231,7 +231,7 @@ describe('Delete label api', () => {
           res.should.have.status(400);
           return done();
         }
-        res.should.have.status(201);
+        res.should.have.status(200);
         done();
       });
   })

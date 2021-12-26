@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const { error } = require('winston');
-
 const labelSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 
@@ -20,12 +18,11 @@ const labelSchema = mongoose.Schema({
 const LabelRegister = mongoose.model('LabelRegister', labelSchema);
 
 class Model {
-
   /**
-    * @description function written to create label
-    * @param {*} data
-    * @returns data else if returns error
-    */
+   * @description function written to create label
+   * @param {*} data
+   * @returns data else if returns error
+   */
   createLabel = (data) => {
     return new Promise((resolve, reject) => {
       const label = new LabelRegister({
@@ -84,13 +81,12 @@ class Model {
     * @param {*} id
     * @returns error in the case of error occurrence
     */
-  deleteLabelById = (id,callback) => {
-    LabelRegister.findOneAndDelete({userId: id.userId},(error,data) => {
-      if(data) {
-        return callback(null,data);
-      }
-      return callback(error,null);
-    })
+  deleteLabelById = async (id) => {
+    try {
+      return await LabelRegister.findOneAndDelete({ $and: [{ _id: id.labelId }, { userId: id.userId }] });
+    } catch (err) {
+      return err;
+    }
   };
 }
 

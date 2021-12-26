@@ -155,7 +155,7 @@ describe('Add notes by ID api', () => {
     const token = noteDB.notes.validToken;
     chai
       .request(server)
-      .post('/deletenotes/61ada51342b5e9f0f69f')
+      .post('/addlabel/61ada51342b5e9f382f0f69f')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(404);

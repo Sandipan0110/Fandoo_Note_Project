@@ -3,7 +3,6 @@ const { logger } = require('../../logger/logger');
 const validation = require('../utilities/validation.js');
 
 class Note {
-
   /**
     * @description function written to create notes into the database
     * @param {*} a valid req body is expected
@@ -20,13 +19,13 @@ class Note {
 
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
+        console.log(createNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
           data: createNoteValidation
         });
       }
-
       noteService.createNote(note, (error, data) => {
         if (error) {
           logger.error('failed to post note');
@@ -51,7 +50,6 @@ class Note {
       });
     }
   };
-
   /**
     * @description function written to get all the notes from the database
     * @param {*} req
@@ -63,6 +61,7 @@ class Note {
       const id = { id: req.user.dataForToken.id };
       const getNoteValidation = validation.getNoteValidation.validate(id);
       if (getNoteValidation.error) {
+        console.log(getNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -92,7 +91,6 @@ class Note {
       });
     }
   };
-
   /**
     * @description function written to get  the notes by Id from the database
     * @param {*} req
@@ -105,6 +103,7 @@ class Note {
       const data = await noteService.getNoteById(id);
       const getNoteValidation = validation.notesdeleteValidation.validate(id);
       if (getNoteValidation.error) {
+        console.log(getNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -117,6 +116,7 @@ class Note {
           success: false
         });
       } else {
+        redisjs.setData("getNoteById", 60, JSON.stringify(data));
         return res.status(200).json({
           message: 'Note retrieved succesfully',
           success: true,
@@ -131,7 +131,6 @@ class Note {
       });
     }
   };
-
   /**
     * @description function written to update notes using ID from the database
     * @param {*} req
@@ -149,13 +148,13 @@ class Note {
       };
       const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
       if (updateNoteValidation.error) {
+        console.log(updateNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
           data: updateNoteValidation
         });
       };
-
       noteService.updateNoteById(updateNote, (error, data) => {
         if (error) {
           logger.error('failed to update note');
@@ -164,6 +163,7 @@ class Note {
             success: false
           });
         } else {
+          redisjs.clearCache("getNotesById");
           logger.info('Successfully inserted note');
           return res.status(201).send({
             message: 'Successfully update note',
@@ -180,7 +180,6 @@ class Note {
       });
     }
   };
-
   /**
     * @description function written to delete note by ID
     * @param {*} req
@@ -192,6 +191,7 @@ class Note {
       const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
       const deleteNoteValidation = validation.validateLabel.validate(id);
       if (deleteNoteValidation.error) {
+        console.log(deleteNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -218,12 +218,12 @@ class Note {
       });
     }
   };
-
   /**
-    * @description function written to add label to note
-    * @param {*} a valid noteId is expected
-    * @param {*} a valid labelId is expecte
-    */
+     * @description function written to add label to note
+     * @param {*} a valid noteId is expected
+     * @param {*} a valid labelId is expecte
+     */
+
   addLabelById = async (req, res) => {
     try {
       const id = {
@@ -246,11 +246,6 @@ class Note {
     }
   };
 
-  /**
-    * @description function written to Delete label to note
-    * @param {*} a valid noteId is expected
-    * @param {*} a valid labelId is expecte
-    */
   deleteLabel = async (req, res) => {
     try {
       const id = {
@@ -279,8 +274,7 @@ class Note {
         success: false,
         error: error,
       });
-     }
+    }
   }
 }
-
 module.exports = new Note();
