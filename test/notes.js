@@ -134,32 +134,14 @@ describe('Get notes by ID api', () => {
 });
 
 describe('Add notes by ID api', () => {
-  it('givenPoperDetails_ShouldGetApPI', (done) => {
-    const data = noteDB.addlabel.isLabel;
-    expect(data).equal(true);
-    done();
-  });
-  it('givenvalidToken_WhenDataShouldAddabel', (done) => {
+  it.only('givenvalidToken_WhenDataShouldAddabel', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
-      .request(server)
-      .post('/addlabel/61ada51342b5e9f382f0f69f')
-      .set({ authorization: token })
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.have.property('success').eql(true);
-        done();
-      });
-  });
-  it('givenNotPoperDetails_ShouldNotAddlabel', (done) => {
-    const token = noteDB.notes.validToken;
-    chai
-      .request(server)
-      .post('/addlabel/61ada51342b5e9f382f0f69f')
-      .set({ authorization: token })
-      .end((err, res) => {
-        res.should.have.status(404);
-        done();
+    .request(server)
+        .delete('/deletelabel/:id')
+        .end((err, res) => {
+          res.should.have.status(500);
+          return done();
       });
   });
 });

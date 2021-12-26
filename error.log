@@ -398,3 +398,24 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T19:38:59.594Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T19:38:59.612Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T19:38:59.646Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-26T20:20:44.040Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-26T20:20:44.146Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T20:20:45.435Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T20:20:45.435Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T20:20:45.700Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:20:45.713Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:20:45.732Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-26T20:22:25.147Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-26T20:22:25.258Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T20:22:26.275Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T20:22:26.275Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T20:22:26.334Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:22:26.352Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:22:26.378Z"}
+{"level":"error","message":"Invalid label body","timestamp":"2021-12-26T20:27:24.429Z"}
+{"level":"error","message":"Label to be updated not foudn due to error","timestamp":"2021-12-26T20:27:24.543Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T20:27:25.476Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T20:27:25.476Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T20:27:25.536Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:27:25.548Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T20:27:25.570Z"}

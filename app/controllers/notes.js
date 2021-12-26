@@ -226,22 +226,11 @@ class Note {
 
   addLabelById = async (req, res) => {
     try {
-      const id = {
-        noteId: req.params.id,
-        labelName: req.body.labelName,
-        userId: req.user.dataForToken.id
-      };
-      const labels = await noteService.addLabelById(id);
-      res.status(200).json({
-        message: 'Label added',
-        success: true,
-        data: labels
-      });
+      
     } catch (err) {
       res.status(500).send({
-        message: 'Label wasnt added',
+        message: 'Label was not added',
         success: false,
-        error: err
       });
     }
   };

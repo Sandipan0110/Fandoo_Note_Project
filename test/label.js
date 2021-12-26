@@ -134,7 +134,7 @@ describe('Update label api', () => {
     const note = labelDB.updatelabel.validData;
     chai
       .request(server)
-      .put('/updatelabel/61bf6c809ed8c0141237cd')
+      .put('/updatelabel/61bf6c809ed8c014123d')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -147,17 +147,17 @@ describe('Update label api', () => {
 });
 
 describe('Delete label api', () => {
-  it('Success should return false', (done) => {
-    const token = labelDB.label.invalidToken;
-    chai
-      .request(server)
-      .delete('/deletelabel/:id')
-      .end((err, res) => {
-        res.should.have.status(500);
-        return done();
-      });
-  })
-  it.only('Success should return true when token valid', (done) => {
+  // it('Success should return false', (done) => {
+  //   const token = labelDB.label.invalidToken;
+  //   chai
+  //     .request(server)
+  //     .delete('/deletelabel/:id')
+  //     .end((err, res) => {
+  //       res.should.have.status(500);
+  //       return done();
+  //     });
+  // })
+  it('Success should return true when token valid', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
@@ -168,7 +168,7 @@ describe('Delete label api', () => {
         done();
       });
   })
-  it.only('Success should return false when token invalid', (done) => {
+  it('Success should return false when token invalid', (done) => {
     const token = labelDB.label.invalidToken;
     chai
       .request(server)
@@ -179,7 +179,7 @@ describe('Delete label api', () => {
         done();
       });
   })
-  it.only('Success should return true when validate', (done) => {
+  it('Success should return true when validate', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
@@ -190,22 +190,7 @@ describe('Delete label api', () => {
         done();
       });
   })
-  it.only('Success should return true when service is responding', (done) => {
-    const token = labelDB.label.validToken;
-    chai
-      .request(server)
-      .delete('/deletelabel/61c4b09c69889b7a7f3a5501')
-      .set({ authorization: token })
-      .end((err, res) => {
-        if (err) {
-          res.should.have.status(400);
-          return done();
-        }
-        res.should.have.status(200);
-        done();
-      });
-  })
-  it.only('Success should return true when Model is Responding', (done) => {
+  it('Success should return true when service is responding', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
@@ -220,7 +205,22 @@ describe('Delete label api', () => {
         done();
       });
   })
-  it.only('Success should return true when Return Particular id is Found', (done) => {
+  it('Success should return true when Model is Responding', (done) => {
+    const token = labelDB.label.validToken;
+    chai
+      .request(server)
+      .delete('/deletelabel/61c4b09c69889b7a7f3a5501')
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          res.should.have.status(400);
+          return done();
+        }
+        res.should.have.status(200);
+        done();
+      });
+  })
+  it('Success should return true when Return Particular id is Found', (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
