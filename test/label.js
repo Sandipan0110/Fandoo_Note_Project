@@ -213,7 +213,7 @@ describe('Delete label api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          res.should.have.status(400);
+          res.should.have.status(404);
           return done();
         }
         res.should.have.status(200);
@@ -228,7 +228,7 @@ describe('Delete label api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          res.should.have.status(400);
+          res.should.have.status(404);
           return done();
         }
         res.should.have.status(200);
