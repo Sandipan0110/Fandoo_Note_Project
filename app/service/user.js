@@ -69,15 +69,14 @@ class UserService {
     * @returns
     */
   resetPassword = (userData, callback) => {
-    userModel.resetPassword(userData, (error, data) => {
-      if (error) {
-        logger.error(error);
-        return callback(error, null);
-      } else {
+    userModel.resetPassword(userData)
+      .then((data) => {
+        logger.error(data);
         return callback(null, data);
-      }
-    });
-  }
+      }).catch((error) => {
+        return callback(error, null);
+      });
+  };
 }
 
 module.exports = new UserService();
