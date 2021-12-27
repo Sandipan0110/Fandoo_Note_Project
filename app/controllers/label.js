@@ -153,10 +153,11 @@ class Label {
   };
 
   /**
-  * @description function written to update label
-  * @param {*} a valid req body is expected
-  * @param {*} res
-  */
+    * @description function written to delete label by ID
+    * @param {*} req
+    * @param {*} res
+    * @returns response
+    */
   deleteLabelById = async (req, res) => {
     try {
       const id = { userId: req.user.dataForToken.id, labelId: req.params.id };
