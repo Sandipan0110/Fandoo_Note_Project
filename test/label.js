@@ -10,7 +10,7 @@ describe("Add Label", () => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post("/addLabel/:id")
+      .post('/addLabel/:id')
       .set({ authorization: token })
       .send({})
       .end((err, res) => {
@@ -22,11 +22,11 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response from controller when token is invalid", (done) => {
+  it("Should return appropriate response from controller when token is invalid", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
-      .post("/addLabel/:id")
+      .post('/addLabel/:id')
       .set({ authorization: token })
       .send({})
       .end((err, res) => {
@@ -38,11 +38,11 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response When Input Valid Data", (done) => {
+  it("Should return appropriate response When Input Valid Data", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .post('/addLabel/61ba38e2d48f7fe935bbbfba')
       .set({ authorization: token })
       .send({ labelName: "Hi Google" })
       .end((err, res) => {
@@ -54,11 +54,11 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response When Input inValid Data", (done) => {
+  it("Should return appropriate response When Input inValid Data", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
-      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .post('/addLabel/61ba38e2d48f7fe935bbbfb')
       .set({ authorization: token })
       .send({ labelName: "Hi Google" })
       .end((err, res) => {
@@ -68,6 +68,15 @@ describe("Add Label", () => {
         }
         res.should.have.status(400);
         return done();
+      });
+  });
+  it.only("Should return appropriate response When it is Responding", (done) => {
+    chai
+      .request(server)
+      .post('/addLabel/:id')
+      .end((err, res) => {
+        res.should.have.status(500);
+        done();
       });
   });
 });
