@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.0",
-        "title": "Fundoo Notes App",
+        "version": "1.0.0",
+        "title": "Fundoo Note Application",
         "description": "Fundoo Notes Application",
         "license": {
             "name": "MIT",
@@ -25,16 +25,16 @@
         "/register": {
             "post": {
                 "tags": [
-                    "Register"
+                    "Sign up"
                 ],
-                "description": "Register New User",
+                "description": "Registration of new user",
                 "parameters": [
                     {
                         "name": "Register",
                         "in": "body",
-                        "description": "User that we want to register",
+                        "description": "Sign Up..",
                         "schema": {
-                            "$ref": "#/definitions/registerUser"
+                            "$ref": "#/definitions/register"
                         }
                     }
                 ],
@@ -43,13 +43,13 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "New user is Registered"
+                        "description": "Successfully  Registered......"
                     },
                     "409": {
-                        "description": "User Already Exist"
+                        "description": "User already exist"
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
@@ -57,16 +57,16 @@
         "/login": {
             "post": {
                 "tags": [
-                    "Login"
+                    "Sign in"
                 ],
-                "description": "Login User",
+                "description": "Login user",
                 "parameters": [
                     {
                         "name": "Login",
                         "in": "body",
-                        "description": "User that we want to login",
+                        "description": "Sign in",
                         "schema": {
-                            "$ref": "#/definitions/loginUser"
+                            "$ref": "#/definitions/login"
                         }
                     }
                 ],
@@ -75,7 +75,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Ok"
+                        "description": "ok"
                     },
                     "404": {
                         "description": "Not Found"
@@ -83,19 +83,19 @@
                 }
             }
         },
-        "/forgotpassword": {
+        "/forgotPassword": {
             "post": {
                 "tags": [
-                    "ForgotPassword"
+                    "Forgot-Password"
                 ],
-                "description": "Send password link",
+                "description": "Send OTP for Password Reset to email",
                 "parameters": [
                     {
-                        "name": "Forgotpassword",
+                        "name": "forgotpassword",
                         "in": "body",
-                        "description": "Sent password resent link",
+                        "description": "Send OTP to Email for reset Password",
                         "schema": {
-                            "$ref": "#/definitions/forgotpassword"
+                            "$ref": "#/definitions/forgotPassword"
                         }
                     }
                 ],
@@ -104,7 +104,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Ok"
+                        "description": "ok"
                     },
                     "404": {
                         "description": "Not Found"
@@ -112,17 +112,17 @@
                 }
             }
         },
-        "/reset-Password": {
-            "put": {
+        "/resetPassword": {
+            "patch": {
                 "tags": [
-                    "Reset Password"
+                    "Reset-Password"
                 ],
-                "description": "Already registered ? Then reset password successfully !",
+                "description": "Already registered ? Then reset password successfully !!",
                 "parameters": [
                     {
                         "name": "Reset Password",
                         "in": "body",
-                        "description": "Reset Password with Code",
+                        "description": "Reset Password by OTP code",
                         "schema": {
                             "$ref": "#/definitions/resetPassword"
                         }
@@ -133,39 +133,39 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "reset password succesfully !"
+                        "description": "reset password succesfully !!"
                     },
                     "400": {
-                        "description": "Incorrect Password for Reset password"
+                        "description": "wrong otp entered / otp expired...."
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
         },
-        "/createnotes": {
+        "/createNote": {
             "post": {
                 "tags": [
                     "Create Notes"
                 ],
-                "description": "Create a Note !",
+                "description": "Create a  note !!",
                 "parameters": [
                     {
                         "in": "header",
                         "name": "Authorization",
-                        "description": "Token for Vaidation",
+                        "description": "Token for validation",
                         "schema": {
                             "type": "string",
                             "required": true
                         }
                     },
                     {
-                        "name": "Create Note",
+                        "name": "create note",
                         "in": "body",
-                        "description": "Note's Body",
+                        "description": "Note's body",
                         "schema": {
-                            "$ref": "#/definitions/notes"
+                            "$ref": "#/definitions/createNote"
                         }
                     }
                 ],
@@ -173,32 +173,32 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/notes"
+                    "$ref": "#/definitions/createNote"
                 },
                 "responses": {
                     "201": {
-                        "description": "Create note Succesfully !"
+                        "description": "Create note succesfully !!"
                     },
                     "400": {
-                        "description": "Please Enter Valid Token"
+                        "description": "Please enter Valid Token"
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
         },
-        "/getnotes": {
+        "/getNote": {
             "get": {
                 "tags": [
-                    "Get Notes"
+                    "Get All Notes"
                 ],
-                "description": "Get a Note !",
+                "description": "Get all note !!",
                 "parameters": [
                     {
                         "in": "header",
                         "name": "Authorization",
-                        "description": "Token for Vaidation",
+                        "description": "Token for validation",
                         "schema": {
                             "type": "string",
                             "required": true
@@ -209,32 +209,32 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/notes"
+                    "$ref": "#/definitions/getNote"
                 },
                 "responses": {
                     "201": {
-                        "description": "Get Note Succesfully !!"
+                        "description": "Succesfully !! retrieve all notes."
                     },
                     "401": {
-                        "description": "Please Enter Valid Token"
+                        "description": "Please enter Valid Token/ or add bearer before token..."
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
         },
-        "/getnotes/{id}": {
+        "/getNote/{id}": {
             "get": {
                 "tags": [
-                    "Get Notes"
+                    "Get Notes By Id"
                 ],
-                "description": "Get a Note by ID for Perticuler Person id !",
+                "description": "Get a note by ID for specific person id",
                 "parameters": [
                     {
                         "in": "header",
                         "name": "Authorization",
-                        "description": "Token for Vaidation",
+                        "description": "Token for validation",
                         "schema": {
                             "type": "string",
                             "required": true
@@ -243,7 +243,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of Note you want to Update",
+                        "description": "Note id for retrieve note",
                         "schema": {
                             "type": "string"
                         }
@@ -253,32 +253,32 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/notes"
+                    "$ref": "#/definitions/getNoteById"
                 },
                 "responses": {
                     "201": {
-                        "description": "Create Note Succesfully !!"
+                        "description": "get note succesfully !!"
                     },
                     "400": {
-                        "description": "Please Enter Valid Token"
+                        "description": "Please enter Valid Token"
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
         },
-        "/updatenotes/{id}": {
+        "/updateNote/{id}": {
             "put": {
                 "tags": [
-                    "update Notes"
+                    "Update Notes By Id"
                 ],
-                "description": "Update a Note by ID for Perticuler Person id !",
+                "description": "Update a Specific note id !!",
                 "parameters": [
                     {
                         "in": "header",
                         "name": "Authorization",
-                        "description": "Token for Vaidation",
+                        "description": "Token for validation",
                         "schema": {
                             "type": "string",
                             "required": true
@@ -287,7 +287,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "Id of Note you want to Update",
+                        "description": "Id of note you want to update",
                         "schema": {
                             "type": "string"
                         }
@@ -295,7 +295,7 @@
                     {
                         "in": "body",
                         "name": "note",
-                        "description": "Note Body",
+                        "description": "Note body",
                         "schema": {
                             "$ref": "#/definitions/updatenotes"
                         }
@@ -306,28 +306,28 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "update Note Succesfully !"
+                        "description": "update note succesfully !!"
                     },
                     "401": {
-                        "description": "Please Enter Valid Token"
+                        "description": "Please enter Valid Token"
                     },
                     "500": {
-                        "description": "Internal Server Error"
+                        "description": "Internal server error"
                     }
                 }
             }
         },
-        "/deletenotes/{id}": {
+        "/deleteNote/{id}": {
             "delete": {
                 "tags": [
-                    "Delete Notes"
+                    "Delete Notes By Id"
                 ],
-                "description": "Delete a Note by ID for Perticuler Person id !",
+                "description": "Delete a note by ID ",
                 "parameters": [
                     {
                         "in": "header",
                         "name": "Authorization",
-                        "description": "Token for Vaidation",
+                        "description": "Token for vaidation",
                         "schema": {
                             "type": "string",
                             "required": true
@@ -336,7 +336,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "Id of Note you want to Update",
+                        "description": "Id of note you want to Delete",
                         "schema": {
                             "type": "string"
                         }
@@ -347,274 +347,20 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Delete Note Succesfully !"
+                        "description": "Delete note succesfully !!"
                     },
                     "401": {
-                        "description": "Please Enter Valid Token"
+                        "description": "Please enter Valid Token"
                     },
                     "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/createlabel": {
-            "post": {
-                "tags": [
-                    "Create Label"
-                ],
-                "description": "Creates a New label",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for Validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "body",
-                        "name": "label",
-                        "description": "Label Attached to Note",
-                        "schema": {
-                            "$ref": "#/definitions/label"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Label Created Successfully"
-                    },
-                    "500": {
-                        "description": "Label Not Created"
-                    },
-                    "400": {
-                        "description": "Invalid Token"
-                    }
-                }
-            }
-        },
-        "/getlabels": {
-            "get": {
-                "tags": [
-                    "Get Labels"
-                ],
-                "description": "Gets All Labels",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for Validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Labels Retrieved"
-                    },
-                    "500": {
-                        "description": "Couldnt Retrieve Labels"
-                    }
-                }
-            }
-        },
-        "/getlabel/{id}": {
-            "get": {
-                "tags": [
-                    "Get Label by id"
-                ],
-                "description": "Gets Label by id",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for Validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "Label id",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Label Found"
-                    },
-                    "500": {
-                        "description": "Label not Found"
-                    },
-                    "400": {
-                        "description": "Invalid Token"
-                    }
-                }
-            }
-        },
-        "/updatelabel/{id}": {
-            "put": {
-                "tags": [
-                    "Update Label"
-                ],
-                "description": "Updates Label",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for Validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "Label id",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "body",
-                        "name": "label",
-                        "description": "Label to be Updated",
-                        "schema": {
-                            "$ref": "#/definitions/label"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Label Updated"
-                    },
-                    "500": {
-                        "description": "Failed to Update Label"
-                    },
-                    "400": {
-                        "description": "Invalid Token"
-                    }
-                }
-            }
-        },
-        "/deletelabel/{id}": {
-            "delete": {
-                "tags": [
-                    "Delete Label"
-                ],
-                "description": "Delete a Label by ID for Perticuler Person id !",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "description": "Token for Vaidation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "Id of Label you want to Delete",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Delete Note Succesfully !!"
-                    },
-                    "401": {
-                        "description": "Please Enter Valid Token"
-                    },
-                    "500": {
-                        "description": "Internal Server Error"
-                    }
-                }
-            }
-        },
-        "/addlabel/{id}": {
-            "post": {
-                "tags": [
-                    "Add Label"
-                ],
-                "description": "Added Label",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for Validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "description": "Note id",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    },
-                    {
-                        "in": "body",
-                        "name": "Add Label",
-                        "description": "Label to be Updated",
-                        "schema": {
-                            "$ref": "#/definitions/addlabel"
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "label Added"
-                    },
-                    "500": {
-                        "description": "Failed to Add Label"
-                    },
-                    "400": {
-                        "description": "Invalid Token"
+                        "description": "Internal server error"
                     }
                 }
             }
         }
     },
     "definitions": {
-        "registerUser": {
+        "register": {
             "type": "object",
             "properties": {
                 "firstName": {
@@ -631,7 +377,7 @@
                 }
             }
         },
-        "loginUser": {
+        "login": {
             "type": "object",
             "properties": {
                 "email": {
@@ -642,7 +388,7 @@
                 }
             }
         },
-        "forgotpassword": {
+        "forgotPassword": {
             "type": "object",
             "properties": {
                 "email": {
@@ -656,7 +402,7 @@
                 "email": {
                     "type": "string"
                 },
-                "newPassword": {
+                "password": {
                     "type": "string"
                 },
                 "code": {
@@ -664,7 +410,18 @@
                 }
             }
         },
-        "notes": {
+        "createNote": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "getNote": {
             "type": "object",
             "properties": {
                 "title": {
@@ -675,8 +432,23 @@
                 }
             },
             "example": {
-                "title": "Write a Title Here...",
-                "description": "Write a Description Here..."
+                "title": "Write a title here.....",
+                "description": "Write a description here....."
+            }
+        },
+        "getNoteById": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "title": "Write a title here.....",
+                "description": "Write a description here....."
             }
         },
         "updatenotes": {
@@ -690,24 +462,8 @@
                 }
             },
             "example": {
-                "title": "Write a Title Here...",
-                "description": "Write a Description Here..."
-            }
-        },
-        "label": {
-            "type": "object",
-            "properties": {
-                "labelName": {
-                    "type": "string"
-                }
-            }
-        },
-        "addlabel": {
-            "type": "object",
-            "properties": {
-                "labelName": {
-                    "type": "string"
-                }
+                "title": "Write a title here.....",
+                "description": "Write a description here....."
             }
         }
     }

@@ -115,20 +115,20 @@ class userModel {
             utilities.hashing(userData.password)
               .then((hash) => {
                 userData.password = hash;
-                user.updateOne({ email: userData.email }, { '$set': { "password": userData.password } })
+                User.updateOne({ email: userData.email }, { '$set': { "password": userData.password } })
                   .then((data) => {
                     resolve(data)
                   }).catch((error) => {
                     reject(error)
                   })
               }).catch((error) => {
-                rejct(error)
+                reject(error)
               })
           } else {
             reject(null)
           }
         }).catch((error) => {
-          reject("Otp doesnt match", null)
+          reject("Otp doesnt match", error)
         });
     });
   }

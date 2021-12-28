@@ -1692,3 +1692,18 @@
 =======
 {"level":"info","message":"Server start","timestamp":"2021-12-27T19:55:56.433Z"}
 >>>>>>> Development
+{"level":"info","message":"Server start","timestamp":"2021-12-28T03:03:34.577Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-28T03:03:42.162Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-28T03:03:42.481Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-28T03:04:12.957Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-28T03:10:08.555Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-28T03:16:45.567Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-28T03:17:34.853Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-28T03:17:38.352Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-28T03:17:44.676Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-28T04:51:50.803Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-28T04:52:01.710Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-28T04:52:01.983Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-28T04:56:11.856Z"}
+{"level":"info","message":"Found all labels","timestamp":"2021-12-28T05:43:59.443Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-28T05:49:03.296Z"}

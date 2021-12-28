@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 class Helper {
+  
   hashing = (password, callback) => {
     bcrypt.hash(password, 10, function (err, hash) {
       if (err) {

@@ -454,3 +454,5 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-27T10:48:54.614Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-27T10:48:54.630Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-27T10:48:54.651Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-28T03:10:08.556Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-28T03:17:44.676Z"}
