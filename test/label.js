@@ -54,4 +54,20 @@ describe("Add Label", () => {
         return done();
       });
   });
+  it.only("Should return appropriate response When Input inValid Data", (done) => {
+    const token = labelData.notes.inValidToken;
+    chai
+      .request(server)
+      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .set({ authorization: token })
+      .send({ labelName: "Hi Google" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
+        return done();
+      });
+  });
 });
