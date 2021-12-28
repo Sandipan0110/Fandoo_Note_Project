@@ -1,0 +1,6 @@
+{
+    "notes": {
+        "validToken": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhRm9yVG9rZW4iOnsiaWQiOiI2MWJhMzI3NmQ0OGY3ZmU5MzViYmJmYTciLCJmaXJzdE5hbWUiOiJTYW5qdSIsImxhc3ROYW1lIjoiQmFiYSIsImVtYWlsIjoic2FuZGlwYW5zZWFsMTFAeWFob28uY29tIn0sImlhdCI6MTY0MDY4NTI3OCwiZXhwIjoxNjQwNzcxNjc4fQ.p8ZXe7NyvUyE6jSBReOwPlFqsHFVMfjpqq5a0PTkGA8",
+            "inValidToken": "bearer OR5cCI6IkpXVCJ9.eyJkYXRhRm9yVG9rZW4iOnsiZW1haWwiOiJ2aXZlay5paXRkOTNAZ21haWwuY29tIn0sImlhdCI6MTYzMzU1NTAyOH0.wJqpcpyzvlQPT684BKIeup28MMdy8M37gRuWuU-RhTY"
+    }
+}
