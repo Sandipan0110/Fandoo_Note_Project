@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const noteModel = require("../model/note.model").User;
-const UserModel = require("../model/user.model").UserDB;
 const { logger } = require("../../logger/logger");
 const labelSchema = mongoose.Schema({
     userId: [{ type: mongoose.Schema.Types.ObjectId, ref: "UserInformation" }],

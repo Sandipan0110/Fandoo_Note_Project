@@ -1807,3 +1807,6 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-30T19:06:35.379Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-30T19:06:35.397Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-30T19:06:35.455Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-30T20:14:28.931Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-30T20:16:30.424Z"}
+{"level":"info","message":"Server start","timestamp":"2021-12-30T20:16:45.618Z"}

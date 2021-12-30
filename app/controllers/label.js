@@ -10,7 +10,7 @@ class LabelController {
         userId: req.user.dataForToken.id,
         noteId: req.params.id
       };
-      const labelValidation = validation.validaAddteLabel.validate(label);
+      const labelValidation = validation.validAddLabel.validate(label);
       if (labelValidation.error) {
         logger.error(labelValidation.error);
         return res.status(400).send({
@@ -40,6 +40,17 @@ class LabelController {
       return res.status(500).send({
         success: false,
         message: "Internal server error"
+      });
+    }
+  };
+
+  getLabel = (req, res) => {
+    try {
+
+    } catch (error) {
+      return res.status(500).json({
+        message: "Internal Server Error",
+        success: false
       });
     }
   }

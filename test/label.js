@@ -160,3 +160,15 @@ describe("Add Label", () => {
       });
   });
 });
+
+describe("Get Label", () => {
+  it.only("Checking Server is Responding or Not", (done) => {
+    chai
+      .request(server)
+      .post('/getLabel/')
+      .end((err, res) => {
+        res.should.have.status(500);
+        done();
+      });
+  });
+});
