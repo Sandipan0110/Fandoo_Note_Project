@@ -1,7 +1,13 @@
+const labelModel = require("../models/label.js");
 
 class LabelService {
     addLabel = (label, callback) => {
-        return callback(null, label);
+        labelModel.addLabel(label, (error, data) => {
+            if (error) {
+              return callback(error, null);
+            }
+            return callback(null, data);
+          });
     };
 }
 
