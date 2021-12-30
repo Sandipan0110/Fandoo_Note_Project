@@ -54,6 +54,12 @@ class LabelModel {
             }
         });
     }
+
+    getLabel = (id, callback) => {
+        if (id) {
+          callback(null, id.data);
+        }
+      };
 }
 
 module.exports = new LabelModel();
