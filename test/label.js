@@ -363,4 +363,19 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
+  it.only("when call getLabelById with valid token , should return appropriate response from model", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .get("/getLabel/61cdfc76dd45eecb8e24e60d")
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
 });
