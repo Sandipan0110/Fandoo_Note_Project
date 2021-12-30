@@ -1,27 +1,27 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 const server = require("../server.js");
-const labelData = require("./label.json");
 chai.use(chaiHttp);
 chai.should();
+const labelData = require("./label.json");
 
 describe("Add Label", () => {
-  it.only("Should return appropriate response When it is Responding", (done) => {
+  it("Checking Server is Responding or Not", (done) => {
     chai
       .request(server)
-      .post('/addLabel/:id')
+      .post('/addlabel/:id')
       .end((err, res) => {
         res.should.have.status(500);
         done();
       });
   });
-  it.only("Should return appropriate response from controller when token valid", (done) => {
+  it("when call AddLabel api, should return appropriate response from controller", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post('/addLabel/:id')
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({})
+      .send({ labelName: "fakeNamefff" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
@@ -31,11 +31,11 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response from controller when token is invalid", (done) => {
+  it("when call AddLabel api, should return appropriate response from controller", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
-      .post('/addLabel/:id')
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({})
       .end((err, res) => {
@@ -47,13 +47,13 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response When Input Valid Data", (done) => {
+  it("when call AddLabel api with valid input, should return appropriate response from controller", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post('/addLabel/61ba38e2d48f7fe935bbbfba')
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({ labelName: "Hi Google" })
+      .send({ labelName: "fakeNamgge" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
@@ -63,13 +63,13 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response When Input inValid Data", (done) => {
+  it("when call AddLabel api with false params, should return appropriate response from controller", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
-      .post('/addLabel/61ba38e2d48f7fe935bbbfb')
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({ labelName: "Hi Google" })
+      .send({ labelName: "fakfeName" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
@@ -79,29 +79,29 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("Should return appropriate response in Service Layer when call false label", (done) => {
-    const token = labelData.notes.ValidToken;
+  it("when call AddLabel api with false label, should return appropriate response from controller", (done) => {
+    const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post('/addLabel/61ba38e2d48f7fe935bbbfba')
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({ labelName: "Google" })
+      .send({ labelName: "fake" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });
-  it.only("when call AddLabel api, should return appropriate response from Service", (done) => {
+  it("when call AddLabel api, should return appropriate response from Service", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({ labelName: "Google" })
+      .send({ labelName: "fakkkeName" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
@@ -111,19 +111,51 @@ describe("Add Label", () => {
         return done();
       });
   });
-  it.only("when call AddLabel api, should return appropriate response from Model", (done) => {
+  it("when call AddLabel api, should return appropriate response from Model", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
-      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
-      .send({ labelName: "Google" })
+      .send({ labelName: "fakeNammme" })
       .end((err, res) => {
         if (err) {
           console.log("plz check your credential");
           return done();
         }
         res.should.have.status(201);
+        return done();
+      });
+  });
+  it("when note id present then add to DB, should return appropriate response from Model", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
+      .set({ authorization: token })
+      .send({ labelName: "fakeNallme" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
+  it("when note id absent then status code 400, should return appropriate response from Model", (done) => {
+    const token = labelData.notes.inValidToken;
+    chai
+      .request(server)
+      .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
+      .set({ authorization: token })
+      .send({ labelName: "fakeNallme" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
         return done();
       });
   });
