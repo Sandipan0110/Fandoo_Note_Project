@@ -68,9 +68,14 @@ class LabelModel {
     };
 
     getLabelById = (id, callback) => {
-        if (id) {
-          callback(null, id.data);
-        }
+        LabelRegister.find({ userId: id.userId, _id: id.id }, (error, data) => {
+            if (data) {
+              console.log(data);
+              callback(null, data);
+            } else {
+              callback(error, null);
+            }
+          })
       };
 }
 
