@@ -82,7 +82,11 @@ class Validation {
   validAddLabel = Joi.object({
     labelName: Joi.string().required().min(5),
     noteId: Joi.string().required().min(20),
-    userId: Joi.string().required()
+    userId: Joi.string()
+  });
+
+  getLabelValidation = Joi.object({
+    id: Joi.string()
   });
 }
 
