@@ -28,12 +28,14 @@ class LabelService {
     getLabelById = (id, callback) => {
         labelModel.getLabelById(id, (error, data) => {
             if (data) {
-              callback(null, data);
+                logger.info(data);
+                callback(null, data);
             } else {
-              callback(error, null);
+                logger.error(error);
+                callback(error, null);
             }
-          });
-      };
+        });
+    };
 }
 
 module.exports = new LabelService();
