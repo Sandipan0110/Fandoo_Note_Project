@@ -277,3 +277,15 @@ describe("Get Label", () => {
       });
   });
 });
+
+describe("Get Label by Id", () => {
+  it.only("Checking Server is Responding or Not", (done) => {
+    chai
+      .request(server)
+      .get('/getLabel/:id')
+      .end((err, res) => {
+        res.should.have.status(500);
+        done();
+      });
+  });
+});
