@@ -165,7 +165,7 @@ describe("Get Label", () => {
   it.only("Checking Server is Responding or Not", (done) => {
     chai
       .request(server)
-      .post('/getLabel/')
+      .get('/getLabel/')
       .end((err, res) => {
         res.should.have.status(500);
         done();
@@ -183,6 +183,21 @@ describe("Get Label", () => {
           return done();
         }
         res.should.have.status(400);
+        return done();
+      });
+  });
+  it.only("when call getLabel with valid token , should return appropriate response from controller", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .get("/getLabel")
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
         return done();
       });
   });
