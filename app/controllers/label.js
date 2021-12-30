@@ -83,7 +83,7 @@ class LabelController {
 
   getLabelById = (req, res) => {
     try {
-      const id = { id: req.user.tokenData.id, labelId: req.params.id };
+      const id = { id: req.user.dataForToken.id, labelId: req.params.id };
       const getLabelValidation = validation.getLabelByIdValidation.validate(id);
       if (getLabelValidation.error) {
         console.log(getLabelValidation.error);
