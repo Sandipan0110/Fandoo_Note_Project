@@ -55,7 +55,10 @@ class LabelController {
           message: "Wrong Input Validations",
           data: getLabelValidation
         });
-      }
+      } return res.status(201).json({
+        message: "Successfully labels retrieve.....",
+        success: true
+      });
     } catch (error) {
       return res.status(500).json({
         message: "Internal Server Error",
