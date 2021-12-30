@@ -19,7 +19,6 @@ class Note {
 
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
-        console.log(createNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
