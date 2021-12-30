@@ -95,4 +95,21 @@ describe("Add Label", () => {
         return done();
       });
   });
+  it.only("when call AddLabel api, should return appropriate response from Service", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .post("/addLabel/61ba38e2d48f7fe935bbbfba")
+      .set({ authorization: token })
+      .send({ labelName: "Google" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
+
 });
