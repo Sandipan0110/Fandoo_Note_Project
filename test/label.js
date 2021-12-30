@@ -171,4 +171,19 @@ describe("Get Label", () => {
         done();
       });
   });
+  it.only("when call getLabel with inValid token , should return appropriate response from controller", (done) => {
+    const token = labelData.notes.inValidToken;
+    chai
+      .request(server)
+      .get("/getLabel")
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
+        return done();
+      });
+  });
 });
