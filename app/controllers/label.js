@@ -83,7 +83,10 @@ class LabelController {
 
   getLabelById = (req, res) => {
     try {
-      
+      return res.status(201).send({
+        message: "Note inserted Successfully",
+        success: true
+      });
     } catch (error) {
       return res.status(500).json({
         message: "Internal Server Error",
