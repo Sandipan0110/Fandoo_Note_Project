@@ -16,11 +16,13 @@ class LabelService {
     getLabel = (id, callback) => {
         labelModel.getLabel(id, (error, data) => {
             if (data) {
-              callback(null, data);
+                logger.info(data);
+                callback(null, data);
             } else {
-              callback(error, null);
+                logger.error(error);
+                callback(error, null);
             }
-          });
+        });
     };
 }
 
