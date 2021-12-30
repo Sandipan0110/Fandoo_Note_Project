@@ -246,4 +246,19 @@ describe("Get Label", () => {
         return done();
       });
   });
+  it.only("check with valid token , should return appropriate response from model", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .get("/getLabel")
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
 });
