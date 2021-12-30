@@ -88,6 +88,11 @@ class Validation {
   getLabelValidation = Joi.object({
     id: Joi.string().required()
   });
+
+  getLabelByIdValidation = Joi.object({
+    id: Joi.string().required(),
+    labelId: Joi.string().required().min(20)
+  });
 }
 
 module.exports = new Validation();
