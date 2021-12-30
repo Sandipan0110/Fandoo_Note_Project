@@ -6,11 +6,17 @@ class LabelService {
         labelModel.addlabelById(label, (error, data) => {
             if (error) {
                 logger.error(error);
-              return callback(error, null);
+                return callback(error, null);
             }
             logger.error(error);
             return callback(null, data);
-          });
+        });
+    };
+
+    getLabel = (id, callback) => {
+        if (id) {
+            callback(null, id.data);
+        }
     };
 }
 
