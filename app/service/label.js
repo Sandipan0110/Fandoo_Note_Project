@@ -24,6 +24,12 @@ class LabelService {
             }
         });
     };
+
+    getLabelById = (id, callback) => {
+        if (id) {
+          callback(null, id.data);
+        }
+      };
 }
 
 module.exports = new LabelService();
