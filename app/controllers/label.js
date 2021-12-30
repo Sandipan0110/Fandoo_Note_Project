@@ -1,5 +1,6 @@
 const validation = require("../utilities/validation");
 const labelService = require("../service/label.js");
+const { logger } = require("../../logger/logger");
 
 class LabelController {
   addLabel = (req, res) => {
@@ -11,6 +12,7 @@ class LabelController {
       };
       const labelValidation = validation.validaAddteLabel.validate(label);
       if (labelValidation.error) {
+        logger.error(labelValidation.error);
         return res.status(400).send({
           success: false,
           message: "wrong input validation",
@@ -19,11 +21,13 @@ class LabelController {
       }
       labelService.addLabel(label, (error, data) => {
         if (error) {
+          logger.error(error);
           return res.status(400).json({
             message: "Note Id Not found / invalid note id..",
             success: false
           });
         } else {
+          logger.info("Successfully Add Label.");
           return res.status(201).send({
             message: "Successfully Add label..",
             success: true,
@@ -32,6 +36,7 @@ class LabelController {
         }
       });
     } catch (error) {
+      logger.error(error);
       return res.status(500).send({
         success: false,
         message: "Internal server error"
