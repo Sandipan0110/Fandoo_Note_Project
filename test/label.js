@@ -333,4 +333,19 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
+  it.only("check validation of false params , should return appropriate response from controller", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .get("/getLabel/61cc4e23cdf0")
+      .set({ authorization: token })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
+        return done();
+      });
+  });
 });
