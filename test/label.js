@@ -1,9 +1,10 @@
-const chai = require("chai");
-const chaiHttp = require("chai-http");
-const server = require("../server.js");
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const server = require('../server');
 chai.use(chaiHttp);
+const labelDB = require('./label.json');
+const { expect } = require('chai');
 chai.should();
-const labelData = require("./label.json");
 
 describe("Add Label", () => {
   it("Checking Server is Responding or Not", (done) => {
@@ -16,7 +17,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api, should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -32,7 +33,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api, should return appropriate response from controller", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -48,7 +49,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api with valid input, should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -64,7 +65,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api with false params, should return appropriate response from controller", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -80,7 +81,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api with false label, should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -96,7 +97,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api, should return appropriate response from Service", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -112,7 +113,7 @@ describe("Add Label", () => {
       });
   });
   it("when call AddLabel api, should return appropriate response from Model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -128,7 +129,7 @@ describe("Add Label", () => {
       });
   });
   it("when note id present then add to DB, should return appropriate response from Model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -144,7 +145,7 @@ describe("Add Label", () => {
       });
   });
   it("when note id absent then status code 400, should return appropriate response from Model", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .post("/addLabel/61ba38b1d48f7fe935bbbfb6")
@@ -172,7 +173,7 @@ describe("Get Label", () => {
       });
   });
   it("when call getLabel with inValid token , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -187,7 +188,7 @@ describe("Get Label", () => {
       });
   });
   it("when call getLabel with valid token , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -202,7 +203,7 @@ describe("Get Label", () => {
       });
   });
   it("check validation , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -217,7 +218,7 @@ describe("Get Label", () => {
       });
   });
   it("when call getLabel with valid token , should return appropriate response from service", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -232,7 +233,7 @@ describe("Get Label", () => {
       });
   });
   it("when call getLabel with valid token , should return appropriate response from model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -247,7 +248,7 @@ describe("Get Label", () => {
       });
   });
   it("check with valid token , should return appropriate response from model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -262,7 +263,7 @@ describe("Get Label", () => {
       });
   });
   it("check with invalid token , should return appropriate response from model", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -289,7 +290,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("when call getLabelById with valid token , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -304,7 +305,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("when call getLabelById with invalid token , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .get("/getLabel")
@@ -319,7 +320,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("check validation of true , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel/61cdfc76dd45eecb8e24e60d")
@@ -334,7 +335,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("check validation of false params , should return appropriate response from controller", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .get("/getLabel/61cc4e23cdf0")
@@ -349,7 +350,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("when call getLabelById with valid token , should return appropriate response from service", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel/61cdfc76dd45eecb8e24e60d")
@@ -364,7 +365,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("when call getLabelById with valid token , should return appropriate response from model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel/61cdfc76dd45eecb8e24e60d")
@@ -379,7 +380,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("check with valid params , should return appropriate response from model", (done) => {
-    const token = labelData.notes.validToken;
+    const token = labelDB.label.validToken;
     chai
       .request(server)
       .get("/getLabel/61cdfc76dd45eecb8e24e60d")
@@ -394,7 +395,7 @@ describe("Get Label by Id", () => {
       });
   });
   it("check with false params , should return appropriate response from model", (done) => {
-    const token = labelData.notes.inValidToken;
+    const token = labelDB.label.inValidToken;
     chai
       .request(server)
       .get("/getLabel/61cc4ae7c22dd21239e23cdf0")
@@ -417,6 +418,17 @@ describe('update label_by id api ', () => {
       .put('/updatelabel/:id')
       .end((err, res) => {
         res.should.have.status(500);
+        done();
+      });
+  });
+  it.only('it should give true when,token is valid ', (done) => {
+    const token = labelDB.label.validToken
+    chai
+      .request(server)
+      .put('/updatelabel/:id')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(201);
         done();
       });
   });
