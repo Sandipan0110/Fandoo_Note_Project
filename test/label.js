@@ -443,4 +443,20 @@ describe('update label_by id api ', () => {
         done();
       });
   });
+  it.only("check validation with true input, should return appropriate response from controller", (done) => {
+    const token = labelDB.label.validToken;
+    chai
+      .request(server)
+      .put("/updateLabel/61cdfc76dd45eecb8e24e60d")
+      .set({ authorization: token })
+      .send({ labelName: "ABCD" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
 });
