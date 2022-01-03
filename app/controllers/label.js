@@ -119,7 +119,20 @@ class LabelController {
   }
   
   updatelabelById = (req, res) => {
-    try{
+    try {
+      const updateLabel = {
+        id: req.params.id,
+        userId: req.user.dataForToken.id,
+        labelName: req.body.title
+      };
+      const updateNoteValidation = validation.labelUpdateValidation.validate(updateLabel);
+      if (updateNoteValidation.error) {
+        return res.status(400).send({
+          success: false,
+          message: "Wrong Input Validations",
+          data: updateNoteValidation
+        });
+      }
       return res.status(201).json({
         message: "successfully note updated......",
         success: true
