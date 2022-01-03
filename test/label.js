@@ -279,7 +279,7 @@ describe("Get Label", () => {
 });
 
 describe("Get Label by Id", () => {
-  it.only("Checking Server is Responding or Not", (done) => {
+  it("Checking Server is Responding or Not", (done) => {
     chai
       .request(server)
       .get('/getLabel/:id')
@@ -288,7 +288,7 @@ describe("Get Label by Id", () => {
         done();
       });
   });
-  it.only("when call getLabelById with valid token , should return appropriate response from controller", (done) => {
+  it("when call getLabelById with valid token , should return appropriate response from controller", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
@@ -303,7 +303,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("when call getLabelById with invalid token , should return appropriate response from controller", (done) => {
+  it("when call getLabelById with invalid token , should return appropriate response from controller", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
@@ -318,7 +318,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("check validation of true , should return appropriate response from controller", (done) => {
+  it("check validation of true , should return appropriate response from controller", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
@@ -333,7 +333,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("check validation of false params , should return appropriate response from controller", (done) => {
+  it("check validation of false params , should return appropriate response from controller", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
@@ -348,7 +348,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("when call getLabelById with valid token , should return appropriate response from service", (done) => {
+  it("when call getLabelById with valid token , should return appropriate response from service", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
@@ -363,7 +363,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("when call getLabelById with valid token , should return appropriate response from model", (done) => {
+  it("when call getLabelById with valid token , should return appropriate response from model", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
@@ -378,7 +378,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("check with valid params , should return appropriate response from model", (done) => {
+  it("check with valid params , should return appropriate response from model", (done) => {
     const token = labelData.notes.validToken;
     chai
       .request(server)
@@ -393,7 +393,7 @@ describe("Get Label by Id", () => {
         return done();
       });
   });
-  it.only("check with false params , should return appropriate response from model", (done) => {
+  it("check with false params , should return appropriate response from model", (done) => {
     const token = labelData.notes.inValidToken;
     chai
       .request(server)
@@ -406,6 +406,18 @@ describe("Get Label by Id", () => {
         }
         res.should.have.status(400);
         return done();
+      });
+  });
+});
+
+describe('update label_by id api ', () => {
+  it.only('Added Controller layer and Checking Response of Updatelabelby_id', (done) => {
+    chai
+      .request(server)
+      .put('/updatelabel/:id')
+      .end((err, res) => {
+        res.should.have.status(500);
+        done();
       });
   });
 });

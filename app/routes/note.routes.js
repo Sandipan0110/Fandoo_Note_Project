@@ -1,7 +1,7 @@
 const controller = require('../controllers/user.js');
-const noteController = require('../controllers/notes');
+const noteController = require('../controllers/notes.js');
 const helper = require('../utilities/helper');
-const labelController = require('../controllers/label');
+const labelController = require('../controllers/label.js');
 
 module.exports = (app) => {
 
@@ -31,6 +31,10 @@ module.exports = (app) => {
   app.post("/addLabel/:id", helper.validateToken, labelController.addLabel);
   // api for getLabel
   app.get("/getLabel/", helper.validateToken, labelController.getLabel);
-  // api for getLabel
+  // api for getLabelById
   app.get("/getLabel/:id", helper.validateToken, labelController.getLabelById);
+
+  app.put('/updatelabel/:id', helper.validateToken, labelController.updatelabelById);
+  
+
 }

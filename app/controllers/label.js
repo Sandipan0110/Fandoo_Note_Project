@@ -7,10 +7,10 @@ class LabelController {
     try {
       const label = {
         labelName: req.body.labelName,
-        userId: req.user.dataForToken.id,
+        userId: req.user.tokenData.id,
         noteId: req.params.id
       };
-      const labelValidation = validation.validAddLabel.validate(label);
+      const labelValidation = validation.validateLabel.validate(label);
       if (labelValidation.error) {
         logger.error(labelValidation.error);
         return res.status(400).send({
@@ -27,7 +27,7 @@ class LabelController {
             success: false
           });
         } else {
-          logger.info("Successfully Add Label.");
+          logger.info("successfully Add Label..");
           return res.status(201).send({
             message: "Successfully Add label..",
             success: true,
@@ -42,7 +42,7 @@ class LabelController {
         message: "Internal server error"
       });
     }
-  };
+  }
 
   getLabel = (req, res) => {
     try {
@@ -79,7 +79,7 @@ class LabelController {
         success: false
       });
     }
-  };
+  }
 
   getLabelById = (req, res) => {
     try {
@@ -115,6 +115,15 @@ class LabelController {
         message: "Internal Server Error",
         success: false
       });
+    }
+  }
+  
+  updatelabelById = (req, res) => {
+    try{
+        console.log("Added Controller Layer")
+    }catch(error){
+        const response = { sucess: false, message: "Internal  Server error" }
+        return res.status(500).json(response)
     }
   }
 }
