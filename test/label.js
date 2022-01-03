@@ -432,4 +432,15 @@ describe('update label_by id api ', () => {
         done();
       });
   });
+  it.only('it should give true when,token is invalid ', (done) => {
+    const token = labelDB.label.inValidToken
+    chai
+      .request(server)
+      .put('/updatelabel/:id')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  });
 });
