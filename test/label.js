@@ -443,7 +443,7 @@ describe('update label_by id api ', () => {
         done();
       });
   });
-  it.only("check validation with true input, should return appropriate response from controller", (done) => {
+  it.only("check validation with valid input, should return appropriate response from controller", (done) => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
@@ -456,6 +456,22 @@ describe('update label_by id api ', () => {
           return done();
         }
         res.should.have.status(201);
+        return done();
+      });
+  });
+  it.only("check validation with wrong input should return appropriate response from controller", (done) => {
+    const token = labelData.notes.validToken;
+    chai
+      .request(server)
+      .put("/updateLabel/61cc4aec22dd21233cdf0")
+      .set({ authorization: token })
+      .send({ labelName: "hvhj" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
         return done();
       });
   });
