@@ -117,7 +117,7 @@ class LabelController {
       });
     }
   }
-  
+
   updatelabelById = (req, res) => {
     try {
       const updateLabel = {
@@ -134,9 +134,19 @@ class LabelController {
           data: updateLabelValidation
         });
       }
-      return res.status(201).json({
-        message: "successfully note updated......",
-        success: true
+      labelService.updateLabelById(updateLabel, (error, data) => {
+        if (error) {
+          return res.status(400).json({
+            message: "Failed to update note",
+            success: false
+          });
+        } else {
+          return res.status(201).send({
+            message: "Successfully updated....",
+            success: true,
+            data: data
+          });
+        }
       });
     } catch (error) {
       return res.status(500).json({

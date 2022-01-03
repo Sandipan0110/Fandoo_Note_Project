@@ -491,4 +491,20 @@ describe('update label_by id api ', () => {
         return done();
       });
   });
+  it.only("when call updateLabel api, should return appropriate response from service", (done) => {
+    const token = labelDB.label.validToken;
+    chai
+      .request(server)
+      .put("/updateLabel/61cdfc76dd45eecb8e24e60d")
+      .set({ authorization: token })
+      .send({ labelName: "Sandip" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
 });
