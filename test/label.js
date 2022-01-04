@@ -390,4 +390,19 @@ describe("Delete Label", () => {
           return done();
         });
     });
+    it.only("when call delete label api with false token, should return appropriate response from controller", (done) => {
+        const token = labelDB.label.inValidToken;
+        chai
+          .request(server)
+          .delete("/deleteLabel/:id")
+          .set({ authorization: token })
+          .end((err, res) => {
+            if (err) {
+              console.log("plz check your credential");
+              return done();
+            }
+            res.should.have.status(400);
+            return done();
+          });
+      });
   });
