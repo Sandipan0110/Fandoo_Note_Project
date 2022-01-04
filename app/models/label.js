@@ -60,7 +60,7 @@ class LabelModel {
           reject(error)
         })
     })
-  }
+  };
 
   getlabelById = (credential) => {
     return new Promise((resolve, reject) => {
@@ -71,7 +71,7 @@ class LabelModel {
           reject(error)
         })
     })
-  }
+  };
 
   updatelabelById = (updatelabel) => {
     return new Promise((resolve, reject) => {
@@ -82,7 +82,11 @@ class LabelModel {
           reject(error)
         })
     })
-  }
+  };
+  
+  deleteLabelById = (id, callback) => {
+    return callback(null, id);
+  };
 }
 
 module.exports = new LabelModel();
