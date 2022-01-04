@@ -2,54 +2,48 @@ const labelModel = require("../models/label.js");
 const { logger } = require("../../logger/logger");
 
 class LabelService {
-    addLabel = (label, callback) => {
-        labelModel.addlabelById(label, (error, data) => {
-            if (error) {
-                logger.error(error);
-                return callback(error, null);
+    
+    addLabel = (labelInfo, callback) => {
+        labelModel.addLabel(labelInfo, (error, data) => {
+            if (!data) {
+                return callback(null, data)
             }
-            logger.error(error);
-            return callback(null, data);
-        });
-    };
-
-    getLabel = (id, callback) => {
-        labelModel.getLabel(id, (error, data) => {
-            if (data) {
-                logger.info(data);
-                callback(null, data);
-            } else {
-                logger.error(error);
-                callback(error, null);
-            }
-        });
-    };
-
-    getLabelById = (id, callback) => {
-        labelModel.getLabelById(id, (error, data) => {
-            if (data) {
-                logger.info(data);
-                callback(null, data);
-            } else {
-                logger.error(error);
-                callback(error, null);
-            }
-        });
-    };
-
-
-    updateLabelById = (updateNote, callback) => {
-        labelModel.updateLabelById(updateNote, (error, data) => {
-            if (error) {
-                logger.error(error);
-                return callback(error, null);
-            } else {
-                logger.info(data);
-                return callback(null, data);
-            }
-        });
+            return callback(null, data)
+        })
     }
 
+    getLabel = (userId) => {
+        return new Promise((resolve, reject) => {
+            let result = labelmodel.getLabel(userId)
+            result.then((data) => {
+                resolve(data)
+            }).catch((error) => {
+                reject(error)
+            })
+        })
+    }
+
+    getlabelById = (credential) => {
+        return new Promise((resolve, reject) => {
+            labelmodel.getlabelById(credential)
+                .then(data => {
+                    resolve(data)
+                }).catch(error => {
+                    reject(error)
+                })
+        })
+    }
+
+    updatelabelById = (updatelabel) => {
+        return new Promise((resolve, reject) => {
+            labelModel.updatelabelById(updatelabel)
+                .then(data => {
+                    resolve(data)
+                }).catch(error => {
+                    reject(error)
+                })
+        })
+    }
 }
 
 module.exports = new LabelService();

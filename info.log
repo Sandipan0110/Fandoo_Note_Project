@@ -2227,3 +2227,203 @@
 {"level":"info","message":"Server start","timestamp":"2022-01-04T09:31:32.983Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-04T09:45:41.262Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-04T09:51:01.095Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:08:33.333Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:08:51.946Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.551Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.569Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.595Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.617Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.635Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:08:52.713Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.749Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.789Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.804Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.821Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.885Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.915Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.935Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.965Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:52.986Z"}
+{"level":"error","timestamp":"2022-01-04T11:08:53.016Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T11:08:53.662Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:08:53.785Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:08:54.013Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T11:08:54.031Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T11:08:54.031Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T11:08:54.308Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:08:54.321Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:08:54.337Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:11:12.560Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.075Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.105Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.127Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.150Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.169Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:11:13.211Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.239Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.276Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.297Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.313Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.349Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.380Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.399Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.429Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.449Z"}
+{"level":"error","timestamp":"2022-01-04T11:11:13.471Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T11:11:13.947Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:11:14.022Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:11:14.228Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T11:11:14.253Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T11:11:14.253Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T11:11:14.329Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:11:14.340Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:11:14.361Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:20:44.077Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.591Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.620Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.642Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.660Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.683Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:20:44.717Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.771Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.811Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.834Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.855Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.884Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.915Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.932Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.964Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.981Z"}
+{"level":"error","timestamp":"2022-01-04T11:20:44.999Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T11:20:45.440Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:20:45.510Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:20:45.722Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T11:20:45.759Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T11:20:45.759Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T11:20:45.850Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:20:45.865Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:20:45.885Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:24:05.878Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.528Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.563Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.589Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.612Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.631Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:24:06.676Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.719Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.771Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.808Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.858Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.893Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.933Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.951Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:06.982Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:07.003Z"}
+{"level":"error","timestamp":"2022-01-04T11:24:07.032Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T11:24:07.648Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:24:07.730Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:24:07.960Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T11:24:07.985Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T11:24:07.986Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T11:24:08.062Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:24:08.074Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:24:08.101Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:32:56.099Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.662Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.685Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.707Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.733Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.759Z"}
+{"level":"error","message":"internal server error","timestamp":"2022-01-04T11:32:56.791Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.825Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.864Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.886Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.905Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.937Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.967Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:56.983Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:57.030Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:57.046Z"}
+{"level":"error","timestamp":"2022-01-04T11:32:57.066Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T11:32:57.548Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:32:57.645Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:32:57.859Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T11:32:57.885Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T11:32:57.886Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T11:32:57.961Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:32:57.974Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T11:32:57.998Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T11:50:41.378Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T11:50:41.600Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T11:53:15.878Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T11:57:15.757Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:14:04.726Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T12:20:33.465Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T12:20:45.238Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T12:20:45.427Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T12:24:28.343Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T12:25:51.305Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:33:56.384Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T12:36:12.657Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:37:44.313Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:39:18.225Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:39:31.564Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:40:47.283Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:40:54.288Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:40:57.976Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:41:09.960Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:44:08.937Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:44:12.652Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:44:21.710Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:46:19.730Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:46:32.655Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:48:28.503Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:48:36.067Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:49:10.904Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:49:16.234Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:50:38.586Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:51:00.647Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:51:06.611Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:54:06.477Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:54:43.403Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T12:58:06.990Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:01:09.394Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:12:30.099Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:12:56.574Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:15:10.536Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:15:20.740Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:15:28.794Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:15:36.888Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:15:48.553Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:16:07.348Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:16:26.922Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:16:38.738Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:16:41.777Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:16:50.212Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:17:07.658Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:17:21.397Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:17:41.486Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:17:56.057Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:01.812Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:15.792Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:20.153Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:32.332Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:39.280Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:18:57.213Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:19:02.663Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:19:13.225Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:19:15.752Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:21:00.875Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T13:21:02.591Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T13:21:02.657Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T13:21:02.871Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T13:21:02.890Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T13:21:02.891Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T13:21:03.604Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T13:21:03.625Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T13:21:03.652Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:24:30.664Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:27:33.434Z"}
+{"level":"info","message":"Password has benn changed !","timestamp":"2022-01-04T13:27:37.491Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T13:27:59.934Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T13:28:00.109Z"}

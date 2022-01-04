@@ -144,49 +144,44 @@ class Controller {
     * @param {*} res
     * @returns
     */
-  resetPassword = (req, res) => {
-    try {
-      const userData = {
-        email: req.body.email,
-        password: req.body.password,
+   resetPassword = (req, res) => {
+		try {
+			const resetPasswordData = {
+				email: req.body.email,
+				password: req.body.password,
         code: req.body.code
-      };
+			};
+      const validationResult = validation.validateReset.validate(resetPasswordData);
+			if (validationResult.error) {
+				const response = { success: false, message: validationResult.error.message };
+				return res.status(400).send(response);
+			}
 
-      const resetVlaidation = validation.validateReset.validate(userData);
-      if (resetVlaidation.error) {
-        logger.error('Invalid password');
-        res.status(422).send({
-          success: false,
-          message: 'Invalid password'
-        });
-        return;
-      }
+			userService.resetPassword(resetPasswordData, (error, data) => {
+				if (error) {
+					logger.error(error.message);
+					const response = { success: false, message: error.message };
+					return res.status(400).send(response);
+				}
 
-      userService.resetPassword(userData, (error, userData) => {
-        if (error) {
-          logger.error(error);
-          return res.status(400).send({
-            message: error,
-            success: false
-          });
-        } else {
-          logger.info('Password reset succesfully');
-          return res.status(200).json({
-            success: true,
-            message: 'Password reset succesfully',
-            data: userData
-          });
-        }
-      });
-    } catch (error) {
-      logger.error('Internal server error');
-      return res.status(500).send({
-        success: false,
-        message: 'Internal server error',
-        data: null
-      });
-    }
-  }
+				else if (!data) {
+					logger.error('Authorization failed');
+					const response = { success: false, message: 'Authorization failed' };
+					return res.status(401).send(response);
+				}
+				else {
+					const response = { success: true, message: 'Password has been changed !', data: resetPasswordData };
+					logger.info('Password has benn changed !');
+					res.status(200).send(response);
+				}
+			});
+		}
+		catch (error) {
+			logger.error('Some error occurred !');
+			const response = { success: false, message: 'Some error occurred !' };
+			res.status(500).send(response);
+		}
+	}
 }
 
 module.exports = new Controller();

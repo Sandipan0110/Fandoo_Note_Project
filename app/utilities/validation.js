@@ -79,26 +79,25 @@ class Validation {
     noteId: Joi.string().required()
   });
   
-  validAddLabel = Joi.object({
-    labelName: Joi.string().required().min(5),
-    noteId: Joi.string().required().min(20),
-    userId: Joi.string().required()
+  validateLabel = Joi.object({
+    labelName: Joi.string()
   });
-
-  getLabelValidation = Joi.object({
-    id: Joi.string().required()
+  
+  validateUserid = Joi.object({
+    id: Joi.string()
   });
-
-  getLabelByIdValidation = Joi.object({
-    id: Joi.string().required(),
-    labelId: Joi.string().required().min(20)
-  });
-
-  labelUpdateValidation = Joi.object({
-    id: Joi.string().min(20),
-    userId: Joi.string(),
-    labelName: Joi.string().min(3)
-  });
+  
+  labelvalidator = Joi.object({
+    userId:Joi.string(),
+    labelId
+    :Joi.string()
+  })
+  
+  updatelabelbyid =Joi.object({
+    userId:Joi.string(),
+    id:Joi.string(),
+    labelName : Joi.string()
+  })
 }
 
 module.exports = new Validation();
