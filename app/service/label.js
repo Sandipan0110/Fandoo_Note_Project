@@ -3,8 +3,8 @@ const { logger } = require("../../logger/logger");
 
 class LabelService {
     
-    addLabel = async (label) => {
-        const add = await labelModel.addlabelById(label);
+    addLabel = async (id) => {
+        const add = await labelModel.addlabelById(id);
         if (add) {
           return add;
         }

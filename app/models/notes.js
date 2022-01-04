@@ -49,13 +49,13 @@ class Model {
   * @description function written to get all notes from database
   * @returns retrieved notes or if error returns error
   */
-  getNote = (id) => {
+  getNotes = (id) => {
     return new Promise((resolve, reject) => {
       NoteRegister.find({ userId: id.id })
         .then((data) => resolve(data))
         .catch((err) => reject(err));
     });
-  };
+  }
 
   /**
 * @description function written to get notes by Id into database
@@ -64,7 +64,9 @@ class Model {
 */
   getNoteById = async (id) => {
     try {
-      return await NoteRegister.find({ _id: id.noteId }, { userId: id.userId });
+      return await NoteRegister.find({
+        _id: id.noteId, userId: id.userId,
+      });
     } catch (err) {
       return err;
     }
@@ -96,11 +98,14 @@ class Model {
 */
   deleteNoteById = async (id) => {
     try {
-      return await NoteRegister.findOneAndDelete({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+      return await NoteRegister.findOneAndDelete({ _id: id.noteId }, { userId: id.userId });
     } catch (err) {
       return err;
     }
   };
 }
 
-module.exports = new Model();
+module.exports = {
+  UserModel: new Model(),
+  User: NoteRegister
+};

@@ -59,7 +59,7 @@ class Note {
   getNote = (req, res) => {
     try {
       const id = { id: req.user.dataForToken.id };
-      const getNoteValidation = validation.getNoteValidation.validate(id);
+      const getNoteValidation = validation.getNotesValidation.validate(id);
       if (getNoteValidation.error) {
         console.log(getNoteValidation.error);
         return res.status(400).send({
@@ -84,7 +84,8 @@ class Note {
           success: false
         });
       }
-    } catch {
+    } catch(error) {
+      console.log(error);
       logger.error('Internal Error');
       return res.status(500).json({
         message: 'Internal Error'
@@ -192,7 +193,7 @@ class Note {
   deleteNoteById = async (req, res) => {
     try {
       const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
-      const deleteNoteValidation = validation.validateLabel.validate(id);
+      const deleteNoteValidation = validation.validateNote.validate(id);
       if (deleteNoteValidation.error) {
         console.log(deleteNoteValidation.error);
         return res.status(400).send({

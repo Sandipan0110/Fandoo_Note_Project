@@ -2583,3 +2583,87 @@
 {"level":"info","message":"Server start","timestamp":"2022-01-04T15:22:44.003Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-04T15:23:34.472Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-04T15:23:40.938Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:32:28.852Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:02:45.655Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:06:55.990Z"}
+{"level":"info","message":"Get Note _id successfully","timestamp":"2022-01-04T16:07:01.271Z"}
+{"level":"info","message":"Get Note _id successfully","timestamp":"2022-01-04T16:07:36.982Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T16:08:35.163Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:11:56.365Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:16:09.700Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:16:22.577Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:16:28.782Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:16:54.935Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T16:17:00.517Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T16:17:31.744Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T16:17:45.768Z"}
+{"level":"info","message":"Get Note _id successfully","timestamp":"2022-01-04T16:18:12.774Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:22:07.268Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:22:16.985Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:22:23.105Z"}
+{"level":"info","message":"Get Note _id successfully","timestamp":"2022-01-04T16:22:28.009Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T16:23:45.879Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T16:24:37.460Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:25:49.158Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:26:46.233Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:29:23.785Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:30:09.102Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:30:30.351Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:30:50.591Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:33:11.040Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:33:39.493Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:34:02.679Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:35:20.977Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:35:41.894Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:35:50.378Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:35:56.063Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:36:19.474Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:36:32.176Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:37:08.050Z"}
+{"_original":{"labelName":"ABCDEFGH","noteId":"61d4731b9092f14537cd9978","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"labelName","key":"labelName","label":"labelName","value":"ABCDEFGH"},"message":"\"labelName\" is not allowed","path":["labelName"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T16:37:29.053Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:38:46.081Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:41:55.702Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:43:11.478Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:46:46.215Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:54:48.357Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:56:07.953Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:56:15.468Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T16:56:56.231Z"}
+{"level":"info","message":"new label created","timestamp":"2022-01-04T16:57:15.359Z"}
+{"level":"info","message":"successfully add a Label","timestamp":"2022-01-04T16:57:15.359Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T16:58:15.245Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T16:58:15.479Z"}
+{"level":"info","message":"new label created","timestamp":"2022-01-04T16:59:27.194Z"}
+{"level":"info","message":"successfully add a Label","timestamp":"2022-01-04T16:59:27.195Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:01:51.837Z"}
+{"level":"info","message":"new label created","timestamp":"2022-01-04T17:02:55.544Z"}
+{"level":"info","message":"successfully add a Label","timestamp":"2022-01-04T17:02:55.545Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:03:10.764Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:04:57.287Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:05:06.206Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:05:23.074Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:06:06.298Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:06:54.910Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:07:02.487Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:07:26.839Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:08:15.073Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:08:33.397Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:08:37.267Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:09:19.256Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:09:42.719Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:09:45.054Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:10:40.091Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:11:35.745Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:11:40.195Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:15:56.520Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:16:15.171Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:16:46.745Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:17:07.234Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:17:10.955Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:18:38.931Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:23:04.651Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:23:16.060Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:23:53.166Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:23:57.503Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:24:10.418Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T17:24:30.468Z"}

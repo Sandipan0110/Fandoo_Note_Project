@@ -5,12 +5,12 @@ const { logger } = require("../../logger/logger");
 class LabelController {
   addLabel = async (req, res) => {
     try {
-      const label = {
+      const id = {
         labelName: req.body.labelName,
         userId: req.user.dataForToken.id,
         noteId: req.params.id
       };
-      const labelValidation = validation.validateLabel.validate(label);
+      const labelValidation = validation.validateLabel.validate(id);
       if (labelValidation.error) {
         logger.error(labelValidation.error);
         console.log(labelValidation.error);
@@ -20,7 +20,7 @@ class LabelController {
           data: labelValidation
         });
       }
-      const add = await labelService.addLabel(label);
+      const add = await labelService.addLabel(id);
       if (!add) {
         logger.error("error in add Labels");
         return res.status(400).send({

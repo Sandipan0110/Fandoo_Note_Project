@@ -29,12 +29,12 @@ class LabelModel {
       logger.error("noteId note found in DataBase");
       return false
     } else {
-      const addLabel = await LabelRegister.findOneAndUpdate({ labelName: id.labelName }, { $addToSet: { noteId: id.noteId } });
+      const addLabel = await label.findOneAndUpdate({ labelName: id.labelName }, { $addToSet: { noteId: id.noteId } });
       if (addLabel) {
         logger.info("noteId added in given labelName")
         return addLabel;
       } else {
-        const labels = new LabelRegister({
+        const labels = new label({
           userId: id.userId,
           noteId: id.noteId,
           labelName: id.labelName

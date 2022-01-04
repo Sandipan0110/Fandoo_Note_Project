@@ -682,3 +682,10 @@
 {"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:55:38.676Z"}
 {"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:02:14.036Z"}
 {"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:08:32.249Z"}
+{"_original":{"labelName":"ABCDEFGH","noteId":"61d4731b9092f14537cd9978","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"labelName","key":"labelName","label":"labelName","value":"ABCDEFGH"},"message":"\"labelName\" is not allowed","path":["labelName"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T16:37:29.053Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:01:51.837Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:03:10.765Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:07:26.839Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:08:37.268Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:09:45.055Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T17:11:40.196Z"}

@@ -60,8 +60,13 @@ class Validation {
       .required()
   });
 
-  getNoteValidation = Joi.object({
+  getNotesValidation = Joi.object({
     id: Joi.string().required()
+  });
+
+  getNoteValidation = Joi.object({
+    userId: Joi.string().required(),
+    noteId: Joi.string().required()
   });
 
   notesUpdateValidation = Joi.object({
@@ -80,7 +85,9 @@ class Validation {
   });
   
   validateLabel = Joi.object({
-    labelName: Joi.string()
+    userId: Joi.string().required(),
+    noteId: Joi.string().required(),
+    labelName: Joi.string().required()
   });
   
   validateUserid = Joi.object({
@@ -91,7 +98,7 @@ class Validation {
     userId:Joi.string(),
     labelId
     :Joi.string()
-  })
+  });
   
   updatelabelbyid =Joi.object({
     userId:Joi.string(),
