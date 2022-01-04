@@ -523,4 +523,20 @@ describe('update label_by id api ', () => {
         return done();
       });
   });
+  it.only("check updation with true id, should return appropriate response from model", (done) => {
+    const token = labelDB.label.validToken;
+    chai
+      .request(server)
+      .put("/updateLabel/61cc4aec22dd21239e23cdf0")
+      .set({ authorization: token })
+      .send({ labelName: "ABCDEFGH" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(201);
+        return done();
+      });
+  });
 });
