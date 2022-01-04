@@ -37,19 +37,19 @@ class LabelService {
         });
     };
 
-    updateLabelById = (id, callback) => {
-        updateLabelById = (updateNote, callback) => {
-            labelModel.updateLabelById(updateNote, (error, data) => {
-                if (error) {
-                    logger.error(error);
-                    return callback(error, null);
-                } else {
-                    logger.info(data);
-                    return callback(null, data);
-                }
-            });
-        }
+
+    updateLabelById = (updateNote, callback) => {
+        labelModel.updateLabelById(updateNote, (error, data) => {
+            if (error) {
+                logger.error(error);
+                return callback(error, null);
+            } else {
+                logger.info(data);
+                return callback(null, data);
+            }
+        });
     }
+
 }
 
 module.exports = new LabelService();
