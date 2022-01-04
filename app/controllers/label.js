@@ -42,7 +42,7 @@ class LabelController {
         message: "Internal server error"
       });
     }
-  }
+  };
 
   getlabel = (req, res) => {
     try {
@@ -71,7 +71,7 @@ class LabelController {
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
-  }
+  };
 
   getlabelById = (req, res) => {
     try {
@@ -97,7 +97,7 @@ class LabelController {
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
-  }
+  };
 
   updatelabelById = (req, res) => {
     try {
@@ -123,7 +123,7 @@ class LabelController {
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
-  }
+  };
 
   deleteLabelById = (req, res) => {
     try {

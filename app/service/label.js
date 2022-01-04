@@ -2,15 +2,15 @@ const labelModel = require("../models/label.js");
 const { logger } = require("../../logger/logger");
 
 class LabelService {
-    
+
     addLabel = async (id) => {
         const add = await labelModel.addlabelById(id);
         if (add) {
-          return add;
+            return add;
         }
         return false;
-      };
-  
+    };
+
 
     getLabel = (userId) => {
         return new Promise((resolve, reject) => {
@@ -48,11 +48,11 @@ class LabelService {
     deleteLabelById = (id, callback) => {
         labelModel.deleteLabelById(id, (error, data) => {
             if (error) {
-              return callback(error, null);
+                return callback(error, null);
             }
             return callback(null, data);
-          });
-      };
+        });
+    }
 }
 
 module.exports = new LabelService();

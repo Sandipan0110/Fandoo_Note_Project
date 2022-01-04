@@ -85,7 +85,7 @@ class LabelModel {
   };
 
   deleteLabelById = (id, callback) => {
-     LabelRegister.findOneAndDelete({ $and: [{ _id: id.id }, { userId: id.userId }] }, (error, data) => {
+    LabelRegister.findOneAndDelete({ $and: [{ _id: id.id }, { userId: id.userId }] }, (error, data) => {
       if (data) {
         return callback(null, data);
       }

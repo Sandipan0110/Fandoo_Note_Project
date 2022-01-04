@@ -94,7 +94,7 @@ describe('Add label by id api ', () => {
     })
     it('Should give true when fetched user is belong to labelInfo', (done) => {
         const token = labelDB.label.validToken;
-        const labelName = {labelname : faker.lorem.word()}
+        const labelName = { labelname: faker.lorem.word() }
         chai
             .request(server)
             .post('/addlabel/61d43c7c3ac1fd77ec76890c')
@@ -375,124 +375,124 @@ describe('update label_by id api ', () => {
 })
 
 describe("Delete Label", () => {
-    it.only("when call delete label api, should return appropriate response from controller", (done) => {
-      const token = labelDB.label.validToken;
-      chai
-        .request(server)
-        .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-        .set({ authorization: token })
-        .end((err, res) => {
-          if (err) {
-            console.log("plz check your credential");
-            return done();
-          }
-          res.should.have.status(201);
-          return done();
-        });
+    it("when call delete label api, should return appropriate response from controller", (done) => {
+        const token = labelDB.label.validToken;
+        chai
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(201);
+                return done();
+            });
     });
-    it.only("when call delete label api with false token, should return appropriate response from controller", (done) => {
+    it("when call delete label api with false token, should return appropriate response from controller", (done) => {
         const token = labelDB.label.inValidToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(400);
-            return done();
-          });
-      });
-      it.only("check validation with true params, should return appropriate response from controller", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(400);
+                return done();
+            });
+    });
+    it("check validation with true params, should return appropriate response from controller", (done) => {
         const token = labelDB.label.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(201);
-            return done();
-          });
-      });
-      it.only("check validation with false params, should return appropriate response from controller", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(201);
+                return done();
+            });
+    });
+    it("check validation with false params, should return appropriate response from controller", (done) => {
         const token = labelDB.label.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61c239e23cdf0")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(400);
-            return done();
-          });
-      });
-      it.only("when call delete label api, should return appropriate response from service", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61c239e23cdf0")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(400);
+                return done();
+            });
+    });
+    it("when call delete label api, should return appropriate response from service", (done) => {
         const token = labelDB.label.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(201);
-            return done();
-          });
-      });
-      it.only("when call delete label api, should return appropriate response from model", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(201);
+                return done();
+            });
+    });
+    it("when call delete label api, should return appropriate response from model", (done) => {
         const token = labelDB.label.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(201);
-            return done();
-          });
-      });
-      it.only("check with true id, should return appropriate response from model", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(201);
+                return done();
+            });
+    });
+    it("check with true id, should return appropriate response from model", (done) => {
         const token = labelData.notes.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(201);
-            return done();
-          });
-      });
-      it.only("check with false id, should return appropriate response from model", (done) => {
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(201);
+                return done();
+            });
+    });
+    it("check with false id, should return appropriate response from model", (done) => {
         const token = labelDB.label.validToken;
         chai
-          .request(server)
-          .delete("/deleteLabel/61d47dbfb686236b3f6a")
-          .set({ authorization: token })
-          .end((err, res) => {
-            if (err) {
-              console.log("plz check your credential");
-              return done();
-            }
-            res.should.have.status(400);
-            return done();
-          });
-      });
-  });
+            .request(server)
+            .delete("/deleteLabel/61d47dbfb686236b3f6a")
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    console.log("plz check your credential");
+                    return done();
+                }
+                res.should.have.status(400);
+                return done();
+            });
+    });
+});
