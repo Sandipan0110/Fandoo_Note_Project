@@ -373,3 +373,21 @@ describe('update label_by id api ', () => {
             });
     });
 })
+
+describe("Delete Label", () => {
+    it.only("when call delete label api, should return appropriate response from controller", (done) => {
+      const token = labelDB.label.validToken;
+      chai
+        .request(server)
+        .delete("/deleteLabel/:id")
+        .set({ authorization: token })
+        .end((err, res) => {
+          if (err) {
+            console.log("plz check your credential");
+            return done();
+          }
+          res.should.have.status(201);
+          return done();
+        });
+    });
+  });

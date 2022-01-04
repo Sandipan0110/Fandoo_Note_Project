@@ -35,4 +35,6 @@ module.exports = (app) => {
    app.get('/getlabel/:id', helper.validateToken, labelController.getlabelById);
    // API for Update Label by Id 
    app.put('/updatelabel/:id', helper.validateToken, labelController.updatelabelById);
+   // API for Delete Label By Id
+  app.delete("/deleteLabel/:id", helper.validateToken, labelController.deleteLabelById);
 }
