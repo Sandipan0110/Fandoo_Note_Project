@@ -2,9 +2,7 @@ const { logger } = require('../../logger/logger');
 const mongoose = require('mongoose');
 const noteSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  labelId: {
-    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'LabelRegister' }]
-  },
+
   labelName: {
     type: String,
     require: true
@@ -66,7 +64,7 @@ class Model {
 */
   getNoteById = async (id) => {
     try {
-      return await NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+      return await NoteRegister.find({ _id: id.noteId }, { userId: id.userId });
     } catch (err) {
       return err;
     }
@@ -103,36 +101,6 @@ class Model {
       return err;
     }
   };
-
-  /**
- * @description function written to add label to note
- * @param {*} a valid noteId is expected
- * @param {*} a valid labelId is expected
- * @returns
- */
-  addLabelById = async (id) => {
-    try {
-      const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $addToSet: { labelName: id.labelName } });
-      return data;
-    } catch (error) {
-      return error;
-    }
-  };
-
-  /**
-* @description function written to remove label from note
-* @param {*} a valid noteId is expected
-* @param {*} a valid labelId is expected
-* @returns
-*/
-  deleteLabel = async (id) => {
-    try {
-      const data = await NoteRegister.findByIdAndUpdate(id.noteId, { $pull: { labelName: id.labelName } });
-      return data;
-    } catch (error) {
-      return error;
-    }
-  }
 }
 
 module.exports = new Model();

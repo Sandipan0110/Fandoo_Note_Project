@@ -101,30 +101,31 @@ class Note {
   getNoteById = async (req, res) => {
     try {
       const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
-      const data = await noteService.getNoteById(id);
-      const getNoteValidation = validation.notesdeleteValidation.validate(id);
+      const getNoteValidation = validation.getNoteValidation.validate(id);
       if (getNoteValidation.error) {
-        console.log(getNoteValidation.error);
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
           data: getNoteValidation
         });
       }
-      if (data.message) {
+      let findnotebyId = await noteService.getNoteById(id)
+      if (!findnotebyId) {
+        logger.error(error)
         return res.status(404).json({
           message: 'Note not found',
           success: false
         });
-      } else {
-        redisjs.setData("getNoteById", 60, JSON.stringify(data));
-        return res.status(200).json({
-          message: 'Note retrieved succesfully',
-          success: true,
-          data: data
-        });
       }
-    } catch (err) {
+      logger.info('Get Note _id successfully');
+      return res.status(200).json({
+        message: 'Note retrieved succesfully',
+        success: true,
+        data: findnotebyId
+
+      });
+    }
+    catch (err) {
       return res.status(500).json({
         message: 'Internal Error',
         success: false,
@@ -165,7 +166,6 @@ class Note {
             success: false
           });
         } else {
-          redisjs.clearCache("getNotesById");
           logger.info('Successfully inserted note');
           return res.status(201).send({
             message: 'Successfully update note',
@@ -222,69 +222,6 @@ class Note {
     }
   };
 
-  /**
-    * @description function written to add label to note
-    * @param {*} a valid noteId is expected
-    * @param {*} a valid labelId is expecte
-    */
-  addLabelById = async (req, res) => {
-    try {
-      const id = {
-        noteId: req.params.id,
-        labelName: req.body.labelName,
-        userId: req.user.dataForToken.id
-      };
-      const labels = await noteService.addLabelById(id);
-      res.status(200).json({
-        message: 'Label added',
-        success: true,
-        data: labels
-      });
-    } catch (err) {
-      res.status(500).send({
-        message: 'Label was not added',
-        success: false,
-        error: err
-      });
-    }
-  };
-
-  /**
-    * @description function written to Delete label to note
-    * @param {*} req
-    * @param {*} res
-    * @returns response
-    */
-  deleteLabel = async (req, res) => {
-    try {
-      const id = {
-        noteId: req.params.id,
-        labelName: req.body.labelName,
-        userId: req.user.dataForToken.id
-      };
-      const noteValidation = validation.deleteLabelValidation.validate(id);
-      if (noteValidation.error) {
-        logger.error(noteValidation.error);
-        res.status(422).send({
-          message: 'Validation error',
-          success: false
-        });
-        return;
-      };
-      const data = await noteService.deleteLabel(id);
-      res.status(200).json({
-        message: 'Label Deleted succesfully',
-        success: true,
-        data: data
-      });
-    } catch (error) {
-      res.status(500).send({
-        message: "internal error occurs",
-        success: false,
-        error: error,
-      });
-    }
-  }
 }
 
 module.exports = new Note();

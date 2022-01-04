@@ -15,7 +15,7 @@ class Helper {
 
   token = (data) => {
     const dataForToken = {
-      id: data._id,
+      id: data.id,
       firstName: data.firstName,
       lastName: data.lastName,
       email: data.email

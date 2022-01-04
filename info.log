@@ -2427,3 +2427,159 @@
 {"level":"info","message":"Password has benn changed !","timestamp":"2022-01-04T13:27:37.491Z"}
 {"level":"info","message":"Email id found","timestamp":"2022-01-04T13:27:59.934Z"}
 {"level":"info","message":" token generated ","timestamp":"2022-01-04T13:28:00.109Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:30:55.513Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T13:30:58.345Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T13:32:19.632Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T13:32:36.544Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T13:32:49.085Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:35:04.225Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T13:35:21.479Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T13:36:09.142Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:39:03.858Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:39:24.731Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:39:52.934Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:40:07.592Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:40:26.645Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:40:33.979Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:41:10.424Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:42:01.290Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:42:33.578Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:42:40.733Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:43:30.301Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:43:35.783Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:43:54.130Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:45:02.783Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:46:15.004Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:46:48.472Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:46:51.427Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:46:57.615Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:48:40.199Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:50:22.026Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:51:13.941Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:52:22.542Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T13:54:21.181Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:02:44.159Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:04:21.654Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:04:38.837Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:07:26.108Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:08:14.249Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:08:20.012Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:11:58.300Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:12:06.121Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:12:10.239Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:12:19.486Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:12:28.275Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:12:41.001Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:13:05.836Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:13:11.038Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:13:26.301Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:13:30.284Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:18:14.302Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:18:18.353Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:18:22.093Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:18:29.540Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:19:36.970Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:20:15.511Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:20:22.575Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:20:37.025Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:20:50.844Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:21:07.940Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:21:48.533Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:21:52.100Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:22:28.390Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:22:35.290Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:22:38.122Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:22:41.392Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:22:44.183Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:23:00.957Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:23:04.100Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:23:08.231Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:23:40.397Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:24:16.257Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:24:21.285Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:26:31.745Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:26:37.708Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:26:44.618Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:26:48.797Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:26:51.313Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:27:32.105Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:27:36.936Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:27:43.249Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:27:46.890Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:27:59.486Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:28:05.095Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:30:57.679Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T14:30:59.003Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:30:59.089Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:30:59.292Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T14:30:59.309Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T14:30:59.310Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T14:30:59.613Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:36:15.226Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-04T14:36:16.519Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:36:16.588Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:36:16.806Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T14:36:16.823Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T14:36:16.824Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T14:36:16.884Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:39:02.214Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:39:57.336Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:40:36.242Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:41:03.388Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:42:57.019Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:44:17.424Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:44:22.415Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:45:25.173Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:46:01.810Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T14:46:52.394Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T14:46:59.125Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:50:03.921Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:50:15.926Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:50:16.181Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:51:18.381Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:51:18.594Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:52:22.487Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T14:54:36.130Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:54:43.293Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:54:48.836Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:55:11.618Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:55:11.931Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:55:38.675Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T14:57:00.929Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T14:57:01.190Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:00:06.955Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:00:38.733Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:02:14.036Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:03:23.498Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:03:50.642Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:04:20.870Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:04:54.715Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:05:08.625Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:05:26.098Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:05:37.559Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:05:54.213Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:05:58.401Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:06:06.515Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:06:15.194Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:06:23.302Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:07:32.398Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-04T15:08:10.131Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-04T15:08:10.510Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:08:32.248Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:10:35.508Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:11:37.114Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:13:21.347Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:14:06.220Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T15:14:23.070Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:15:19.095Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T15:16:37.842Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2022-01-04T15:17:33.950Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-04T15:17:50.890Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:21:18.318Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:21:24.659Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:21:32.628Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:21:36.128Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:21:49.304Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:22:44.003Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:23:34.472Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-04T15:23:40.938Z"}

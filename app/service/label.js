@@ -3,14 +3,14 @@ const { logger } = require("../../logger/logger");
 
 class LabelService {
     
-    addLabel = (labelInfo, callback) => {
-        labelModel.addLabel(labelInfo, (error, data) => {
-            if (!data) {
-                return callback(null, data)
-            }
-            return callback(null, data)
-        })
-    }
+    addLabel = async (label) => {
+        const add = await labelModel.addlabelById(label);
+        if (add) {
+          return add;
+        }
+        return false;
+      };
+  
 
     getLabel = (userId) => {
         return new Promise((resolve, reject) => {

@@ -664,3 +664,21 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T13:21:03.605Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-04T13:21:03.625Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-04T13:21:03.653Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:24:21.285Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T14:30:59.309Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T14:30:59.310Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T14:30:59.614Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T14:36:16.823Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T14:36:16.824Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T14:36:16.886Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:44:22.415Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:45:25.173Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T14:46:52.394Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-04T14:46:59.125Z"}
+{"_original":{"labelName":"Apple","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:50:03.921Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:52:22.487Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:54:43.294Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:54:48.837Z"}
+{"_original":{"labelName":"Apple Store","noteId":"61d43c7c3ac1fd77ec76890c","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"child":"userId","key":"userId","label":"userId","value":"61d43b913ac1fd77ec768909"},"message":"\"userId\" is not allowed","path":["userId"],"type":"object.unknown"}],"level":"error","timestamp":"2022-01-04T14:55:38.676Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:02:14.036Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-04T15:08:32.249Z"}

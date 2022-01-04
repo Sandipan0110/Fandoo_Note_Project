@@ -37,12 +37,12 @@
             "email": "sandipanseal11gmail"
         },
         "validDetails": {
-            "email": "mkaubr007@gmail.com",
-            "newPassword": "Mkaubr#12",
-            "code": "9867"
+            "email": "sandipanseal11@yahoo.com",
+            "newPassword": "Sandipan12345$",
+            "code": "5c8b7660pb"
         },
         "invalidDetails": {
-            "email": "sandipanseal11@gmail.com",
+            "email": "sandipanseal11@yahoo.com",
             "newPassword": "Sandipan#12"
         }
     }

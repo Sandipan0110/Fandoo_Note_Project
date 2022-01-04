@@ -174,7 +174,7 @@ describe('reset Password API', () => {
       .put('/resetPassword')
       .send(reset)
       .end((error, res) => {
-        res.should.have.status(422);
+        res.should.have.status(400);
         res.body.should.have.property('success').eql(false);
         res.body.should.have.property('message').eql('Invalid password');
         done();

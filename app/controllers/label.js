@@ -1,45 +1,46 @@
-const validation = require("../utilities/validation");
+const validation = require("../utilities/validation.js");
 const labelService = require("../service/label.js");
 const { logger } = require("../../logger/logger");
 
 class LabelController {
-  addLabel = (req, res) => {
+  addLabel = async (req, res) => {
     try {
-      if (req.user) {
-        const labelName = { labelName: req.body.labelName }
-        const validateResult = validation.validateLabel.validate(labelName);
-        if (validateResult.error) {
-          const response = { sucess: false, message: "Wrong Input Vaidation" }
-          return res.status(422).json(response)
-        }
-        const labelInfo = {
-          labelName: req.body.labelName,
-          userId: req.user.dataForToken.id,
-          noteId: req.params.id,
-          email: req.user.dataForToken.email
-        };
-        labelService.addLabel(labelInfo, (error, data) => {
-          if (error) {
-            logger.error('Some error occurred !')
-            const response = { sucess: false, message: 'Some error occured' }
-            return res.status(404).send(response)
-          }
-          else if (!data) {
-            const response = { sucess: true, message: "Label is not added !", data: data }
-            return res.status(400).json(response)
-          }
-          logger.info('Successfully added label !');
-          const response = { sucess: true, message: "Successfully added label !", data: data }
-          return res.status(200).json(response)
-        })
+      const label = {
+        labelName: req.body.labelName,
+        userId: req.user.dataForToken.id,
+        noteId: req.params.id
+      };
+      const labelValidation = validation.validateLabel.validate(label);
+      if (labelValidation.error) {
+        logger.error(labelValidation.error);
+        console.log(labelValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: "wrong input validation",
+          data: labelValidation
+        });
       }
-      else {
-        const response = { sucess: false, message: "Invalid Entry of Token" }
-        return res.status(400).json(response)
+      const add = await labelService.addLabel(label);
+      if (!add) {
+        logger.error("error in add Labels");
+        return res.status(400).send({
+          success: false,
+          message: "Oops Error in Add Label....."
+        });
+      } else {
+        logger.info("successfully add a Label");
+        return res.status(201).send({
+          success: true,
+          message: "Congratulation !!!! Successfully Add Label...........",
+          data: add
+        });
       }
-    } catch (err) {
-      const response = { sucess: false, message: "Internal  Server error" }
-      return res.status(500).json(response);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).send({
+        success: false,
+        message: "Internal server error"
+      });
     }
   }
 

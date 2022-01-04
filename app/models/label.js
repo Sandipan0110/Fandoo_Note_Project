@@ -23,42 +23,32 @@ const labelSchema = mongoose.Schema({
 const label = mongoose.model('label', labelSchema);
 
 class LabelModel {
-  addLabel = (labelInfo, callback) => {
-    const findNotes = NoteRegister.find({ email: labelInfo.email, _id: labelInfo.noteId })
-    if (findNotes.length === 0) {
-      return callback(null);
-    }
-    label.find({ userId: labelInfo.userId, labelName: labelInfo.labelName }, (error, data) => {
-      if (!data || data.length === 0) {
-        const labelmodel = new label({
-          userId: labelInfo.userId,
-          noteId: [labelInfo.noteId],
-          labelName: labelInfo.labelName,
+  addlabelById = async (id) => {
+    const isAddLabel = await noteModel.findById({ _id: id.noteId });
+    if (!isAddLabel) {
+      logger.error("noteId note found in DataBase");
+      return false
+    } else {
+      const addLabel = await LabelRegister.findOneAndUpdate({ labelName: id.labelName }, { $addToSet: { noteId: id.noteId } });
+      if (addLabel) {
+        logger.info("noteId added in given labelName")
+        return addLabel;
+      } else {
+        const labels = new LabelRegister({
+          userId: id.userId,
+          noteId: id.noteId,
+          labelName: id.labelName
         });
-        labelmodel.save((error, data))
-          .then((data) => {
-            logger.info('Successfully added label !');
-            return callback(null, data)
-          }).catch((error) => {
-            logger.info('Some error occurred while adding label');
-            callback(error, null)
-          })
-      } else if (data) {
-        label.findOneAndUpdate({ userId: labelInfo.userId, labelName: labelInfo.labelName }, { $addToSet: { noteId: [labelInfo.noteId] } }, (error, data) => {
-          if (error) {
-            callback(error, null)
-          }
-          else if (!data) {
-            logger.info("label is  not found");
-            return callback('label is  not found', data)
-          }
-          else {
-            return callback(error, data)
-          }
-        })
+        const labelSave = await labels.save();
+        if (labelSave) {
+          logger.info("new label created")
+          return labelSave;
+        }
+        logger.error("error in creating note");
+        return false;
       }
-    });
-  }
+    }
+  };
 
   getLabel = (userId) => {
     return new Promise((resolve, reject) => {
