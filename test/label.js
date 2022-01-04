@@ -447,7 +447,7 @@ describe('update label_by id api ', () => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
-      .put("/updateLabel/61cdfc76dd45eecb8e24e60d")
+      .put("/updateLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({ labelName: "ABCD" })
       .end((err, res) => {
@@ -463,7 +463,7 @@ describe('update label_by id api ', () => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
-      .put("/updateLabel/61cc4dd21233cdf0")
+      .put("/updateLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({ labelName: "hvhj" })
       .end((err, res) => {
@@ -495,7 +495,7 @@ describe('update label_by id api ', () => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
-      .put("/updateLabel/61cdfc76dd45eecb8e24e60d")
+      .put("/updateLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({ labelName: "Sandip" })
       .end((err, res) => {
@@ -511,7 +511,7 @@ describe('update label_by id api ', () => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
-      .put("/updateLabel/61cdfc76dd45eecb8e24e60d")
+      .put("/updateLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({ labelName: "bsbdbc" })
       .end((err, res) => {
@@ -527,7 +527,7 @@ describe('update label_by id api ', () => {
     const token = labelDB.label.validToken;
     chai
       .request(server)
-      .put("/updateLabel/61cc4aec22dd21239e23cdf0")
+      .put("/updateLabel/61ba38b1d48f7fe935bbbfb6")
       .set({ authorization: token })
       .send({ labelName: "ABCDEFGH" })
       .end((err, res) => {
@@ -536,6 +536,22 @@ describe('update label_by id api ', () => {
           return done();
         }
         res.should.have.status(201);
+        return done();
+      });
+  });
+  it("check updation with false id, should return appropriate response from model", (done) => {
+    const token = labelDB.label.invalidToken;
+    chai
+      .request(server)
+      .put("/updateLabel/61cc4aec224dd21239e23cdf")
+      .set({ authorization: token })
+      .send({ labelName: "ABCDE" })
+      .end((err, res) => {
+        if (err) {
+          console.log("plz check your credential");
+          return done();
+        }
+        res.should.have.status(400);
         return done();
       });
   });
