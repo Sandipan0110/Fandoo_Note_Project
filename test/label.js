@@ -420,4 +420,19 @@ describe("Delete Label", () => {
             return done();
           });
       });
+      it.only("check validation with false params, should return appropriate response from controller", (done) => {
+        const token = labelDB.label.validToken;
+        chai
+          .request(server)
+          .delete("/deleteLabel/61c239e23cdf0")
+          .set({ authorization: token })
+          .end((err, res) => {
+            if (err) {
+              console.log("plz check your credential");
+              return done();
+            }
+            res.should.have.status(400);
+            return done();
+          });
+      });
   });
