@@ -379,7 +379,7 @@ describe("Delete Label", () => {
       const token = labelDB.label.validToken;
       chai
         .request(server)
-        .delete("/deleteLabel/:id")
+        .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
         .set({ authorization: token })
         .end((err, res) => {
           if (err) {
@@ -394,7 +394,7 @@ describe("Delete Label", () => {
         const token = labelDB.label.inValidToken;
         chai
           .request(server)
-          .delete("/deleteLabel/:id")
+          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
           .set({ authorization: token })
           .end((err, res) => {
             if (err) {
@@ -402,6 +402,21 @@ describe("Delete Label", () => {
               return done();
             }
             res.should.have.status(400);
+            return done();
+          });
+      });
+      it.only("check validation with true params, should return appropriate response from controller", (done) => {
+        const token = labelDB.label.validToken;
+        chai
+          .request(server)
+          .delete("/deleteLabel/61d47dbfb686236b3f6a602f")
+          .set({ authorization: token })
+          .end((err, res) => {
+            if (err) {
+              console.log("plz check your credential");
+              return done();
+            }
+            res.should.have.status(201);
             return done();
           });
       });

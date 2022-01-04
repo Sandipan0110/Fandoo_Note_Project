@@ -127,8 +127,18 @@ class LabelController {
 
   deleteLabelById = (req, res) => {
     try {
+      const id = { userId: req.user.tokenData.id, id: req.params.id };
+      const deleteLabelValidation = validation.validateDeleteLabel.validate(id);
+      if (deleteLabelValidation.error) {
+        console.log(deleteLabelValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: "Wrong Input Validations",
+          data: deleteLabelValidation
+        });
+      }
       return res.status(201).send({
-        message: "Successfully id is found",
+        message: "Successfully Label Deleted ...",
         success: true
       });
     } catch {

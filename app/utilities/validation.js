@@ -104,6 +104,11 @@ class Validation {
     userId:Joi.string(),
     id:Joi.string(),
     labelName : Joi.string()
+  });
+
+  validateDeleteLabel = Joi.object({
+    id: Joi.string().min(20).required(),
+    userId: Joi.string()
   })
 }
 
