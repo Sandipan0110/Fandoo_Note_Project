@@ -21,7 +21,7 @@ class LabelService {
                 reject(error)
             })
         })
-    }
+    };
 
     getlabelById = (credential) => {
         return new Promise((resolve, reject) => {
@@ -32,7 +32,7 @@ class LabelService {
                     reject(error)
                 })
         })
-    }
+    };
 
     updatelabelById = (updatelabel) => {
         return new Promise((resolve, reject) => {
@@ -43,7 +43,11 @@ class LabelService {
                     reject(error)
                 })
         })
-    }
+    };
+
+    deleteLabelById = (id, callback) => {
+        return callback(null, id);
+      };
 }
 
 module.exports = new LabelService();
