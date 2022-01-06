@@ -1,5 +1,6 @@
 const labelModel = require("../models/label.js");
 const { logger } = require("../../logger/logger");
+const redis = require('../redis/redis.js')
 
 class LabelService {
 
@@ -27,6 +28,7 @@ class LabelService {
         return new Promise((resolve, reject) => {
             labelModel.getlabelById(credential)
                 .then(data => {
+                    redis.setData("getLabelById", 90, JSON.stringify(data));
                     resolve(data)
                 }).catch(error => {
                     reject(error)
@@ -38,6 +40,7 @@ class LabelService {
         return new Promise((resolve, reject) => {
             labelModel.updatelabelById(updatelabel)
                 .then(data => {
+                    redis.clearCache(data);
                     resolve(data)
                 }).catch(error => {
                     reject(error)

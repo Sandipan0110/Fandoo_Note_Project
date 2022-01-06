@@ -1,6 +1,7 @@
 const noteService = require('../service/notes');
 const { logger } = require('../../logger/logger');
 const validation = require('../utilities/validation.js');
+const redis = require('../redis/redis.js');
 
 class Note {
   /**
@@ -84,7 +85,7 @@ class Note {
           success: false
         });
       }
-    } catch(error) {
+    } catch (error) {
       console.log(error);
       logger.error('Internal Error');
       return res.status(500).json({
@@ -117,112 +118,113 @@ class Note {
           message: 'Note not found',
           success: false
         });
+      } else {
+        logger.info('Get Note _id successfully');
+        return res.status(200).json({
+          message: 'Note retrieved succesfully',
+          success: true,
+          data: findnotebyId
+        });
       }
-      logger.info('Get Note _id successfully');
-      return res.status(200).json({
-        message: 'Note retrieved succesfully',
-        success: true,
-        data: findnotebyId
-
-      });
     }
     catch (err) {
-      return res.status(500).json({
-        message: 'Internal Error',
-        success: false,
-        data: err
-      });
-    }
-  };
-
-  /**
-    * @description function written to update notes using ID from the database
-    * @param {*} req
-    * @param {*} res
-    * @returns response
-    */
-  updateNoteById = (req, res) => {
-    try {
-      const noteId = req.params.id;
-      const updateNote = {
-        id: req.params.id,
-        userId: req.user.dataForToken.id,
-        title: req.body.title,
-        description: req.body.description
-      };
-      const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
-      if (updateNoteValidation.error) {
-        console.log(updateNoteValidation.error);
-        return res.status(400).send({
+        return res.status(500).json({
+          message: 'Internal Error',
           success: false,
-          message: 'Wrong Input Validations',
-          data: updateNoteValidation
-        });
-      };
-      noteService.updateNoteById(updateNote, (error, data) => {
-        if (error) {
-          logger.error('failed to update note');
-          return res.status(400).json({
-            message: 'failed to update note',
-            success: false
-          });
-        } else {
-          logger.info('Successfully inserted note');
-          return res.status(201).send({
-            message: 'Successfully update note',
-            success: true,
-            data: data
-          });
-        }
-      });
-    } catch {
-      logger.error('Internal server error');
-      return res.status(500).json({
-        message: 'Error occured',
-        success: false
-      });
-    }
-  };
-
-  /**
-    * @description function written to delete note by ID
-    * @param {*} req
-    * @param {*} res
-    * @returns response
-    */
-  deleteNoteById = async (req, res) => {
-    try {
-      const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
-      const deleteNoteValidation = validation.validateNote.validate(id);
-      if (deleteNoteValidation.error) {
-        console.log(deleteNoteValidation.error);
-        return res.status(400).send({
-          success: false,
-          message: 'Wrong Input Validations',
-          data: deleteNoteValidation
+          data: err
         });
       }
-      const data = await noteService.deleteNoteById(id);
-      if (data.message) {
-        return res.status(404).json({
-          message: 'Note not found',
+    };
+
+    /**
+      * @description function written to update notes using ID from the database
+      * @param {*} req
+      * @param {*} res
+      * @returns response
+      */
+    updateNoteById = (req, res) => {
+      try {
+        const noteId = req.params.id;
+        const updateNote = {
+          id: req.params.id,
+          userId: req.user.dataForToken.id,
+          title: req.body.title,
+          description: req.body.description
+        };
+        const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
+        if (updateNoteValidation.error) {
+          console.log(updateNoteValidation.error);
+          return res.status(400).send({
+            success: false,
+            message: 'Wrong Input Validations',
+            data: updateNoteValidation
+          });
+        };
+        noteService.updateNoteById(updateNote, (error, data) => {
+          if (error) {
+            logger.error('failed to update note');
+            return res.status(400).json({
+              message: 'failed to update note',
+              success: false
+            });
+          } else {
+            redis.clearCache("getNoteById");
+            logger.info('Successfully inserted note');
+            return res.status(201).send({
+              message: 'Successfully update note',
+              success: true,
+              data: data
+            });
+          }
+        });
+      } catch {
+        logger.error('Internal server error');
+        return res.status(500).json({
+          message: 'Error occured',
           success: false
         });
       }
-      return res.status(200).json({
-        message: 'Note Deleted succesfully',
-        success: true,
-        data: data
-      });
-    } catch (err) {
-      return res.status(500).json({
-        message: 'Note not updated',
-        success: false,
-        data: err
-      });
-    }
-  };
+    };
 
-}
+    /**
+      * @description function written to delete note by ID
+      * @param {*} req
+      * @param {*} res
+      * @returns response
+      */
+    deleteNoteById = async (req, res) => {
+      try {
+        const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
+        const deleteNoteValidation = validation.validateNote.validate(id);
+        if (deleteNoteValidation.error) {
+          console.log(deleteNoteValidation.error);
+          return res.status(400).send({
+            success: false,
+            message: 'Wrong Input Validations',
+            data: deleteNoteValidation
+          });
+        }
+        const data = await noteService.deleteNoteById(id);
+        if (data.message) {
+          return res.status(404).json({
+            message: 'Note not found',
+            success: false
+          });
+        }
+        return res.status(200).json({
+          message: 'Note Deleted succesfully',
+          success: true,
+          data: data
+        });
+      } catch (err) {
+        return res.status(500).json({
+          message: 'Note not updated',
+          success: false,
+          data: err
+        });
+      }
+    };
+
+  }
 
 module.exports = new Note();

@@ -2,6 +2,7 @@ const controller = require('../controllers/user.js');
 const noteController = require('../controllers/notes.js');
 const helper = require('../utilities/helper');
 const labelController = require('../controllers/label.js');
+const redis = require('../redis/redis.js');
 
 module.exports = (app) => {
 
