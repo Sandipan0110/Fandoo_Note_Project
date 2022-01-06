@@ -40,6 +40,7 @@ class Model {
         logger.error(error);
         return callback(error, null);
       } else {
+        logger.info(data);
         return callback(null, data);
       }
     });
@@ -68,6 +69,7 @@ class Model {
         _id: id.noteId, userId: id.userId,
       });
     } catch (err) {
+      logger.error(err);
       return err;
     }
   };
@@ -80,12 +82,15 @@ class Model {
     try {
       NoteRegister.findByIdAndUpdate(updatedNote.id, { title: updatedNote.title, description: updatedNote.description }, { new: true }, (err, data) => {
         if (err) {
+          logger.error(err);
           return callback(err, null);
         } else {
+          logger.info(data);
           return callback(null, data);
         }
       });
     } catch (err) {
+      logger.error(err);
       return callback(err, null);
     }
   };
@@ -100,12 +105,10 @@ class Model {
     try {
       return await NoteRegister.findOneAndDelete({ _id: id.noteId }, { userId: id.userId });
     } catch (err) {
+      logger.error(err);
       return err;
     }
   };
 }
 
-module.exports = {
-  UserModel: new Model(),
-  User: NoteRegister
-};
+module.exports = { UserModel: new Model(), User: NoteRegister };

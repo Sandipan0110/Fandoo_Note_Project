@@ -36,7 +36,7 @@ class LabelController {
         });
       }
     } catch (error) {
-      console.log(error);
+      logger.error(error);
       return res.status(500).send({
         success: false,
         message: "Internal server error"
@@ -55,20 +55,24 @@ class LabelController {
         }
         labelService.getLabel(userId)
           .then((data) => {
+            logger.info(data);
             const response = { sucess: true, message: 'label is fetched', data: data }
             return res.status(200).send(response)
           }).catch((error) => {
+            logger.error(error);
             const response = { sucess: false, message: 'Some error occured' }
             return res.status(200).send(response)
           })
       }
       else {
+        logger.error("Invalid Token !!!");
         const response = { sucess: false, message: 'Invalid Token' }
         return res.status(400).send(response)
       }
     }
     catch (error) {
       console.log(error);
+      logger.error(error);
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
@@ -82,20 +86,23 @@ class LabelController {
       };
       const validationResult = validation.labelvalidator.validate(credentials)
       if (validationResult.error) {
+        logger.error(validationResult.error);
         const response = { sucess: false, message: "Wrong Credential  Validation" }
         res.status(422).json(response)
       }
       labelService.getlabelById(credentials)
         .then(data => {
+          logger.info(data);
           const response = { sucess: true, message: "Succesfuly label is fetch", data: data }
           return res.status(201).json(response);
         }).catch(error => {
-          console.log(error);
+          logger.error(error);
           const response = { sucess: false, message: "Succesfuly label is not fetch", error: error.message }
           return res.status(400).json(response)
         })
     }
     catch (error) {
+      logger.error(error);
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
@@ -110,18 +117,22 @@ class LabelController {
       };
       const validatiionResult = validation.updatelabelbyid.validate(updtlabel)
       if (validatiionResult.error) {
+        logger.error(validatiionResult.error);
         const response = { sucess: false, message: "Validation Failed", error: validatiionResult.error }
         return res.status(422).json(response)
       }
       labelService.updatelabelById(updtlabel)
         .then(data => {
+          logger.info(data);
           const response = { sucess: true, message: "Succesfully Updated label", data: data }
           return res.status(200).json(response)
         }).catch(error => {
+          logger.error(error);
           const response = { sucess: false, message: "some error occured ", error: error }
           return res.status(400).json(response)
         })
     } catch (error) {
+      logger.error(error);
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }

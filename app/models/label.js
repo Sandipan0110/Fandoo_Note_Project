@@ -54,9 +54,10 @@ class LabelModel {
     return new Promise((resolve, reject) => {
       label.find({ userId: userId.id })
         .then((data) => {
+          logger.info(data);
           resolve(data)
         }).catch((error) => {
-
+          logger.error(error);
           reject(error)
         })
     })
@@ -66,8 +67,10 @@ class LabelModel {
     return new Promise((resolve, reject) => {
       label.find({ userId: credential.userId, _id: credential.labelId })
         .then(data => {
+          logger.info(data);
           resolve(data)
         }).catch(error => {
+          logger.error(error);
           reject(error)
         })
     })
@@ -77,8 +80,10 @@ class LabelModel {
     return new Promise((resolve, reject) => {
       label.findByIdAndUpdate(updatelabel.id, { labelName: updatelabel.labelName }, { new: true })
         .then(data => {
+          logger.info(data);
           resolve(data)
         }).catch(error => {
+          logger.error(error);
           reject(error)
         })
     })

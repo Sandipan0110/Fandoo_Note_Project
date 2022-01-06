@@ -14,8 +14,10 @@ class UserService {
   registerUser = (user, callback) => {
     userModel.registerUser(user, (err, data) => {
       if (err) {
+        logger.error(err);
         callback(err, null);
       } else {
+        logger.info(data);
         callback(null, data);
       }
     });
@@ -57,6 +59,7 @@ class UserService {
         logger.error(error);
         return callback(error, null);
       } else {
+        logger.info(data);
         return callback(null, nodemailer.sendEmail(data));
       }
     });
@@ -74,6 +77,7 @@ class UserService {
         logger.error(error);
         return callback(error, null);
       } else {
+        logger.info(data);
         return callback(null, data);
       }
     });

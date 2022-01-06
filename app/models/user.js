@@ -48,8 +48,10 @@ class userModel {
           newUser.password = hash;
           newUser.save((error, data) => {
             if (error) {
+              logger.error(error);
               callback(error, null);
             } else {
+              logger.info(data);
               callback(null, data);
             }
           });
@@ -59,7 +61,7 @@ class userModel {
       });
     }
     catch (error) {
-      logger.error('Find error in model');
+      logger.error(error);
       return callback('Internal Error', null)
     }
   }
