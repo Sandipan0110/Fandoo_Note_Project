@@ -14,7 +14,7 @@ class LabelService {
 
     getLabel = (userId) => {
         return new Promise((resolve, reject) => {
-            let result = labelmodel.getLabel(userId)
+            let result = labelModel.getLabel(userId)
             result.then((data) => {
                 resolve(data)
             }).catch((error) => {
@@ -25,7 +25,7 @@ class LabelService {
 
     getlabelById = (credential) => {
         return new Promise((resolve, reject) => {
-            labelmodel.getlabelById(credential)
+            labelModel.getlabelById(credential)
                 .then(data => {
                     resolve(data)
                 }).catch(error => {

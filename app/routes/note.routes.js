@@ -14,27 +14,27 @@ module.exports = (app) => {
   // API for Reset Password
   app.put('/resetPassword', controller.resetPassword);
 
-
-  // API for CRUD 
+  
   // API for Creat Notes
-  app.post('/createnotes', helper.validateToken, noteController.createNote);
+  app.post('/note', helper.TokenValidation, noteController.createNote);
   // API for Get Notes
-  app.get('/getnotes', helper.validateToken, noteController.getNote);
+  app.get('/notes', helper.TokenValidation, noteController.getNote);
   // API for Get Notes by ID 
-  app.get('/getnotes/:id', helper.validateToken, noteController.getNoteById);
+  app.get('/note/:id', helper.TokenValidation, noteController.getNoteById);
   // API for Update Notes
-  app.put('/updatenotes/:id', helper.validateToken, noteController.updateNoteById);
+  app.put('/note/:id', helper.TokenValidation, noteController.updateNoteById);
   // API for Delete Notes
-  app.delete('/deletenotes/:id', helper.validateToken, noteController.deleteNoteById);
+  app.delete('/note/:id', helper.TokenValidation, noteController.deleteNoteById);
+  
 
    // API for Add Label By Id 
-   app.post('/addlabel/:id', helper.validateToken, labelController.addLabel);
+   app.post('/note/:id/label/:id', helper.TokenValidation, labelController.addLabel);
    // API for get Label  
-   app.get('/getlabel', helper.validateToken, labelController.getlabel);
+   app.get('/labels', helper.TokenValidation, labelController.getlabel);
    // API for get Label BY Id 
-   app.get('/getlabel/:id', helper.validateToken, labelController.getlabelById);
+   app.get('/label/:id', helper.TokenValidation, labelController.getlabelById);
    // API for Update Label by Id 
-   app.put('/updatelabel/:id', helper.validateToken, labelController.updatelabelById);
+   app.put('/label/:id', helper.TokenValidation, labelController.updatelabelById);
    // API for Delete Label By Id
-  app.delete("/deleteLabel/:id", helper.validateToken, labelController.deleteLabelById);
+  app.delete("/Label/:id", helper.TokenValidation, labelController.deleteLabelById);
 }

@@ -1,7 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../server');
-const faker = require('faker');
 chai.use(chaiHttp);
 const labelDB = require('./label.json');
 chai.should();

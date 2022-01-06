@@ -1,8 +1,7 @@
 const Joi = require('joi');
 
 class Validation {
-  authRegister =
-    Joi.object({
+  authRegister = Joi.object({
       firstName: Joi.string()
         .min(3)
         .required()
@@ -22,8 +21,7 @@ class Validation {
         .required()
     });
 
-  authLogin =
-    Joi.object({
+  authLogin = Joi.object({
       email: Joi.string()
         .pattern(new RegExp('^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$'))
         .required(),

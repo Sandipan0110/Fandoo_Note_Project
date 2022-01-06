@@ -23,7 +23,7 @@ class Helper {
     return jwt.sign({ dataForToken }, process.env.JWT_SECRET, { expiresIn: '24H' });
   };
 
-  validateToken = (req, res, next) => {
+  TokenValidation = (req, res, next) => {
     const header = req.headers.authorization;
     const myArr = header.split(' ');
     const token = myArr[1];

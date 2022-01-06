@@ -68,6 +68,7 @@ class LabelController {
       }
     }
     catch (error) {
+      console.log(error);
       const response = { sucess: false, message: "Internal  Server error" }
       return res.status(500).json(response)
     }
@@ -89,6 +90,7 @@ class LabelController {
           const response = { sucess: true, message: "Succesfuly label is fetch", data: data }
           return res.status(201).json(response);
         }).catch(error => {
+          console.log(error);
           const response = { sucess: false, message: "Succesfuly label is not fetch", error: error.message }
           return res.status(400).json(response)
         })
@@ -152,7 +154,8 @@ class LabelController {
           data: data
         });
       });
-    } catch {
+    } catch (error) {
+      console.log(error);
       logger.error(error);
       return res.status(500).json({
         message: "Internal server error",
