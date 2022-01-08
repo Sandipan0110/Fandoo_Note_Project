@@ -39,7 +39,7 @@ class Service {
     if (!getId) {
       return false;
     }
-    redis.setData("getNoteById", 90, JSON.stringify(getId));
+    redis.setData("getNoteById", 60, JSON.stringify(getId));
     return getId;
   };
 

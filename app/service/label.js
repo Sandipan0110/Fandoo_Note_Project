@@ -12,7 +12,6 @@ class LabelService {
         return false;
     };
 
-
     getLabel = (userId) => {
         return new Promise((resolve, reject) => {
             let result = labelModel.getLabel(userId)
@@ -28,7 +27,7 @@ class LabelService {
         return new Promise((resolve, reject) => {
             labelModel.getlabelById(credential)
                 .then(data => {
-                    redis.setData("getLabelById", 90, JSON.stringify(data));
+                    redis.setData("getLabelById", 60, JSON.stringify(data));
                     resolve(data)
                 }).catch(error => {
                     reject(error)
