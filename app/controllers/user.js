@@ -1,15 +1,8 @@
-const userService = require('../service/user.js');
-const validation = require('../utilities/validation.js');
-const { logger } = require('../../logger/logger');
-require('dotenv').config();
+const userService = require("../service/user.js");
+const validation = require("../utilities/validation");
+const { logger } = require("../../logger/logger");
 
 class userController {
-
-  /**
-    * @description Create and save user and sending response to service
-    * @method register to save the user
-    * @param req,res for service
-    */
   register = (req, res) => {
     try {
       const user = {
@@ -18,53 +11,54 @@ class userController {
         email: req.body.email,
         password: req.body.password
       };
-      const registerValidation = validation.authRegister.validate(user)
+      const registerValidation = validation.validDetails.validate(user);
       if (registerValidation.error) {
-        logger.error(registerValidation.error);
+        logger.error("Wrong Input Validations");
         return res.status(400).send({
           success: false,
-          message: 'Wrong Input Validations',
+          message: "Wrong Input Validations",
           data: registerValidation
         });
       }
       userService.registerUser(user, (error, data) => {
         if (error) {
-          logger.error(error);
-          return res.status(409).json({
+          logger.error("User already registered.");
+          return res.status(400).json({
             success: false,
-            message: 'User already exist'
+            message: "Try new..  User already registered...."
           });
         } else {
-          logger.info('User registered');
+          logger.info("User registered");
           return res.status(200).json({
             success: true,
-            message: 'User Registered',
-            data: data
+            message: "SuccessFully !!!  registered......",
+            data: {
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.email,
+              verified: data.verified
+            }
           });
         }
       });
     } catch (error) {
-      logger.error(error);
+      logger.error("Internal server error");
       return res.status(500).json({
         success: false,
-        message: 'Error While Registering',
+        message: "Oops....Error While Registering",
         data: null
       });
     }
   }
 
-  /**
-    * @description retrieving login info from user by email and password
-    * @method login
-    * @param req,res for service
-    */
   login = (req, res) => {
     try {
+      const paswd = req.body.password;
       const userLoginInfo = {
         email: req.body.email,
-        password: req.body.password
+        password: paswd
       };
-      const loginValidation = validation.authLogin.validate(userLoginInfo);
+      const loginValidation = validation.validLogin.validate(userLoginInfo);
       if (loginValidation.error) {
         logger.error(loginValidation.error);
         res.status(400).send({
@@ -74,141 +68,132 @@ class userController {
       }
       userService.userLogin(userLoginInfo, (error, data) => {
         if (error) {
-          logger.error(error);
+          logger.error("Wrong Information entered...");
           return res.status(400).json({
             success: false,
-            message: 'Unable to login. Please enter correct info',
+            message: "Oops ...Wrong Information entered....",
             error
           });
+        } else {
+          logger.info("User logged in successfully");
+          console.log("data", data);
+          return res.status(200).json({
+            success: true,
+            message: "User logged in successfully",
+            data: data
+          });
         }
-        logger.info("User Successfully Logged in...");
-        return res.status(200).json({
-          success: true,
-          message: 'User logged in successfully',
-          data: data
-        });
       });
     } catch (error) {
-      logger.error(error);
+      logger.error("Error while Login");
+      console.log("In Catch", error);
       return res.status(500).json({
         success: false,
-        message: 'Error while Login', error,
+        message: "Error while Login",
+        error,
         data: null
       });
     }
   };
 
-  /**
-    * description controller function for forgot password
-    * @param {*} req
-    * @param {*} res
-    * @returns
-    */
   forgotPassword = (req, res) => {
     try {
-      const userCredential = {
+      const userForgotPasswordInfo = {
         email: req.body.email
       };
 
-      const validationforgotPassword =
-        validation.authenticateLogin.validate(userCredential);
-      if (validationforgotPassword.error) {
-        logger.error(validationforgotPassword.error);
-        return res.status(400).send({
+      const forgotValidation = validation.validForgotPassword.validate(userForgotPasswordInfo);
+
+      if (forgotValidation.error) {
+        logger.error(forgotValidation.error);
+        res.status(400).send({
           success: false,
-          message: 'Wrong Input Validations',
-          data: validationforgotPassword
+          message: "Email is not valid..."
         });
       }
-      userService.forgotPassword(userCredential, (error, result) => {
+
+      userService.forgotPassword(userForgotPasswordInfo, (error, result) => {
         if (error) {
-          logger.error(error);
+          logger.error("Failed to send email. Email not exist....");
           return res.status(400).send({
             success: false,
-            message: 'failed to send email'
+            message: "Failed to send email. Email not exist...."
           });
         } else {
-          logger.info("Email Sent Successfully...");
+          logger.info("Email sent successfully");
           return res.status(200).send({
             success: true,
-            message: 'Email sent successfully'
+            message: "Email sent successfully"
           });
         }
       });
     } catch (error) {
-      logger.error(error);
+      logger.error("Internal server error");
+      console.log("Error", error);
       return res.status(500).send({
         success: false,
-        message: 'Internal server error',
+        message: "Internal server error",
         result: null
       });
-    }
-  };
+    };
+  }
 
-  /**
-    * description controller function for reset password
-    * @param {*} req
-    * @param {*} res
-    * @returns
-    */
-  resetPassword = (req, res) => {
+  resetPassword = async (req, res) => {
     try {
-      const resetPasswordData = {
+      const userResetPasswordInfo = {
         email: req.body.email,
         password: req.body.password,
         code: req.body.code
       };
-      const validationResult = validation.validateReset.validate(resetPasswordData);
-      if (validationResult.error) {
-        logger.error(validationResult.error);
-        const response = { success: false, message: validationResult.error.message };
-        return res.status(400).send(response);
+      const resetValidation = validation.validResetPassword.validate(userResetPasswordInfo);
+      if (resetValidation.error) {
+        logger.error(resetValidation.error);
+        res.status(400).send({
+          success: false,
+          message: resetValidation.error.message
+        });
       }
 
-      userService.resetPassword(resetPasswordData, (error, data) => {
-        if (error) {
-          logger.error(error.message);
-          const response = { success: false, message: error.message };
-          return res.status(400).send(response);
-        }
+      const isReset = await userService.resetpassword(userResetPasswordInfo);
+      if (!isReset) {
+        return res.status(401).json({
+          success: false,
+          message: "Unable to reset password. Please enter correct info"
+        });
+      }
+      return res.status(200).json({
+        success: true,
+        message: "password reset successfull",
+        data: isReset
+      });
+    } catch (error) {
+      logger.error("Internal server error");
+      return res.status(500).send({
+        success: false,
+        message: "Internal server error",
+        result: null
+      });
+    };
+  }
 
-        else if (!data) {
-          logger.error('Authorization failed');
-          const response = { success: false, message: 'Authorization failed' };
-          return res.status(401).send(response);
-        }
-        else {
-          const response = { success: true, message: 'Password has been changed !', data: resetPasswordData };
-          logger.info('Password has benn changed !');
-          res.status(200).send(response);
+  verifyUser = (req, res) => {
+    try {
+      const data = {
+        token: req.params.token
+      };
+      userService.verifyUser(data, (error, data) => {
+        if (error) {
+          return res.status(404).json({
+            success: false,
+            message: "error"
+          });
+        } else {
+          return res.status(200).json({
+            message: ` Congratulation !!! ${data.firstName} , Your Email ${data.email} Is Successfully Verified..... :) :)`
+          });
         }
       });
-    }
-    catch (error) {
-      logger.error('Some error occurred !');
-      const response = { success: false, message: 'Some error occurred !' };
-      res.status(500).send(response);
-    }
-  }
-
-  confirmRegister = (req, res) => {
-    const data = {
-      token: req.params.token
-    }
-    service.confirmRegister(data, (error, data) => {
-      if (error) {
-        return res.status(404).json({
-          success: false,
-          message: "error"
-        });
-      } else {
-        return res.status(200).json({
-          success: true,
-          message: "Email Successfully Verified"
-        });
-      }
-    });
-  }
-};
-
+    } catch { }
+  };
+}
 module.exports = new userController();

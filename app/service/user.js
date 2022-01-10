@@ -1,58 +1,54 @@
-const userModel = require('../models/user.js');
-const bcrypt = require('bcryptjs');
-const utilities = require('../utilities/helper.js');
-const { logger } = require('../../logger/logger');
-const nodemailer = require('../utilities/nodeemailer.js');
+const userModel = require("../model/user.js");
+const utilities = require("../utilities/helper.js");
+const nodemailer = require("../utilities/nodemailer");
+const { logger } = require("../../logger/logger");
+const rabbitMQ = require("../utilities/rabbitMq.js");
+const jsonWebToken = require("jsonwebtoken");
+require("dotenv").config();
 
 class UserService {
-
-  /**
-    * @description Create and save user then send response to controller
-    * @method registerUser to save the user
-    * @param callback callback for controller
-    */
   registerUser = (user, callback) => {
     userModel.registerUser(user, (err, data) => {
       if (err) {
-        logger.error(err);
         callback(err, null);
       } else {
-        logger.info(data);
-        callback(null, data);
-      }
-    });
-  }
-
-  /**
-    * @description sends the data to loginApi in the controller
-    * @method userLogin
-    * @param callback callback for controller
-    */
-  userLogin = (InfoLogin, callback) => {
-    userModel.loginUser(InfoLogin, (error, data) => {
-      if (data) {
-        bcrypt.compare(InfoLogin.password, data.password, (error, validate) => {
-          if (!validate) {
-            logger.error(error);
-            return callback(error + 'Invalid Password', null);
-          } else {
-            logger.info(' token generated ');
-            const token = utilities.token(data);
+        // Send Welcome Mail to User on his Mail
+        utilities.sendWelcomeMail(user);
+        const secretkey = process.env.SECRET_KEY_FOR_CONFIRM;
+        utilities.jwtTokenVerifyMail(data, secretkey, (err, token) => {
+          if (token) {
+            rabbitMQ.sender(data, data.email);
+            nodemailer.verifyMail(token, data);
             return callback(null, token);
+          } else {
+            return callback(err, null);
           }
         });
-      } else {
-        logger.error(error);
-        return callback(error);
+        return callback(null, data);
       }
     });
   };
 
-  /**
-    * @description sends the code to forgotPasswordAPI in the controller
-    * @method forgotPassword
-    * @param callback callback for controller
-    */
+  userLogin = (InfoLogin, callback) => {
+    userModel.loginModel(InfoLogin, (error, data) => {
+      if (data) {
+        const passwordResult = utilities.comparePassword(InfoLogin.password, data.password);
+        if (!passwordResult) {
+          logger.error("Error occured......");
+          // eslint-disable-next-line node/no-callback-literal
+          return callback("Error occured......", null);
+        } else {
+          logger.info(data);
+          const token = utilities.token(data);
+          return callback(null, token);
+        }
+      } else {
+        logger.error(error);
+        return callback(error, null);
+      }
+    });
+  }
+
   forgotPassword = (email, callback) => {
     userModel.forgotPassword(email, (error, data) => {
       if (error) {
@@ -65,43 +61,30 @@ class UserService {
     });
   };
 
-  /**
-    * @description it acts as a middleware between controller and model for reset password
-    * @param {*} inputData
-    * @param {*} callback
-    * @returns
-    */
-  resetPassword = (userData, callback) => {
-    userModel.resetPassword(userData, (error, data) => {
-      if (error) {
-        logger.error(error);
-        return callback(error, null);
-      } else {
-        logger.info(data);
-        return callback(null, data);
-      }
-    });
+  resetpassword = async (user) => {
+    const success = await userModel.resetpassword(user);
+    if (!success) {
+      return false;
+    }
+    return success;
   }
 
-  confirmRegister = (data, callback) => {
-    const decode = jwt.verify(data.token, process.env.JWT_SECRET);
+  verifyUser = (data, callback) => {
+    const decode = jsonWebToken.verify(data.token, process.env.SECRET_KEY_FOR_CONFIRM);
     if (decode) {
-      rabbitMQ
-        .receiver(decode.email)
-        .then((val) => {
-          userModel.confirmRegister(JSON.parse(val), (error, data) => {
-            if (data) {
-              return callback(null, data);
-            } else {
-              return callback(error, null);
-            }
-          });
-        })
+      rabbitMQ.receiver(decode.email).then((val) => {
+        userModel.verifyUser(JSON.parse(val), (error, data) => {
+          if (data) {
+            return callback(null, data);
+          } else {
+            return callback(error, null);
+          }
+        });
+      })
         .catch((error) => {
           logger.error(error);
         });
     }
   };
 }
-
 module.exports = new UserService();

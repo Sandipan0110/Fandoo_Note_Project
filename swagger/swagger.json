@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "1.0",
-        "title": "Fundoo Notes App",
+        "version": "1.0.0",
+        "title": "Fundoo Note Application",
         "description": "Fundoo Notes Application",
         "license": {
             "name": "MIT",
@@ -25,7 +25,7 @@
         "/register": {
             "post": {
                 "tags": [
-                    "Register"
+                    "Sign up"
                 ],
                 "description": "Registration of new user",
                 "parameters": [
@@ -165,7 +165,7 @@
                         "in": "body",
                         "description": "Note's body",
                         "schema": {
-                            "$ref": "#/definitions/createNote"
+                            "$ref": "#/definitions/CreateNote"
                         }
                     }
                 ],
@@ -173,7 +173,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/note"
+                    "$ref": "#/definitions/CreateNote"
                 },
                 "responses": {
                     "201": {
@@ -186,9 +186,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/Notes": {
+            },
             "get": {
                 "tags": [
                     "Get All Notes"
@@ -209,7 +207,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/getNotes"
+                    "$ref": "#/definitions/GetNote"
                 },
                 "responses": {
                     "201": {
@@ -227,7 +225,7 @@
         "/note/{id}": {
             "get": {
                 "tags": [
-                    "Get Note By Id"
+                    "Get Notes By Id"
                 ],
                 "description": "Get a note by ID for specific person id",
                 "parameters": [
@@ -253,7 +251,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/getNoteById"
+                    "$ref": "#/definitions/GetNoteById"
                 },
                 "responses": {
                     "201": {
@@ -266,9 +264,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/Notes/{id}": {
+            },
             "put": {
                 "tags": [
                     "Update Notes By Id"
@@ -315,9 +311,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/notess/{id}": {
+            },
             "delete": {
                 "tags": [
                     "Delete Notes By Id"
@@ -358,7 +352,37 @@
                 }
             }
         },
-        "/note/{id}/label/{id}": {
+        "/label/": {
+            "get": {
+                "tags": [
+                    "Get All Labels"
+                ],
+                "description": "Gets All Labels",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "authorization",
+                        "description": "Token for validation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "labels retrieved"
+                    },
+                    "500": {
+                        "description": "Couldnt retrieve labels"
+                    }
+                }
+            }
+        },
+        "/label/{id}": {
             "post": {
                 "tags": [
                     "Add Label by NoteID"
@@ -406,39 +430,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/labels": {
-            "get": {
-                "tags": [
-                    "Get All Labels"
-                ],
-                "description": "Gets All Labels",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "labels retrieved"
-                    },
-                    "500": {
-                        "description": "Couldnt retrieve labels"
-                    }
-                }
-            }
-        },
-        "/label/{id}": {
+            },
             "get": {
                 "tags": [
                     "Get Label By Id"
@@ -478,9 +470,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/labels/{id}": {
+            },
             "put": {
                 "tags": [
                     "Update Label"
@@ -528,9 +518,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/labelss/{id}": {
+            },
             "delete": {
                 "tags": [
                     "Delete Label"

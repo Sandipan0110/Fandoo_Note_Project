@@ -1,43 +1,43 @@
-const usercontroller = require('../controllers/user.js');
-const noteController = require('../controllers/notes.js');
-const helper = require('../utilities/helper');
-const labelController = require('../controllers/label.js');
+const userController = require("../controllers/user.js");
+const helper = require("../utilities/helper.js");
+const noteController = require("../controllers/note.js");
+const labelController = require("../controllers/label.js");
 
 module.exports = (app) => {
-
   // API for Registration
-  app.post('/register', usercontroller.register);
+  app.post("/register", userController.register);
   // API for Login
-  app.post('/login', usercontroller.login);
-  // API for Forget Password
-  app.post('/forgotPassword', usercontroller.forgotPassword);
+  app.post("/login", userController.login);
+  // API for Forgot Password
+  app.post("/forgotPassword", userController.forgotPassword);
   // API for Reset Password
-  app.put('/resetPassword', usercontroller.resetPassword);
+  app.delete("/resetPassword", userController.resetPassword);
 
 
-
-  // API for Creat Notes
-  app.post('/note', helper.TokenValidation, noteController.createNote);
+  // API for Create a Note
+  app.post("/note", helper.validateToken, noteController.createnote);
   // API for Get Notes
-  app.get('/notes', helper.TokenValidation, noteController.getNotes);
-  // API for Get Notes by ID 
-  app.get('/note/:id', helper.TokenValidation, noteController.getNoteById);
-  // API for Update Notes
-  app.put('/notes/:id', helper.TokenValidation, noteController.updateNoteById);
-  // API for Delete Notes
-  app.delete('/notess/:id', helper.TokenValidation, noteController.deleteNoteById);
-
-
-
-  // API for Add Label By Id 
-  app.post('/note/:id/label/:id', helper.TokenValidation, labelController.addLabel);
-  // API for get Label  
-  app.get('/labels', helper.TokenValidation, labelController.getlabels);
-  // API for get Label BY Id 
-  app.get('/label/:id', helper.TokenValidation, labelController.getlabelById);
-  // API for Update Label by Id 
-  app.put('/labels/:id', helper.TokenValidation, labelController.updatelabelById);
+  app.get("/notes", helper.validateToken, noteController.getNote);
+  // API for Get Note By Id
+  app.get("/note/:id", helper.validateToken, noteController.getNoteById);
+  // API for Update Note By Id
+  app.put("/note/:id", helper.validateToken, noteController.updateNoteById);
+  // API for Delete Note By Id
+  app.delete("/note/:id", helper.validateToken, noteController.deleteNote);
+  
+  
+  // API for Add Label
+  app.post("note/id/label/:id", helper.validateToken, labelController.addLabel);
+  // API for Get All Labels
+  app.get("/labels", helper.validateToken, labelController.getLabel);
+  // API for Get Label By Id
+  app.get("/label/:id", helper.validateToken, labelController.getLabelById);
+  // API for Update Label By Id
+  app.put("/label/:id", helper.validateToken, labelController.updateLabelById);
   // API for Delete Label By Id
-  app.delete("/labelss/:id", helper.TokenValidation, labelController.deleteLabelById);
+  app.delete("/label/:id", helper.validateToken, labelController.deleteLabelById);
 
-}
+
+  // Verify User
+  app.get("/verify/:token", userController.verifyUser);
+};

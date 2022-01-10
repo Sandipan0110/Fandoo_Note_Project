@@ -1,113 +1,92 @@
-const Joi = require('joi');
+const Joi = require("joi");
 
 class Validation {
-  authRegister = Joi.object({
-      firstName: Joi.string()
-        .min(3)
-        .required()
-        .pattern(new RegExp("^([A-Z]?[a-zA-Z]{1,30}[ ]?[.]?[']?[ ]?[a-zA-Z]{1,30}[ ]?[.]?[']?[ ]?[a-zA-Z]{0,30}[ ]?[a-zA-Z]{0,30}?)")),
+    validDetails =
+        Joi.object({
+          firstName: Joi.string().min(3).max(20).required().pattern(new RegExp("([A-Z][a-z]*)([\\s\\'-][A-Z][a-z]*)*")),
 
-      lastName: Joi.string()
-        .min(2)
-        .required(),
+          lastName: Joi.string().min(2).max(20).required().pattern(new RegExp("([A-Z][a-z]*)([\\s\\'-][A-Z][a-z]*)*")),
 
-      email: Joi.string()
-        .pattern(new RegExp('^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$'))
-        .required(),
+          email: Joi.string().pattern(new RegExp("^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")).required(),
 
-      password: Joi.string()
-        // eslint-disable-next-line no-control-regex
-        .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
-        .required()
+          password: Joi.string().required()
+            .pattern(new RegExp("(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"))
+        });
+
+    validLogin =
+        Joi.object({
+          email: Joi.string().required().pattern(new RegExp("^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")),
+
+          password: Joi.string().required()
+            .pattern(new RegExp("(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"))
+        });
+
+  validForgotPassword =
+    Joi.object({
+      email: Joi.string().required().pattern(new RegExp("^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"))
+
     });
 
-  authLogin = Joi.object({
-      email: Joi.string()
-        .pattern(new RegExp('^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$'))
-        .required(),
+  validResetPassword =
+    Joi.object({
+      email: Joi.string().required().pattern(new RegExp("^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")),
+      password: Joi.string().required().pattern(new RegExp("(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$")),
+      code: Joi.string().required()
 
-      password: Joi.string()
-        .required()
-        .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
     });
 
-  authenticateLogin = Joi.object({
-    email: Joi.string()
-      .pattern(new RegExp('^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$'))
-      .required()
-  })
-
-  validateReset = Joi.object({
-    email: Joi.string()
-      .pattern(new RegExp('^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$'))
-      .required(),
-    password: Joi.string()
-      .pattern(new RegExp('(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'))
-      .required(),
-    code: Joi.string()
-      .pattern(new RegExp('[0-9aA-Za-z]{1,}'))
-      .required()
+  createNoteValidation = Joi.object({
+    userId: Joi.string(),
+    title: Joi.string().min(3).required(),
+    description: Joi.string().min(8).required()
   });
 
-  notesCreationValidation = Joi.object({
-    userId: Joi.string().required(),
-    title: Joi.string().min(2)
-      .required(),
-
-    description: Joi.string().min(5)
-      .required()
+  noteIDValidation = Joi.object({
+    id: Joi.string()
   });
 
-  getNotesValidation = Joi.object({
+  getNoteByIDValidation = Joi.object({
+    userId: Joi.string(),
     id: Joi.string().required()
   });
 
-  getNoteValidation = Joi.object({
-    userId: Joi.string().required(),
-    noteId: Joi.string().required()
-  });
-
-  notesUpdateValidation = Joi.object({
+  noteUpdateValidation = Joi.object({
     id: Joi.string().required(),
-    userId: Joi.string().required(),
-    title: Joi.string().min(5)
-      .required(),
-
-    description: Joi.string().min(5)
-      .required()
+    userId: Joi.string(),
+    title: Joi.string().min(3),
+    description: Joi.string().min(3)
   });
 
-  notesdeleteValidation = Joi.object({
-    userId: Joi.string().required(),
-    noteId: Joi.string().required()
+  validateDeleteNote = Joi.object({
+    id: Joi.string(),
+    noteId: Joi.string().required().min(20),
+    userId: Joi.string()
   });
-  
+
   validateLabel = Joi.object({
+    labelName: Joi.string().required().min(5),
+    noteId: Joi.string().required().min(20),
+    userId: Joi.string()
+  });
+
+  getLabelValidation = Joi.object({
+    id: Joi.string().required()
+  });
+
+  getLabelByIdValidation = Joi.object({
     userId: Joi.string().required(),
-    noteId: Joi.string().required(),
-    labelName: Joi.string().required()
+    id: Joi.string().required().min(20)
   });
-  
-  validateUserid = Joi.object({
-    id: Joi.string()
-  });
-  
-  labelvalidator = Joi.object({
-    userId:Joi.string(),
-    labelId
-    :Joi.string()
-  });
-  
-  updatelabelbyid =Joi.object({
-    userId:Joi.string(),
-    id:Joi.string(),
-    labelName : Joi.string()
+
+  labelUpdateValidation = Joi.object({
+    id: Joi.string().min(20),
+    userId: Joi.string(),
+    labelName: Joi.string().min(3)
   });
 
   validateDeleteLabel = Joi.object({
     id: Joi.string().min(20).required(),
     userId: Joi.string()
-  })
+  });
 }
-
 module.exports = new Validation();

@@ -1,40 +1,35 @@
 const mongoose = require("mongoose");
-const noteModel = require("../models/notes.js").User;
+const noteModel = require("../model/note.model").User;
 const { logger } = require("../../logger/logger");
-
 const labelSchema = mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  userId: [{ type: mongoose.Schema.Types.ObjectId, ref: "UserInformation" }],
 
-  noteId: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'NoteRegister'
-  }],
+  noteId: [{ type: mongoose.Schema.Types.ObjectId, ref: "NoteBook" }],
 
   labelName: {
     type: String,
-    unique: true,
     required: true
-  },
+  }
 
 }, {
   timestamps: true
-})
+});
 
-const label = mongoose.model('label', labelSchema);
+const LabelRegister = mongoose.model("LabelBook", labelSchema);
 
 class LabelModel {
-  addlabelById = async (id) => {
+  label = async (id) => {
     const isAddLabel = await noteModel.findById({ _id: id.noteId });
     if (!isAddLabel) {
       logger.error("noteId note found in DataBase");
       return false
     } else {
-      const addLabel = await label.findOneAndUpdate({ labelName: id.labelName }, { $addToSet: { noteId: id.noteId } });
+      const addLabel = await LabelRegister.findOneAndUpdate({ labelName: id.labelName }, { $addToSet: { noteId: id.noteId } });
       if (addLabel) {
         logger.info("noteId added in given labelName")
         return addLabel;
       } else {
-        const labels = new label({
+        const labels = new LabelRegister({
           userId: id.userId,
           noteId: id.noteId,
           labelName: id.labelName
@@ -50,55 +45,38 @@ class LabelModel {
     }
   };
 
-  getLabel = (userId) => {
-    return new Promise((resolve, reject) => {
-      label.find({ userId: userId.id })
-        .then((data) => {
-          logger.info(data);
-          resolve(data)
-        }).catch((error) => {
-          logger.error(error);
-          reject(error)
-        })
-    })
+  getLabel = async (id) => {
+    const getAll = await LabelRegister.find({ userId: id.id });
+    if (!getAll) {
+      return false;
+    }
+    return getAll;
   };
 
-  getlabelById = (credential) => {
-    return new Promise((resolve, reject) => {
-      label.find({ userId: credential.userId, _id: credential.labelId })
-        .then(data => {
-          logger.info(data);
-          resolve(data)
-        }).catch(error => {
-          logger.error(error);
-          reject(error)
-        })
-    })
+  getLabelById = async (id) => {
+    const getAll = await LabelRegister.find({ userId: id.userId, _id: id.id });
+    if (!getAll) {
+      return false;
+    }
+    return getAll;
   };
 
-  updatelabelById = (updatelabel) => {
-    return new Promise((resolve, reject) => {
-      label.findByIdAndUpdate(updatelabel.id, { labelName: updatelabel.labelName }, { new: true })
-        .then(data => {
-          logger.info(data);
-          resolve(data)
-        }).catch(error => {
-          logger.error(error);
-          reject(error)
-        })
-    })
-  };
-
-  deleteLabelById = (id, callback) => {
-    LabelRegister.findOneAndDelete({ $and: [{ _id: id.id }, { userId: id.userId }] }, (error, data) => {
-      if (data) {
+  upgradeLabelById = (id, callback) => {
+    LabelRegister.findByIdAndUpdate(id.id, { labelName: id.labelName }, { new: true }, (err, data) => {
+      if (err) {
+        logger.error(err);
+        return callback(err, null);
+      } else {
         logger.info(data);
         return callback(null, data);
       }
-      logger.error(error);
-      return callback(error, null);
     });
-  };
-}
+  }
 
+  removeLabelById = (id) => {
+    return new Promise((resolve, reject) => {
+      LabelRegister.findOneAndDelete({ $and: [{ _id: id.id }, { userId: id.userId }] }).then(data => resolve(data)).catch((err) => reject(err));
+    })
+  }
+}
 module.exports = new LabelModel();

@@ -1,61 +1,50 @@
-const labelModel = require("../models/label.js");
+const labelModel = require("../model/label.js");
 const { logger } = require("../../logger/logger");
-const redis = require('../Connection/redis.js')
+const redis = require("../redis/redis.js");
 
 class LabelService {
-
-    addLabel = async (id) => {
-        const add = await labelModel.addlabelById(id);
-        if (add) {
-            return add;
-        }
-        return false;
+    label = async (label) => {
+      const add = await labelModel.label(label);
+      if (add) {
+        return add;
+      }
+      return false;
     };
 
-    getLabel = (userId) => {
-        return new Promise((resolve, reject) => {
-            let result = labelModel.getLabel(userId)
-            result.then((data) => {
-                resolve(data)
-            }).catch((error) => {
-                reject(error)
-            })
-        })
-    };
-
-    getlabelById = (credential) => {
-        return new Promise((resolve, reject) => {
-            labelModel.getlabelById(credential)
-                .then(data => {
-                    redis.setData("getById", 60, JSON.stringify(data));
-                    resolve(data)
-                }).catch(error => {
-                    reject(error)
-                })
-        })
-    };
-
-    updatelabelById = (updatelabel) => {
-        return new Promise((resolve, reject) => {
-            labelModel.updatelabelById(updatelabel)
-                .then(data => {
-                    resolve(data)
-                }).catch(error => {
-                    reject(error)
-                })
-        })
-    };
-
-    deleteLabelById = (id, callback) => {
-        labelModel.deleteLabelById(id, (error, data) => {
-            if (error) {
-                logger.error(error);
-                return callback(error, null);
-            }
-            logger.info(data);
-            return callback(null, data);
-        });
+  getLabel = async (id) => {
+    const get = await labelModel.getLabel(id);
+    if (!get) {
+      return false;
     }
-}
+    return get;
+  };
 
+  getLabelById = async (id) => {
+    let getId = await redis.getData(id);
+    if (!getId) {
+      getId = await labelModel.getLabelById(id);
+    }
+    redis.setData("getRedisById", 60, JSON.stringify(getId));
+    logger.info("get data by id");
+    return getId;
+  };
+
+  upgradeLabelById = (updateNote, callback) => {
+    labelModel.upgradeLabelById(updateNote, (error, data) => {
+      if (error) {
+        logger.error(error);
+        return callback(error, null);
+      } else {
+        logger.info(data);
+        redis.clearCache("getLabelById");
+        return callback(null, data);
+      }
+    }
+    );
+  }
+
+  removeLabelById = (id, resolve, reject) => {
+    labelModel.removeLabelById(id).then((data) => resolve(data)).catch((err) => reject(err));
+  };
+}
 module.exports = new LabelService();

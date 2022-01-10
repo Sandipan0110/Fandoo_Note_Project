@@ -1,16 +1,16 @@
-const validation = require("../utilities/validation.js");
+const validation = require("../utilities/validation");
 const labelService = require("../service/label.js");
 const { logger } = require("../../logger/logger");
 
-class LabelController {
+class AddLabelController {
   addLabel = async (req, res) => {
     try {
-      const id = {
+      const label = {
         labelName: req.body.labelName,
-        userId: req.user.dataForToken.id,
+        userId: req.user.tokenData.id,
         noteId: req.params.id
       };
-      const labelValidation = validation.validateLabel.validate(id);
+      const labelValidation = validation.validateLabel.validate(label);
       if (labelValidation.error) {
         logger.error(labelValidation.error);
         console.log(labelValidation.error);
@@ -20,7 +20,7 @@ class LabelController {
           data: labelValidation
         });
       }
-      const add = await labelService.addLabel(id);
+      const add = await labelService.label(label);
       if (!add) {
         logger.error("error in add Labels");
         return res.status(400).send({
@@ -36,107 +36,128 @@ class LabelController {
         });
       }
     } catch (error) {
-      logger.error(error);
+      console.log(error);
       return res.status(500).send({
         success: false,
         message: "Internal server error"
       });
     }
-  };
+  }
 
-  getlabels = (req, res) => {
+  getLabel = async (req, res) => {
     try {
-      if (req.user) {
-        const userId = { id: req.user.dataForToken.id }
-        const validateResult = validation.validateUserid.validate(userId);
-        if (validateResult.error) {
-          const response = { sucess: false, message: 'Wrong Input Validation', data: validateResult }
-          return res.status(400).send(response)
-        }
-        labelService.getLabel(userId)
-          .then((data) => {
-            logger.info(data);
-            const response = { sucess: true, message: 'label is fetched', data: data }
-            return res.status(200).send(response)
-          }).catch((error) => {
-            logger.error(error);
-            const response = { sucess: false, message: 'Some error occured' }
-            return res.status(200).send(response)
-          })
+      const id = { id: req.user.tokenData.id };
+      const getLabelValidation = validation.getLabelValidation.validate(id);
+      if (getLabelValidation.error) {
+        logger.error(getLabelValidation.error);
+        console.log(getLabelValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: "Wrong Input Validations",
+          data: getLabelValidation
+        });
       }
-      else {
-        logger.error("Invalid Token !!!");
-        const response = { sucess: false, message: 'Invalid Token' }
-        return res.status(400).send(response)
+      const serviceLabel = await labelService.getLabel(id);
+      if (!serviceLabel) {
+        logger.error("error in getting all Labels");
+        return res.status(400).send({
+          success: false,
+          message: "error in getting all Labels"
+        });
+      } else {
+        logger.info("successfully getting all Labels");
+        return res.status(201).send({
+          success: true,
+          message: "Successfully....  getting all Labels",
+          data: serviceLabel
+        });
       }
+    } catch (error) {
+      console.log("internal =  ", error);
+      logger.error("internal server error");
+      return res.status(500).json({
+        message: "Internal Server Error",
+        success: false
+      });
     }
-    catch (error) {
-      console.log(error);
-      logger.error(error);
-      const response = { sucess: false, message: "Internal  Server error" }
-      return res.status(500).json(response)
-    }
-  };
+  }
 
-  getlabelById = (req, res) => {
+  getLabelById = async (req, res) => {
     try {
-      const credentials = {
-        userId: req.user.dataForToken.id,
-        labelId: req.params.id
-      };
-      const validationResult = validation.labelvalidator.validate(credentials)
-      if (validationResult.error) {
-        logger.error(validationResult.error);
-        const response = { sucess: false, message: "Wrong Credential  Validation" }
-        res.status(422).json(response)
+      const id = { userId: req.user.tokenData.id, id: req.params.id };
+      const getLabelValidation = validation.getLabelByIdValidation.validate(id);
+      if (getLabelValidation.error) {
+        logger.error(getLabelValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: "Wrong Input Validations",
+          data: getLabelValidation
+        });
       }
-      labelService.getlabelById(credentials)
-        .then(data => {
-          logger.info(data);
-          const response = { sucess: true, message: "Succesfuly label is fetch", data: data }
-          return res.status(201).json(response);
-        }).catch(error => {
-          logger.error(error);
-          const response = { sucess: false, message: "Succesfuly label is not fetch", error: error.message }
-          return res.status(400).json(response)
-        })
+      const serviceLabe = await labelService.getLabelById(id);
+      if (!serviceLabe) {
+        logger.error("error in getting a Label");
+        return res.status(400).send({
+          success: false,
+          message: "error in getting a Label"
+        });
+      } else {
+        logger.info("successfully getting a Label");
+        return res.status(201).send({
+          success: true,
+          message: "Successfully....  getting a Label",
+          data: serviceLabe
+        });
+      }
+    } catch (error) {
+      logger.error("internal server error");
+      return res.status(500).json({
+        message: "Internal Server Error",
+        success: false
+      });
     }
-    catch (error) {
-      logger.error(error);
-      const response = { sucess: false, message: "Internal  Server error" }
-      return res.status(500).json(response)
-    }
-  };
+  }
 
-  updatelabelById = (req, res) => {
+  updateLabelById = (req, res) => {
     try {
-      const updtlabel = {
-        userId: req.user.dataForToken.id,
+      const updateLabel = {
         id: req.params.id,
+        userId: req.user.tokenData.id,
         labelName: req.body.labelName
       };
-      const validatiionResult = validation.updatelabelbyid.validate(updtlabel)
-      if (validatiionResult.error) {
-        logger.error(validatiionResult.error);
-        const response = { sucess: false, message: "Validation Failed", error: validatiionResult.error }
-        return res.status(422).json(response)
+      const updateLabelValidation = validation.labelUpdateValidation.validate(updateLabel);
+      if (updateLabelValidation.error) {
+        logger.error(updateLabelValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: "Wrong Input Validations",
+          data: updateLabelValidation
+        });
       }
-      labelService.updatelabelById(updtlabel)
-        .then(data => {
-          logger.info(data);
-          const response = { sucess: true, message: "Succesfully Updated label", data: data }
-          return res.status(200).json(response)
-        }).catch(error => {
+      labelService.updateLabelById(updateLabel, (error, data) => {
+        if (error) {
           logger.error(error);
-          const response = { sucess: false, message: "some error occured ", error: error }
-          return res.status(400).json(response)
-        })
+          return res.status(400).json({
+            message: "Failed to update note",
+            success: false
+          });
+        } else {
+          logger.info("successfully updated...");
+          return res.status(201).send({
+            message: "Successfully updated....",
+            success: true,
+            data: data
+          });
+        }
+      });
     } catch (error) {
       logger.error(error);
-      const response = { sucess: false, message: "Internal  Server error" }
-      return res.status(500).json(response)
+      return res.status(500).json({
+        message: "Internal server error",
+        success: false
+      });
     }
-  };
+  }
 
   deleteLabelById = (req, res) => {
     try {
@@ -150,24 +171,24 @@ class LabelController {
           data: deleteLabelValidation
         });
       }
-      labelService.deleteLabelById(id, (error, data) => {
-        if (error) {
-          logger.error(error);
-          return res.status(400).json({
-            message: "Note not found",
-            success: false
-          });
-        }
-        logger.info("Successfully Deleted Label..");
+      labelService.deleteLabelById(id, resolve, reject);
+      function resolve (data) {
+        logger.info("Delete Label successfully");
         return res.status(201).send({
-          message: "Successfully Deleted Label..",
+          message: "Delete label successfully",
           success: true,
           data: data
         });
-      });
-    } catch (error) {
-      console.log(error);
-      logger.error(error);
+      }
+      function reject () {
+        logger.error("Failed to delete Label");
+        return res.status(400).json({
+          message: "failed to delete Label",
+          success: false
+        });
+      }
+    } catch {
+      logger.error("internal server error");
       return res.status(500).json({
         message: "Internal server error",
         success: false
@@ -176,4 +197,4 @@ class LabelController {
   }
 }
 
-module.exports = new LabelController();
+module.exports = new AddLabelController();
