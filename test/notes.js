@@ -5,8 +5,6 @@ const faker = require('faker');
 
 chai.use(chaiHttp);
 const noteDB = require('./notes.json');
-const { expect } = require('chai');
-const { string } = require('joi');
 chai.should();
 
 describe('create notes api', () => {
@@ -18,7 +16,7 @@ describe('create notes api', () => {
     };
     chai
       .request(server)
-      .post('/createnotes')
+      .post('/note')
       .set({ authorization: token })
       .send(createNotes)
       .end((err, res) => {
@@ -35,7 +33,7 @@ describe('create notes api', () => {
     };
     chai
       .request(server)
-      .post('/createnotes')
+      .post('/note')
       .set({ authorization: token })
       .send(createNotes)
       .end((err, res) => {
@@ -51,7 +49,7 @@ describe('get notes api', () => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .get('/getnotes')
+      .get('/notes')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(201);
@@ -63,7 +61,7 @@ describe('get notes api', () => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
-      .get('/getnotes')
+      .get('/notes')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);
@@ -78,7 +76,7 @@ describe('Get notes by ID api', () => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .get('/getnotes/6165357e39139e12b1b2986f')
+      .get('/note/6165357e39139e12b1b2986f')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(200);
@@ -94,7 +92,7 @@ describe('Update notes api', () => {
     const note = noteDB.updateNote.validData;
     chai
       .request(server)
-      .put('/updatenotes/6165357e39139e12b1b2986f')
+      .put('/notes/6165357e39139e12b1b2986f')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -108,7 +106,7 @@ describe('Update notes api', () => {
     const note = noteDB.updateNote.validData;
     chai
       .request(server)
-      .put('/updatenotes/6163a92b4ec773015a13abb0')
+      .put('/notes/6163a92b4ec773015a13abb0')
       .set({ authorization: token })
       .send(note)
       .end((err, res) => {
@@ -124,7 +122,7 @@ describe('delete notes api', () => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/6165357e39139e12b1b2986f')
+      .delete('/notess/6165357e39139e12b1b2986f')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);

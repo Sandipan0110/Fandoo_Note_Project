@@ -1,44 +1,47 @@
 const redis = require("redis");
+const { logger } = require("../../logger/logger");
 
 let client;
 class RedisServer {
-    constructor() {
-        this.connect();
+  constructor () {
+    this.connect();
+  }
+
+  connect = () => {
+    client = redis.createClient();
+    client.connect();
+    client.on("connect", function () {
+      console.log("Connected to Redis");
+    });
+  };
+
+  getData = async (key) => {
+    let data = await client.get(key + "getById")
+    try {
+      if (!data) {
+        return null;
+      }
+      return JSON.parse(data);
+    }catch(error) {
+      throw error;
     }
+  }
 
-    connect = () => {
-        client = redis.createClient(6379, "127.0.0.1");
-        client.connect();
-        client.on("connect", function () {
-            console.log("successFully .....Redis server Connected!");
-        });
-    };
+  setData = async (key, time, data) => {
+    client.setEx(key, time, data);
+  };
 
-    getData = async (key) => {
-        client.get(key + "getRedisById", (error, data) => {
-            if (error) {
-                throw error;
-            } else if (data) {
-                return JSON.parse(data);
-            } else {
-                return null;
-            }
-        });
-    };
-
-    setData = async (key, time, data) => {
-        client.set(key, time, data);
-    };
-
-    clearCache = (key) => {
-        client.del(key, (err, res) => {
-            if (err) {
-                return false;
-            } else {
-                return true;
-            }
-        });
-    };
+  ClearCache = async(key) => {
+     let deletecache = await client.del(key)
+     try{
+       if(!deletecache){
+          return null;
+       }
+       return true;
+     }catch(error){
+      logger.error("Some Error occured while in clearing cache");
+     }
+  };
 }
 
 module.exports = new RedisServer();

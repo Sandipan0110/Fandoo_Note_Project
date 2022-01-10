@@ -693,3 +693,36 @@
 {"level":"error","timestamp":"2022-01-06T10:40:05.945Z"}
 {"level":"error","timestamp":"2022-01-06T10:42:22.762Z"}
 {"level":"error","timestamp":"2022-01-06T10:44:16.891Z"}
+{"_original":{"noteId":"61d9772609f4d8c1a84947e8","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"key":"labelName","label":"labelName"},"message":"\"labelName\" is required","path":["labelName"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:28.735Z"}
+{"_original":{"noteId":"61d9772609f4d8c1a84947e8","userId":"61d43b913ac1fd77ec768909"},"details":[{"context":{"key":"labelName","label":"labelName"},"message":"\"labelName\" is required","path":["labelName"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:28.819Z"}
+{"level":"error","message":"noteId note found in DataBase","timestamp":"2022-01-08T11:49:28.875Z"}
+{"level":"error","message":"error in add Labels","timestamp":"2022-01-08T11:49:28.876Z"}
+{"level":"error","message":"noteId note found in DataBase","timestamp":"2022-01-08T11:49:28.910Z"}
+{"level":"error","message":"error in add Labels","timestamp":"2022-01-08T11:49:28.911Z"}
+{"level":"error","message":"noteId note found in DataBase","timestamp":"2022-01-08T11:49:28.986Z"}
+{"level":"error","message":"error in add Labels","timestamp":"2022-01-08T11:49:28.987Z"}
+{"level":"error","message":"noteId note found in DataBase","timestamp":"2022-01-08T11:49:29.049Z"}
+{"level":"error","message":"error in add Labels","timestamp":"2022-01-08T11:49:29.050Z"}
+{"level":"error","message":"noteId note found in DataBase","timestamp":"2022-01-08T11:49:29.173Z"}
+{"level":"error","message":"error in add Labels","timestamp":"2022-01-08T11:49:29.177Z"}
+{"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\"61d47c6bb686236b3f6a\"","timestamp":"2022-01-08T11:49:29.649Z","value":"61d47c6bb686236b3f6a","valueType":"string"}
+{"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\"61d47c6bb686236b3f6a\"","timestamp":"2022-01-08T11:49:29.651Z","value":"61d47c6bb686236b3f6a","valueType":"string"}
+{"level":"error","timestamp":"2022-01-08T11:49:29.788Z"}
+{"level":"error","timestamp":"2022-01-08T11:49:29.827Z"}
+{"level":"error","timestamp":"2022-01-08T11:49:29.867Z"}
+{"level":"error","timestamp":"2022-01-08T11:49:29.896Z"}
+{"level":"error","timestamp":"2022-01-08T11:49:29.924Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-08T11:49:29.941Z"}
+{"level":"error","message":"Internal Error","timestamp":"2022-01-08T11:49:30.012Z"}
+{"level":"error","timestamp":"2022-01-08T11:49:30.071Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-08T11:49:30.094Z"}
+{"_original":{"email":"Dorothy.Cassin@hotmail.com","firstName":"Andres Grant","lastName":"Shields","password":"RtjKUNCPyaZxypG"},"details":[{"context":{"key":"password","label":"password","regex":{},"value":"RtjKUNCPyaZxypG"},"message":"\"password\" with value \"RtjKUNCPyaZxypG\" fails to match the required pattern: /(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$/","path":["password"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-08T11:49:30.157Z"}
+{"_original":{"email":"ganjubhai@gmail.com","firstName":"Vinod","password":"Ganju#7654"},"details":[{"context":{"key":"lastName","label":"lastName"},"message":"\"lastName\" is required","path":["lastName"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.183Z"}
+{"_original":{"firstName":"Sonu","lastName":"Soud","password":"sOnus$123"},"details":[{"context":{"key":"email","label":"email"},"message":"\"email\" is required","path":["email"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.234Z"}
+{"_original":{"email":"ajay.barma1947@gmail.com","lastName":"Barma","password":"AjaY@123B"},"details":[{"context":{"key":"firstName","label":"firstName"},"message":"\"firstName\" is required","path":["firstName"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.284Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-08T11:49:30.736Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-08T11:49:30.736Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-08T11:49:30.737Z"}
+{"_original":{"email":"sandipanseal11gmail"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipanseal11gmail"},"message":"\"email\" with value \"sandipanseal11gmail\" fails to match the required pattern: /^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-08T11:49:30.951Z"}
+{"_original":{"code":"5c8b7660pb","email":"sandipanseal11@yahoo.com"},"details":[{"context":{"key":"password","label":"password"},"message":"\"password\" is required","path":["password"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.963Z"}
+{"_original":{"email":"sandipanseal11@yahoo.com"},"details":[{"context":{"key":"password","label":"password"},"message":"\"password\" is required","path":["password"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.992Z"}

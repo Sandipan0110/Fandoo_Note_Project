@@ -44,7 +44,7 @@ class LabelController {
     }
   };
 
-  getlabel = (req, res) => {
+  getlabels = (req, res) => {
     try {
       if (req.user) {
         const userId = { id: req.user.dataForToken.id }

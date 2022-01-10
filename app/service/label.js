@@ -27,7 +27,7 @@ class LabelService {
         return new Promise((resolve, reject) => {
             labelModel.getlabelById(credential)
                 .then(data => {
-                    redis.setData("getLabelById", 60, JSON.stringify(data));
+                    redis.setData("getById", 60, JSON.stringify(data));
                     resolve(data)
                 }).catch(error => {
                     reject(error)
@@ -39,7 +39,6 @@ class LabelService {
         return new Promise((resolve, reject) => {
             labelModel.updatelabelById(updatelabel)
                 .then(data => {
-                    redis.clearCache(data);
                     resolve(data)
                 }).catch(error => {
                     reject(error)

@@ -39,7 +39,7 @@ class Service {
     if (!getId) {
       return false;
     }
-    redis.setData("getNoteById", 60, JSON.stringify(getId));
+    redis.setData("getById", 60, JSON.stringify(getId));
     return getId;
   };
 
@@ -53,7 +53,6 @@ class Service {
         logger.error(error);
         return callback(error, null);
       } else {
-        redis.clearCache(data.id);
         return callback(null, data);
       }
     }

@@ -57,7 +57,7 @@ class noteController {
     * @param {*} res
     * @returns response
     */
-  getNote = (req, res) => {
+  getNotes = (req, res) => {
     try {
       const id = { id: req.user.dataForToken.id };
       const getNoteValidation = validation.getNotesValidation.validate(id);

@@ -144,7 +144,7 @@
                 }
             }
         },
-        "/createNote": {
+        "/note": {
             "post": {
                 "tags": [
                     "Create Notes"
@@ -165,7 +165,7 @@
                         "in": "body",
                         "description": "Note's body",
                         "schema": {
-                            "$ref": "#/definitions/CreateNote"
+                            "$ref": "#/definitions/createNote"
                         }
                     }
                 ],
@@ -173,7 +173,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/CreateNote"
+                    "$ref": "#/definitions/note"
                 },
                 "responses": {
                     "201": {
@@ -188,7 +188,7 @@
                 }
             }
         },
-        "/getNote": {
+        "/Notes": {
             "get": {
                 "tags": [
                     "Get All Notes"
@@ -209,7 +209,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/GetNote"
+                    "$ref": "#/definitions/getNotes"
                 },
                 "responses": {
                     "201": {
@@ -224,10 +224,10 @@
                 }
             }
         },
-        "/getNote/{id}": {
+        "/note/{id}": {
             "get": {
                 "tags": [
-                    "Get Notes By Id"
+                    "Get Note By Id"
                 ],
                 "description": "Get a note by ID for specific person id",
                 "parameters": [
@@ -253,7 +253,7 @@
                     "application/json"
                 ],
                 "schema": {
-                    "$ref": "#/definitions/GetNoteById"
+                    "$ref": "#/definitions/getNoteById"
                 },
                 "responses": {
                     "201": {
@@ -268,7 +268,7 @@
                 }
             }
         },
-        "/updateNote/{id}": {
+        "/Notes/{id}": {
             "put": {
                 "tags": [
                     "Update Notes By Id"
@@ -317,7 +317,7 @@
                 }
             }
         },
-        "/deleteNote/{id}": {
+        "/notess/{id}": {
             "delete": {
                 "tags": [
                     "Delete Notes By Id"
@@ -358,7 +358,7 @@
                 }
             }
         },
-        "/addLabel/{id}": {
+        "/note/{id}/label/{id}": {
             "post": {
                 "tags": [
                     "Add Label by NoteID"
@@ -408,7 +408,7 @@
                 }
             }
         },
-        "/getLabel": {
+        "/labels": {
             "get": {
                 "tags": [
                     "Get All Labels"
@@ -438,7 +438,7 @@
                 }
             }
         },
-        "/getLabel/{id}": {
+        "/label/{id}": {
             "get": {
                 "tags": [
                     "Get Label By Id"
@@ -480,7 +480,7 @@
                 }
             }
         },
-        "/updateLabel/{id}": {
+        "/labels/{id}": {
             "put": {
                 "tags": [
                     "Update Label"
@@ -530,7 +530,7 @@
                 }
             }
         },
-        "/deleteLabel/{id}": {
+        "/labelss/{id}": {
             "delete": {
                 "tags": [
                     "Delete Label"
