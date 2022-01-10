@@ -1,6 +1,6 @@
 const { logger } = require('../../logger/logger');
 const noteModel = require('../models/notes.js');
-const redis = require('../redis/redis.js')
+const redis = require('../Connection/redis.js')
 
 class Service {
   /**

@@ -1,6 +1,6 @@
 const labelModel = require("../models/label.js");
 const { logger } = require("../../logger/logger");
-const redis = require('../redis/redis.js')
+const redis = require('../Connection/redis.js')
 
 class LabelService {
 

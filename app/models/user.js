@@ -136,5 +136,18 @@ class userModel {
       }
     })
   }
+
+  confirmRegister = (data, callback) => {
+    user.findOneAndUpdate({ email: data.email }, { verified: true }, (error, data) => {
+      if (error) {
+        logger.error("data not found in database");
+        return callback(error, null);
+      } else {
+        logger.info("data found in database");
+        return callback(null, data);
+      }
+    }
+    );
+  };
 }
 module.exports = new userModel();

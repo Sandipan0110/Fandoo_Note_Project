@@ -1,7 +1,7 @@
 const noteService = require('../service/notes');
 const { logger } = require('../../logger/logger');
 const validation = require('../utilities/validation.js');
-const redis = require('../redis/redis.js');
+const redis = require('../Connection/redis.js');
 
 class noteController {
   /**

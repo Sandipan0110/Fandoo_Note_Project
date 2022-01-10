@@ -82,6 +82,26 @@ class UserService {
       }
     });
   }
+
+  confirmRegister = (data, callback) => {
+    const decode = jwt.verify(data.token, process.env.JWT_SECRET);
+    if (decode) {
+      rabbitMQ
+        .receiver(decode.email)
+        .then((val) => {
+          userModel.confirmRegister(JSON.parse(val), (error, data) => {
+            if (data) {
+              return callback(null, data);
+            } else {
+              return callback(error, null);
+            }
+          });
+        })
+        .catch((error) => {
+          logger.error(error);
+        });
+    }
+  };
 }
 
 module.exports = new UserService();

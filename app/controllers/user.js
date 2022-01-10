@@ -151,45 +151,64 @@ class userController {
     * @param {*} res
     * @returns
     */
-   resetPassword = (req, res) => {
-		try {
-			const resetPasswordData = {
-				email: req.body.email,
-				password: req.body.password,
+  resetPassword = (req, res) => {
+    try {
+      const resetPasswordData = {
+        email: req.body.email,
+        password: req.body.password,
         code: req.body.code
-			};
+      };
       const validationResult = validation.validateReset.validate(resetPasswordData);
-			if (validationResult.error) {
+      if (validationResult.error) {
         logger.error(validationResult.error);
-				const response = { success: false, message: validationResult.error.message };
-				return res.status(400).send(response);
-			}
+        const response = { success: false, message: validationResult.error.message };
+        return res.status(400).send(response);
+      }
 
-			userService.resetPassword(resetPasswordData, (error, data) => {
-				if (error) {
-					logger.error(error.message);
-					const response = { success: false, message: error.message };
-					return res.status(400).send(response);
-				}
+      userService.resetPassword(resetPasswordData, (error, data) => {
+        if (error) {
+          logger.error(error.message);
+          const response = { success: false, message: error.message };
+          return res.status(400).send(response);
+        }
 
-				else if (!data) {
-					logger.error('Authorization failed');
-					const response = { success: false, message: 'Authorization failed' };
-					return res.status(401).send(response);
-				}
-				else {
-					const response = { success: true, message: 'Password has been changed !', data: resetPasswordData };
-					logger.info('Password has benn changed !');
-					res.status(200).send(response);
-				}
-			});
-		}
-		catch (error) {
-			logger.error('Some error occurred !');
-			const response = { success: false, message: 'Some error occurred !' };
-			res.status(500).send(response);
-		}
-	}
-}
+        else if (!data) {
+          logger.error('Authorization failed');
+          const response = { success: false, message: 'Authorization failed' };
+          return res.status(401).send(response);
+        }
+        else {
+          const response = { success: true, message: 'Password has been changed !', data: resetPasswordData };
+          logger.info('Password has benn changed !');
+          res.status(200).send(response);
+        }
+      });
+    }
+    catch (error) {
+      logger.error('Some error occurred !');
+      const response = { success: false, message: 'Some error occurred !' };
+      res.status(500).send(response);
+    }
+  }
+
+  confirmRegister = (req, res) => {
+    const data = {
+      token: req.params.token
+    }
+    service.confirmRegister(data, (error, data) => {
+      if (error) {
+        return res.status(404).json({
+          success: false,
+          message: "error"
+        });
+      } else {
+        return res.status(200).json({
+          success: true,
+          message: "Email Successfully Verified"
+        });
+      }
+    });
+  }
+};
 
 module.exports = new userController();
