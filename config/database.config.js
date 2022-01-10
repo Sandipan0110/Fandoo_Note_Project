@@ -6,7 +6,7 @@ class DBconnection {
       mongoose.connect(process.env.URL, {
         useNewUrlParser: true
       }).then(() => {
-        console.log("Successfully connected to the database");
+        console.log("Successfully Connected to The Database...");
       }).catch(err => {
         console.log("Could not connect to the database. Exiting now...", err);
         process.exit();

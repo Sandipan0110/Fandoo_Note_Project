@@ -2,23 +2,23 @@ const express = require('express');
 const { logger } = require('./logger/logger');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/swagger.json');
-require('dotenv').config();
-//const bodyParser = require('body-parser');
+const cors = require('cors');
 
+require('dotenv').config();
+//const bodyParser = require('body-parser')
 // create express app
 const app = express();
+app.use(cors());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }))
-
 // parse requests of content-type - application/json
 app.use(express.json())
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
-
 // Connecting to the database
 dbConfig.connection();
 
@@ -33,7 +33,7 @@ require('./app/routes/note.routes.js')(app);
 // listen for requests
 app.listen(process.env.PORT, () => {
     logger.info("Server start");
-    console.log("Server is listening");
+    console.log("Server is Listening...");
 });
 
 module.exports = app

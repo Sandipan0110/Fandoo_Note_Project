@@ -10,7 +10,7 @@ class RedisServer {
     client = redis.createClient();
     client.connect();
     client.on("connect", function () {
-      console.log("successFully .....Redis server Connected!");
+      console.log("Successfully Connected to The Redis...");
     });
   };
 
