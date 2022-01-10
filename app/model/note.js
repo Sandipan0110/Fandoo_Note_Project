@@ -18,7 +18,7 @@ const noteSchema = mongoose.Schema({
 const NoteRegister = mongoose.model("NoteBook", noteSchema);
 
 class NoteModel {
-  note = async (note) => {
+  createNote = async (note) => {
     const notes = new NoteRegister({
       userId: note.userId,
       title: note.title,
@@ -59,7 +59,7 @@ class NoteModel {
     });
   }
 
-  removeNote = (id) => {
+  deleteNote = (id) => {
     return new Promise((resolve, reject) => {
       NoteRegister.findOneAndDelete({ $and: [{ _id: id.noteId }, { userId: id.userId }] }).then(data => resolve(data)).catch((err) => reject(err));
     });

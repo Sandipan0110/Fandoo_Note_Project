@@ -3,8 +3,8 @@ const { logger } = require("../../logger/logger");
 const redis = require("../redis/redis.js");
 
 class NoteService {
-  note = async (note) => {
-    const success = noteModel.note(note);
+  createNote = async (note) => {
+    const success = noteModel.createNote(note);
     if (!success) {
       return false;
     }
@@ -42,8 +42,8 @@ class NoteService {
     });
   };
 
-  removeNote = (id, resolve, reject) => {
-    noteModel.removeNote(id).then((data) => resolve(data)).catch((err) => reject(err));
+  deleteNote = (id, resolve, reject) => {
+    noteModel.deleteNote(id).then((data) => resolve(data)).catch((err) => reject(err));
   };
 }
 module.exports = new NoteService();

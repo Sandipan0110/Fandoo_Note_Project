@@ -19,7 +19,7 @@ class noteController {
           data: createNoteValidation
         });
       }
-      const notes = await noteService.note(note);
+      const notes = await noteService.createNote(note);
       if (!notes) {
         return res.status(400).send({
           success: false,

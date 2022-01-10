@@ -1,7 +1,7 @@
-const userController = require("../controllers/user.js");
+const userController = require("../controller/user.js");
 const helper = require("../utilities/helper.js");
-const noteController = require("../controllers/note.js");
-const labelController = require("../controllers/label.js");
+const noteController = require("../controller/note.js");
+const labelController = require("../controller/label.js");
 
 module.exports = (app) => {
   // API for Registration

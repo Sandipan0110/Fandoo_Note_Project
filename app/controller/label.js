@@ -20,7 +20,7 @@ class AddLabelController {
           data: labelValidation
         });
       }
-      const add = await labelService.label(label);
+      const add = await labelService.addLabel(label);
       if (!add) {
         logger.error("error in add Labels");
         return res.status(400).send({

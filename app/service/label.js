@@ -3,8 +3,8 @@ const { logger } = require("../../logger/logger");
 const redis = require("../redis/redis.js");
 
 class LabelService {
-    label = async (label) => {
-      const add = await labelModel.label(label);
+    addLabel = async (label) => {
+      const add = await labelModel.addLabel(label);
       if (add) {
         return add;
       }
@@ -29,8 +29,8 @@ class LabelService {
     return getId;
   };
 
-  upgradeLabelById = (updateNote, callback) => {
-    labelModel.upgradeLabelById(updateNote, (error, data) => {
+  updateLabelById = (updateNote, callback) => {
+    labelModel.updateLabelById(updateNote, (error, data) => {
       if (error) {
         logger.error(error);
         return callback(error, null);
@@ -43,8 +43,8 @@ class LabelService {
     );
   }
 
-  removeLabelById = (id, resolve, reject) => {
-    labelModel.removeLabelById(id).then((data) => resolve(data)).catch((err) => reject(err));
+  deleteLabelById = (id, resolve, reject) => {
+    labelModel.deleteLabelById(id).then((data) => resolve(data)).catch((err) => reject(err));
   };
 }
 module.exports = new LabelService();
