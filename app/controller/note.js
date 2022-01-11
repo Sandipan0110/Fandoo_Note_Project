@@ -1,4 +1,4 @@
-const validation = require("../utilities/validation");
+const validation = require("../utilitie/validation");
 const noteService = require("../service/note.js");
 const { logger } = require("../../logger/logger");
 

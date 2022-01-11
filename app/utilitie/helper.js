@@ -1,28 +1,27 @@
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+const saltRounds = 10;
+const salt = bcrypt.genSaltSync(saltRounds);
+const nodeMailer = require("nodemailer");
 
 class Helper {
-  hashing = (password, callback) => {
-    bcrypt.hash(password, 10, function (err, hash) {
-      if (err) {
-        return callback(err, null);
-      } else {
-        return callback(null, hash);
-      }
-    });
-  };
+  hashedPassword = (password) => {
+    return bcrypt.hashSync(password, salt);
+  }
 
   token = (data) => {
-    const dataForToken = {
-      id: data._id,
+    const tokenData = {
+      id: data.id,
       firstName: data.firstName,
       lastName: data.lastName,
-      email: data.email,
+      email: data.email
     };
-    return jwt.sign({ dataForToken }, process.env.JWT_SECRET, {
-      expiresIn: "24H",
-    });
-  };
+    return jwt.sign({ tokenData }, process.env.JWT_SECRET, { expiresIn: "24H" });
+  }
+
+  comparePassword = (password, result) => {
+    return bcrypt.compareSync(password, result);
+  }
 
   validateToken = (req, res, next) => {
     const tokenHeader = req.headers.authorization;
@@ -53,7 +52,7 @@ class Helper {
   }
 
   jwtTokenVerifyMail = (payload, secretkey, callback) => {
-    jwt.sign({ email: payload.email }, secretkey, { expiresIn: "50h" },
+    jwt.sign({ email: payload.email }, secretkey, { expiresIn: "24H" },
       (err, token) => {
         if (err) {
           return callback("token not generated", null);

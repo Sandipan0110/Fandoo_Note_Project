@@ -1,9 +1,9 @@
 const userService = require("../service/user.js");
-const validation = require("../utilities/validation");
+const validation = require("../utilitie/validation");
 const { logger } = require("../../logger/logger");
 
 class userController {
-  register = (req, res) => {
+  registerUser = (req, res) => {
     try {
       const user = {
         firstName: req.body.firstName,
@@ -51,7 +51,7 @@ class userController {
     }
   }
 
-  login = (req, res) => {
+  loginUser = (req, res) => {
     try {
       const paswd = req.body.password;
       const userLoginInfo = {
@@ -66,7 +66,7 @@ class userController {
           message: loginValidation.error.message
         });
       }
-      userService.userLogin(userLoginInfo, (error, data) => {
+      userService.loginUser(userLoginInfo, (error, data) => {
         if (error) {
           logger.error("Wrong Information entered...");
           return res.status(400).json({
@@ -76,7 +76,6 @@ class userController {
           });
         } else {
           logger.info("User logged in successfully");
-          console.log("data", data);
           return res.status(200).json({
             success: true,
             message: "User logged in successfully",
@@ -86,7 +85,6 @@ class userController {
       });
     } catch (error) {
       logger.error("Error while Login");
-      console.log("In Catch", error);
       return res.status(500).json({
         success: false,
         message: "Error while Login",
@@ -129,7 +127,6 @@ class userController {
       });
     } catch (error) {
       logger.error("Internal server error");
-      console.log("Error", error);
       return res.status(500).send({
         success: false,
         message: "Internal server error",
@@ -185,11 +182,11 @@ class userController {
         if (error) {
           return res.status(404).json({
             success: false,
-            message: "error"
+            message: "error",
           });
         } else {
           return res.status(200).json({
-            message: ` Congratulation !!! ${data.firstName} , Your Email ${data.email} Is Successfully Verified..... :) :)`
+            message: "Congratulation !!! ${data.firstName} , Your Email ${data.email} Is Successfully Verified..... :) :)",
           });
         }
       });

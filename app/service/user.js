@@ -1,8 +1,8 @@
 const userModel = require("../model/user.js");
-const utilities = require("../utilities/helper.js");
-const nodemailer = require("../utilities/nodemailer");
+const utilities = require("../utilitie/helper.js");
+const nodemailer = require("../utilitie/nodemailer.js");
 const { logger } = require("../../logger/logger");
-const rabbitMQ = require("../utilities/rabbitMq.js");
+const rabbitMQ = require("../utilitie/rabbitMq.js");
 const jsonWebToken = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -29,8 +29,8 @@ class UserService {
     });
   };
 
-  userLogin = (InfoLogin, callback) => {
-    userModel.loginModel(InfoLogin, (error, data) => {
+  loginUser = (InfoLogin, callback) => {
+    userModel.loginUser(InfoLogin, (error, data) => {
       if (data) {
         const passwordResult = utilities.comparePassword(InfoLogin.password, data.password);
         if (!passwordResult) {

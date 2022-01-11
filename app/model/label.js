@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const noteModel = require("../model/note.js").User;
+const noteModel = require("./note.js").User;
 const { logger } = require("../../logger/logger");
 const labelSchema = mongoose.Schema({
   userId: [{ type: mongoose.Schema.Types.ObjectId, ref: "UserInformation" }],
-
   noteId: [{ type: mongoose.Schema.Types.ObjectId, ref: "NoteBook" }],
 
   labelName: {

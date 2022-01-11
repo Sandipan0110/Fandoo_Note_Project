@@ -2863,3 +2863,112 @@
 {"level":"info","message":"Server start","timestamp":"2022-01-10T13:42:56.948Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-10T13:43:32.700Z"}
 {"level":"info","message":"Server start","timestamp":"2022-01-10T13:43:38.069Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:35:09.793Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T18:46:18.043Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:48:59.075Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T18:49:03.121Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:50:34.291Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:52:03.984Z"}
+{"_message":"UserInformation validation failed","errors":{"password":{"kind":"required","message":"Path `password` is required.","name":"ValidatorError","path":"password","properties":{"message":"Path `password` is required.","path":"password","type":"required"}}},"level":"error","timestamp":"2022-01-10T18:52:19.902Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T18:52:19.904Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:54:15.980Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T18:54:25.524Z"}
+{"_message":"UserInformation validation failed","errors":{"password":{"kind":"required","message":"Path `password` is required.","name":"ValidatorError","path":"password","properties":{"message":"Path `password` is required.","path":"password","type":"required"}}},"level":"error","timestamp":"2022-01-10T18:54:30.378Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T18:54:30.380Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T19:02:22.086Z"}
+{"level":"info","message":"Server start","timestamp":"2022-01-10T19:12:53.057Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-10T19:13:07.100Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:25:13.796Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:25:13.800Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:32:39.763Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:32:39.766Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T19:37:10.079Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:39:03.228Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:39:03.232Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:44:33.534Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:44:33.537Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:17:16.354Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:17:16.359Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:20:59.713Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:20:59.716Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T20:22:13.408Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-10T20:23:02.703Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sumanshaw123@gmail.com"},"level":"error","timestamp":"2022-01-10T20:26:31.535Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:26:31.539Z"}
+{"code":13297,"index":0,"level":"error","timestamp":"2022-01-10T20:35:09.425Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:35:09.428Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:36:47.752Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:36:47.756Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:02:58.326Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:02:58.376Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T05:09:14.095Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:31:40.231Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:31:40.234Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-11T05:33:30.256Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-11T05:33:30.261Z"}
+{"level":"error","message":"Wrong Information entered...","timestamp":"2022-01-11T05:33:30.263Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:34:51.118Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:34:51.119Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:35:25.248Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:35:25.250Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T06:15:43.865Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:15:43.870Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T06:21:05.912Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:21:05.915Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T06:27:09.777Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T06:30:05.016Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:30:05.019Z"}
+{"level":"info","message":"data found in database","timestamp":"2022-01-11T06:31:46.512Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd233db1ebed69f1ad22bf","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$Ml4gYA424QPKHmAflt/RL.UvvuYFiC4My1TeZdxcZRzUYZYMv.KYm","verified":true},"timestamp":"2022-01-11T06:31:46.641Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2022-01-11T06:31:46.696Z"}
+{"level":"info","message":"data found in database","timestamp":"2022-01-11T06:33:05.527Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd233db1ebed69f1ad22bf","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$Ml4gYA424QPKHmAflt/RL.UvvuYFiC4My1TeZdxcZRzUYZYMv.KYm","verified":true},"timestamp":"2022-01-11T06:33:05.659Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2022-01-11T06:33:05.668Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T06:34:00.566Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:34:00.567Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd233db1ebed69f1ad22bf","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$Ml4gYA424QPKHmAflt/RL.UvvuYFiC4My1TeZdxcZRzUYZYMv.KYm","verified":true},"timestamp":"2022-01-11T06:34:35.916Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd233db1ebed69f1ad22bf","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$Ml4gYA424QPKHmAflt/RL.UvvuYFiC4My1TeZdxcZRzUYZYMv.KYm","verified":true},"timestamp":"2022-01-11T06:34:35.918Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2022-01-11T06:34:35.949Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T06:51:00.078Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T06:52:15.515Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:52:15.549Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-11T06:52:15.552Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.660Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.690Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.707Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-11T06:52:15.771Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-11T06:52:15.773Z"}
+{"level":"error","message":"Wrong Information entered...","timestamp":"2022-01-11T06:52:15.777Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd28d36562769b69004f99","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$LpnHzBwh3JFx/12N67YLAOUDsXAQLgmNnhbhX8JNVgPR62EVjxZeq","verified":false},"timestamp":"2022-01-11T06:52:15.821Z"}
+{"level":"info","message":{"__v":0,"_id":"61dd28d36562769b69004f99","email":"sandipanseal11@gmail.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$LpnHzBwh3JFx/12N67YLAOUDsXAQLgmNnhbhX8JNVgPR62EVjxZeq","verified":false},"timestamp":"2022-01-11T06:52:15.822Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2022-01-11T06:52:15.833Z"}
+{"_original":{"email":"sandipanseal11gmail"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipanseal11gmail"},"message":"\"email\" with value \"sandipanseal11gmail\" fails to match the required pattern: /^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-11T06:52:15.868Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-11T06:52:15.891Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-11T06:52:15.891Z"}
+{"level":"error","message":"Failed to send email. Email not exist....","timestamp":"2022-01-11T06:52:15.892Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T17:05:16.716Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:05:16.765Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T17:18:24.220Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T17:27:00.398Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:27:00.431Z"}
+{"level":"info","message":"success fully registered","timestamp":"2022-01-11T17:48:27.317Z"}
+{"level":"info","message":"data found in database","timestamp":"2022-01-11T17:50:57.895Z"}
+{"level":"info","message":{"__v":0,"_id":"61ddc2eb949eeba64424dcb8","email":"sandipanseal11@yahoo.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$.svz.l5/OG3qFHKTjQ6/HeGbb1sT6qnukIM5m5gy2hjLgTvFlCVVS","verified":true},"timestamp":"2022-01-11T17:50:58.039Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2022-01-11T17:50:58.127Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T17:53:30.496Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T17:54:19.692Z"}
+{"level":"info","message":"get data by id","timestamp":"2022-01-11T17:55:15.794Z"}
+{"level":"info","message":"successfully get note by id","timestamp":"2022-01-11T17:55:15.795Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T17:56:12.165Z"}
+{"level":"info","message":"get data by id","timestamp":"2022-01-11T17:56:28.908Z"}
+{"level":"info","message":"successfully get note by id","timestamp":"2022-01-11T17:56:28.909Z"}
+{"level":"info","message":"updated successfully","timestamp":"2022-01-11T17:57:35.120Z"}
+{"level":"info","message":"successfully updated....","timestamp":"2022-01-11T17:57:35.121Z"}
+{"level":"info","message":"Succefully updated..","timestamp":"2022-01-11T17:57:35.122Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T17:58:06.898Z"}
+{"level":"info","message":"Delete Note successfully","timestamp":"2022-01-11T17:59:32.758Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T17:59:42.088Z"}
+{"level":"info","message":"successfully getting all notes","timestamp":"2022-01-11T18:00:08.623Z"}
+{"level":"info","message":{"__v":0,"_id":"61ddc2eb949eeba64424dcb8","email":"sandipanseal11@yahoo.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$.svz.l5/OG3qFHKTjQ6/HeGbb1sT6qnukIM5m5gy2hjLgTvFlCVVS","verified":true},"timestamp":"2022-01-11T18:13:28.102Z"}
+{"level":"info","message":{"__v":0,"_id":"61ddc2eb949eeba64424dcb8","email":"sandipanseal11@yahoo.com","firstName":"Sandipan","lastName":"Seal","password":"$2b$10$.svz.l5/OG3qFHKTjQ6/HeGbb1sT6qnukIM5m5gy2hjLgTvFlCVVS","verified":true},"timestamp":"2022-01-11T18:13:28.105Z"}
+{"level":"info","message":"Email sent successfully","timestamp":"2022-01-11T18:13:28.155Z"}

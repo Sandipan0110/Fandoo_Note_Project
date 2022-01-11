@@ -1,8 +1,8 @@
-const validation = require("../utilities/validation");
+const validation = require("../utilitie/validation");
 const labelService = require("../service/label.js");
 const { logger } = require("../../logger/logger");
 
-class AddLabelController {
+class labelController {
   addLabel = async (req, res) => {
     try {
       const label = {
@@ -22,6 +22,7 @@ class AddLabelController {
       }
       const add = await labelService.addLabel(label);
       if (!add) {
+        console.log(error);
         logger.error("error in add Labels");
         return res.status(400).send({
           success: false,
@@ -197,4 +198,4 @@ class AddLabelController {
   }
 }
 
-module.exports = new AddLabelController();
+module.exports = new labelController();

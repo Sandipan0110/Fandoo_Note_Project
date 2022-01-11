@@ -1,13 +1,13 @@
 const userController = require("../controller/user.js");
-const helper = require("../utilities/helper.js");
+const helper = require("../utilitie/helper.js");
 const noteController = require("../controller/note.js");
 const labelController = require("../controller/label.js");
 
 module.exports = (app) => {
   // API for Registration
-  app.post("/register", userController.register);
+  app.post("/register", userController.registerUser);
   // API for Login
-  app.post("/login", userController.login);
+  app.post("/login", userController.loginUser);
   // API for Forgot Password
   app.post("/forgotPassword", userController.forgotPassword);
   // API for Reset Password
@@ -27,7 +27,7 @@ module.exports = (app) => {
   
   
   // API for Add Label
-  app.post("note/id/label/:id", helper.validateToken, labelController.addLabel);
+  app.post("note/label/:id", helper.validateToken, labelController.addLabel);
   // API for Get All Labels
   app.get("/labels", helper.validateToken, labelController.getLabel);
   // API for Get Label By Id

@@ -726,3 +726,70 @@
 {"_original":{"email":"sandipanseal11gmail"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipanseal11gmail"},"message":"\"email\" with value \"sandipanseal11gmail\" fails to match the required pattern: /^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-08T11:49:30.951Z"}
 {"_original":{"code":"5c8b7660pb","email":"sandipanseal11@yahoo.com"},"details":[{"context":{"key":"password","label":"password"},"message":"\"password\" is required","path":["password"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.963Z"}
 {"_original":{"email":"sandipanseal11@yahoo.com"},"details":[{"context":{"key":"password","label":"password"},"message":"\"password\" is required","path":["password"],"type":"any.required"}],"level":"error","timestamp":"2022-01-08T11:49:30.992Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T18:46:18.069Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T18:49:03.121Z"}
+{"_message":"UserInformation validation failed","errors":{"password":{"kind":"required","message":"Path `password` is required.","name":"ValidatorError","path":"password","properties":{"message":"Path `password` is required.","path":"password","type":"required"}}},"level":"error","timestamp":"2022-01-10T18:52:19.903Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T18:52:19.904Z"}
+{"_message":"UserInformation validation failed","errors":{"password":{"kind":"required","message":"Path `password` is required.","name":"ValidatorError","path":"password","properties":{"message":"Path `password` is required.","path":"password","type":"required"}}},"level":"error","timestamp":"2022-01-10T18:54:30.378Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T18:54:30.380Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:13:07.128Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:25:13.798Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:25:13.800Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:32:39.765Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:32:39.766Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T19:37:10.081Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:39:03.230Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:39:03.232Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T19:44:33.536Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T19:44:33.538Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:17:16.357Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:17:16.359Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:20:59.715Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:20:59.716Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T20:22:13.408Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:23:02.741Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sumanshaw123@gmail.com"},"level":"error","timestamp":"2022-01-10T20:26:31.538Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:26:31.539Z"}
+{"code":13297,"index":0,"level":"error","timestamp":"2022-01-10T20:35:09.427Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:35:09.428Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-10T20:36:47.755Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-10T20:36:47.756Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:02:58.374Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:02:58.376Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:09:14.231Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:31:40.233Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:31:40.234Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-11T05:33:30.257Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-11T05:33:30.262Z"}
+{"level":"error","message":"Wrong Information entered...","timestamp":"2022-01-11T05:33:30.264Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:34:51.119Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:34:51.119Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T05:35:25.249Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T05:35:25.250Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T06:15:43.868Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:15:43.870Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T06:21:05.914Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:21:05.915Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:27:09.838Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T06:30:05.018Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:30:05.019Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T06:34:00.566Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:34:00.567Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:51:00.101Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T06:52:15.550Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.662Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.691Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-11T06:52:15.707Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-11T06:52:15.772Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-11T06:52:15.774Z"}
+{"level":"error","message":"Wrong Information entered...","timestamp":"2022-01-11T06:52:15.777Z"}
+{"_original":{"email":"sandipanseal11gmail"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"sandipanseal11gmail"},"message":"\"email\" with value \"sandipanseal11gmail\" fails to match the required pattern: /^^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-11T06:52:15.868Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-11T06:52:15.891Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-11T06:52:15.892Z"}
+{"level":"error","message":"Failed to send email. Email not exist....","timestamp":"2022-01-11T06:52:15.892Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@gmail.com"},"level":"error","timestamp":"2022-01-11T17:05:16.763Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:05:16.765Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:18:24.353Z"}
+{"code":11000,"index":0,"keyPattern":{"email":1},"keyValue":{"email":"sandipanseal11@yahoo.com"},"level":"error","timestamp":"2022-01-11T17:27:00.401Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:27:00.431Z"}
+{"level":"error","message":"User already registered.","timestamp":"2022-01-11T17:48:27.343Z"}

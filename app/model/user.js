@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const encryption = require("../utilities/helper.js");
+const encryption = require("../utilitie/helper.js");
 const Otp = require("./otp.js");
 const { logger } = require("../../logger/logger");
 
@@ -21,15 +21,15 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  login: { type: Boolean },
+  googlelogin: { type: Boolean },
   verified: {
     type: Boolean,
     default: false
   }
 },
-{
-  timestamps: false
-});
+  {
+    timestamps: false
+  });
 
 const User = mongoose.model("UserInformation", userSchema);
 
@@ -53,9 +53,22 @@ class UserModel {
         callback(null, data);
       }
     });
-  }
+  };
 
-  loginModel = (loginData, callBack) => {
+  verifyUser = (data, callback) => {
+    User.findOneAndUpdate({ email: data.email }, { verified: true }, (error, data) => {
+      if (error) {
+        logger.error("data not found in database");
+        return callback(error, null);
+      } else {
+        logger.info("data found in database");
+        return callback(null, data);
+      }
+    }
+    );
+  };
+
+  loginUser = (loginData, callBack) => {
     // To find a user email in the database
     User.findOne({ email: loginData.email }, (error, data) => {
       if (error) {
@@ -63,7 +76,6 @@ class UserModel {
         return callBack(error, null);
       } else if (data.verified == false) {
         logger.error("Invalid User");
-        console.log(data);
         return callBack("Invalid Credential / invalid user", null);
       } else {
         if (data.verified == true) {
@@ -103,18 +115,5 @@ class UserModel {
     }
     return false;
   }
-
-  verifyUser = (data, callback) => {
-    User.findOneAndUpdate({ email: data.email }, { verified: true }, (error, data) => {
-      if (error) {
-        logger.error("data not found in database");
-        return callback(error, null);
-      } else {
-        logger.info("data found in database");
-        return callback(null, data);
-      }
-    }
-    );
-  };
 }
 module.exports = new UserModel();
