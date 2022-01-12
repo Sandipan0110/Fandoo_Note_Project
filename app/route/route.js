@@ -11,7 +11,7 @@ module.exports = (app) => {
   // API for Forgot Password
   app.post("/forgotPassword", userController.forgotPassword);
   // API for Reset Password
-  app.delete("/resetPassword", userController.resetPassword);
+  app.put("/resetPassword", userController.resetPassword);
 
 
   // API for Create a Note
@@ -27,7 +27,7 @@ module.exports = (app) => {
   
   
   // API for Add Label
-  app.post("note/label/:id", helper.validateToken, labelController.addLabel);
+  app.post("/note/label/:id", helper.validateToken, labelController.addLabel);
   // API for Get All Labels
   app.get("/labels", helper.validateToken, labelController.getLabel);
   // API for Get Label By Id

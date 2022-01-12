@@ -14,7 +14,7 @@ class UserService {
       } else {
         // Send Welcome Mail to User on his Mail
         utilities.sendWelcomeMail(user);
-        const secretkey = process.env.SECRET_KEY_FOR_CONFIRM;
+        const secretkey = process.env.JWT_SECRET;
         utilities.jwtTokenVerifyMail(data, secretkey, (err, token) => {
           if (token) {
             rabbitMQ.sender(data, data.email);
@@ -70,7 +70,7 @@ class UserService {
   }
 
   verifyUser = (data, callback) => {
-    const decode = jsonWebToken.verify(data.token, process.env.SECRET_KEY_FOR_CONFIRM);
+    const decode = jsonWebToken.verify(data.token, process.env.JWT_SECRET);
     if (decode) {
       rabbitMQ.receiver(decode.email).then((val) => {
         userModel.verifyUser(JSON.parse(val), (error, data) => {

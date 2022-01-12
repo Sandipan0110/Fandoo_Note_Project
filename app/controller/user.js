@@ -22,6 +22,7 @@ class userController {
       }
       userService.registerUser(user, (error, data) => {
         if (error) {
+          console.log("ghfiiudgherhgo",error);
           logger.error("User already registered.");
           return res.status(400).json({
             success: false,
@@ -186,7 +187,7 @@ class userController {
           });
         } else {
           return res.status(200).json({
-            message: "Congratulation !!! ${data.firstName} , Your Email ${data.email} Is Successfully Verified..... :) :)",
+            message: "Congratulation Your id is Successfully Verified..... :) :)",
           });
         }
       });

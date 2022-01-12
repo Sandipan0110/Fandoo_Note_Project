@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const encryption = require("../utilitie/helper.js");
-const Otp = require("./otp.js");
+const otp = require("./otp.js");
 const { logger } = require("../../logger/logger");
 
 const userSchema = mongoose.Schema({
@@ -64,8 +64,7 @@ class UserModel {
         logger.info("data found in database");
         return callback(null, data);
       }
-    }
-    );
+    });
   };
 
   loginUser = (loginData, callBack) => {
@@ -104,7 +103,7 @@ class UserModel {
   };
 
   resetpassword = async (Data) => {
-    const codepresent = await Otp.findOne({ email: Data.email, code: Data.code });
+    const codepresent = await otp.findOne({ email: Data.email, code: Data.code });
     if (codepresent) {
       const hash = encryption.hashedPassword(Data.password);
       const success = await User.findOneAndUpdate({ email: Data.email }, { $set: { password: hash } });

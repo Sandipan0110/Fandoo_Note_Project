@@ -1,45 +1,45 @@
 {
     "user": {
         "registartion": {
-            "firstName": "Bruj",
-            "lastName": "Khalifa",
-            "email": "bruj.khalifa007@gmail.com",
-            "password": "Banu@baj#12345"
+            "firstName": "Sandipan",
+            "lastName": "Seal",
+            "email": "sandipanseal11@yahoo.com",
+            "password": "Sand@123#ipaN"
         },
         "registrationWithImproperDetails": {
-            "firstName": "Vinod",
-            "email": "ganjubhai@gmail.com",
-            "password": "Ganju#7654"
+            "firstName": "Sandipan",
+            "email": "sandipanseal11@yahoo.com",
+            "password": "Sand@123#"
         },
         "registrationWithOutEmail": {
-            "firstName": "Sonu",
-            "lastName": "Soud",
-            "password": "sOnus$123"
+            "firstName": "Sandipan",
+            "lastName": "Seal",
+            "password": "Sand@123#ipaN"
         },
         "registrationWithOutfirstName": {
-            "lastName": "Barma",
-            "email": "ajay.barma1947@gmail.com",
-            "password": "AjaY@123B"
+            "lastName": "Seal",
+            "email": "sandipanseal11@yahoo.com",
+            "password": "Sand@123#ipaN"
         },
         "login": {
-            "email": "sandipanseal11@gmail.com",
-            "password": "Sandipan#12345"
+            "email": "sandipanseal11@yahoo.com",
+            "password": "Sand@123#ipaN"
         },
         "loginWithImproperDetails": {
-            "email": "sandipansea@gmail.com",
+            "email": "sandipanseal11@yahoo.co",
             "password": "Sandip@12345"
             
         },
         "ForgotPasswordPos": {
-            "email": "sandipanseal11@gmail.com"
+            "email": "sandipanseal11@yahoo.com"
         },
         "ForgotPasswordNegNonRegistered": {
-            "email": "sandipanseal11gmail"
+            "email": "sandipanseal11@yahoo"
         },
         "validDetails": {
             "email": "sandipanseal11@yahoo.com",
-            "newPassword": "Sandipan12345$",
-            "code": "5c8b7660pb"
+            "newPassword": "Sand@12345#ipaN",
+            "code": "c4th2xqkct"
         },
         "invalidDetails": {
             "email": "sandipanseal11@yahoo.com",
